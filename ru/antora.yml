@@ -1,0 +1,8 @@
+name: ru
+title: РУ
+version: 'ru'
+nav: 
+- modules/ROOT/nav.adoc
+- modules/users/nav.adoc
+- modules/contributors/nav.adoc
+- modules/developers/nav.adoc
