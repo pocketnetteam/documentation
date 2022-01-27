@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "build": "npx antora --fetch antora.yml"
+  },
+  "devDependencies": {
+    "@antora/cli": "3.0.0",
+    "@antora/site-generator": "3.0.0"
+  }
+}

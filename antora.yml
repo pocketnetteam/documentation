@@ -1,5 +1,13 @@
-name: main
-title: Pocketnet Documentation
-version: '0.1'
-nav: 
-- modules/ROOT/nav.adoc
+site:
+  title: Pocketnet Documentation
+  start_page: en::index.adoc 
+content:
+  sources:
+    - url: ./
+      branches: en
+    - url: ./
+      branches: ru
+ui: 
+  bundle:
+    url: https://gitlab.com/brangr/antora-bastyon-ui/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable
+    snapshot: true
