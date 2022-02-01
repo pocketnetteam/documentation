@@ -1,0 +1,12 @@
+= Documentation
+
+Welcome to the official documentation repository of Pocketnet/Bastyon.
+
+This repository contains documentation in link:https://asciidoc.org/[AsciiDoc] format and must comply with the requirements and recommendations of link:https://antora.org/[Antora].
+
+== Assigning branches:
+
+* link:https://github.com/pocketnetteam/documentation/tree/main[main] - designed for shared files and build configuration files
+* link:https://github.com/pocketnetteam/documentation/tree/users[users] - documentation, guides and other information for network users
+* link:https://github.com/pocketnetteam/documentation/tree/contributors[contributors] - any help in installing and configuring nodes, video servers, proxies, etc.
+* link:https://github.com/pocketnetteam/documentation/tree/developers[developers] - any materials for developers
