@@ -1,4 +1,4 @@
-name: default.documentation
+name: deploy
 
 on:
   push:
