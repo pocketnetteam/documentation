@@ -1,0 +1,12 @@
+= Profile
+include::ROOT:partial$authors.adoc[tag=scottcbusiness]
+
+You are able to update your profile to the blockchain once an hour. You can do this by going to your profile and clicking on the “Manage” tab under your profile name. Then navigate to “Edit Profile.”
+
+image::basics/profile_01.png[align="center"]
+
+It’s fairly straight forward, you can add your username, language, about section, website, and crypto addresses for people who would like to donate. Press save and you’re good to go.
+
+On your actual profile you have your posts and then of course your followers/following, as well as blocked users, a share link (where you can get your referral link), and the manage tab.
+
+On the left hand side of your profile you will see your reputation, your about section, your PKOIN address, when you joined, your website, and how many posts you’ve made.

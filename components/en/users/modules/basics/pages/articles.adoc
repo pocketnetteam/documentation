@@ -1,0 +1,18 @@
+= Articles
+include::ROOT:partial$authors.adoc[tag=scottcbusiness]
+
+When you go to post and click the book icon to write an article you will be prompted with this window
+
+image::basics/articles_01.png[align="center"]
+
+When you click on “Write New Article” you will be brought to the article publisher. It’s very similar to something like Medium with the addition of the category section. The caption is the title, while the text is the body.
+
+image::basics/articles_02.png[align="center"]
+
+When you highlight text, you will be able to add basic font styling, add links, and quotes.
+
+image::basics/articles_03.png[align="center"]
+
+On an empty line, you will see a + similar to how Medium works. By clicking on it you will see a play button and a camera. This allows you to either upload an image or a video link.
+
+image::basics/articles_04.png[align="center"]

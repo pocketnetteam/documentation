@@ -1,0 +1,14 @@
+= Multiple Accounts
+include::ROOT:partial$authors.adoc[tag=scottcbusiness]
+
+If you have a business page, manage accounts, or just want to have multiple accounts on Bastyon, it’s very easy to utilize this and switch between them. Simply click on the drop down arrow beside your profile picture and you will be prompted with this window.
+
+image::accounts_01.png[align="center"]
+
+If you have added an account you can easily switch between the two. If you haven’t added an account, you can click "Add Account".
+
+image::accounts_02.png[align="center"]
+
+Then you just have to copy and paste in your Private Key for the other account and click "Add".
+
+Now you can easily swap between multiple accounts by going to the dropdown menu and clicking on an account to switch.

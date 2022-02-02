@@ -1,0 +1,6 @@
+= Block Explorer
+include::ROOT:partial$authors.adoc[tag=scottcbusiness]
+
+If you’re interested in learning more about PKOIN and actually looking through the transactions or the nodes, you can find all of this listed on the Pocketnet block explorer.
+
+https://bastyon.com/blockexplorer/

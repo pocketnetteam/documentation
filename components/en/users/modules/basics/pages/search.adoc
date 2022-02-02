@@ -1,0 +1,6 @@
+= Search
+include::ROOT:partial$authors.adoc[tag=scottcbusiness]
+
+Search is fairly straightforward. You can search topics or for users directly. This is found near the top right of the page by your notifications and PKOIN balance.
+
+image::basics/search_01.png[align="center"]

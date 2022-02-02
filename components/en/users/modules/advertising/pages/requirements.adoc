@@ -1,0 +1,4 @@
+= KYC Requirements
+include::ROOT:partial$authors.adoc[tag=scottcbusiness]
+
+You do not require anything whatsoever, not even an email address to get started on Bastyon. This is the ideal all platforms should aim for.

@@ -1,0 +1,10 @@
+= How Does It Work On The Backend?
+include::ROOT:partial$authors.adoc[tag=scottcbusiness]
+
+Bastyon is modeled on the style of cryptocurrency (like Bitcoin and Ethereum), because it has no central authority and uses the blockchain to make transactions and ensure security.
+
+There is no central server: instead, the platform relies on a network of nodes, located all over the world. Every person in the world with a computer can actually run a node (and be rewarded to do so).
+
+Each post, each comment, each interaction (except chat messages!) is stored on the blockchain. This means that there is no way to remove a post or censor it. Every post is and will always be available on the blockchain and no authority, government or corporation can remove it.
+
+Bastyon uses a dedicated blockchain, derived directly from the Bitcoin chain.

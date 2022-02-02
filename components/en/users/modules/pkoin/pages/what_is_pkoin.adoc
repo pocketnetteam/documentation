@@ -1,0 +1,4 @@
+= What Is PKOIN?
+include::ROOT:partial$authors.adoc[tag=scottcbusiness]
+
+Pocketcoin is a network token. It is used exclusively to buy advertising from Pocketnet contributors and to pay transaction fees for such payments. Pocketcoin emission depends on the number of users of Pocketnet and has inherent algorithmic factors tying its long term value to Annual Revenue Per User (ARPU). ARPU is a term in digital advertising which signifies the total amount of revenue platform receives for one active user per year. In Pocketnet all of the revenue is split between content creators and nodes

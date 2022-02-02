@@ -1,0 +1,16 @@
+= What Is Bastyon?
+include::ROOT:partial$authors.adoc[tag=scottcbusiness]
+
+Bastyon is an innovative social network and video sharing platform. Unlike the mainstream social networks, it is not ruled by a company. It is an open source project run by a team of developers and experts, and its scope is to provide a censorship-free platform where the freedom of speech is seriously respected.
+ 
+The project was created by Daniel Satchkov and is a decentralized social media platform without any central authority. The platform does not run on a single server but on a network of nodes that are located all throughout the world.
+
+You can view my interview with him on link:https://youtu.be/jysM5tJFMQo[youtu.be] or link:https://odysee.com/@ScottCBusiness:4/Pockenet:a[odysee.com].
+
+This means, in practical terms, that users are always able to connect to it, see the content and post as long as they have an internet connection.
+
+In addition, Bastyon grants complete anonymity: users register without any email or phone number and no personal data like the IP or MAC address are stored in any way.
+
+By doing so, Bastyon removes the chance for governments to track specific users and to associate an identity to users. Today, anonymity is a requirement for security and privacy and Bastyon is able to guarantee it.
+
+There are many other features and measures Bastyon implements for security, privacy, and more. The main goal of Bastyon is to deliver a completely free, safe, and anonymous social platform where people can chat, communicate, and share contents without the risk of being controlled, limited, or censored by governments or corporations.

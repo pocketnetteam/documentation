@@ -1,0 +1,4 @@
+* xref:roadmap.adoc[Bastyon Insights]
+** xref:roadmap.adoc[Roadmap]
+** xref:whitepaper.adoc[Whitepaper]
+** xref:decentralization.adoc[Decentralization]

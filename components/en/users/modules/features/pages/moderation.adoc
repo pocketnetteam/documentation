@@ -1,0 +1,18 @@
+= Moderation
+include::ROOT:partial$authors.adoc[tag=scottcbusiness]
+
+To begin with, not all types of content are allowed. However, and this is crucial, the enforcement is transparent and up to the community in the way, we will explain below. Enforcement is done by the community and is in the open with no hidden shadowbans or selective banning practiced by Silicon Valley.
+
+It is very similar to the concept used on Hive for reputation and ratings to moderate content.
+When your reputation gets to 100 and you press on dots in the upper right of any post, you will see an option to Complain. If enough complaints come in, the post will not be shown anymore. When someone has more than 2 posts that are voted off the platform in 24 hours, they cannot post for another 48 hours after the second post. Complain is completed when a number of complaints is at least 1⁄3 of the number of 4 and 5-star ratings, subject to a minimum of 10 complaints (which will be adjusted over time in consultation with the community).
+
+Sometimes we can have a user who comes in with a specific purpose to attack Pocketnet by posting a series of vile images. To protect against that we have a following mechanism. If someone’s reputation reaches -50 (negative 50), their account is automatically blocked. Getting a reputation of -50 is equivalent to having 25 one-star ratings and no four or five-star ratings. This is nearly impossible to achieve without having lots of bad posts.
+
+_"So when someone is getting blocked at -50, what exactly does that entail?"_
+
+* That is currently an old system that will be updated.
+* The new algorithm will be Flagging leads to high rep users to be randomly chosen to be jury
+members to judge a specific piece of content/user that the content did in fact break the rules.
+* Users' funds will remain available and will not be affected, only their ability to post based on the
+decision outcome.
+* Appeals will be allowed.

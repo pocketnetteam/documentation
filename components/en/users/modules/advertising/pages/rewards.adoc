@@ -1,0 +1,30 @@
+= Earning Crypto Rewards
+include::ROOT:partial$authors.adoc[tag=scottcbusiness]
+
+The main way you will earn rewards is through platform content rewards. Rewards are given out based on a random draw of 25 winners per block that is mined. The way to be entered into the random draw is to have received ratings on your content within the block mining time frame. A block is mined every minute and thus 25 users are rewarded with PKOIN every minute totaling 1,500 per hour or 36,000 per day. After 6 months your ability to earn rewards on content expires.
+
+In terms of how reputation affects your rewards, it doesn’t. You don’t earn more for having a higher reputation and your votes are worth the same too.
+
+Pocketnet also features a unique direct marketplace where content creators can sell advertising to ad buyers. This isn’t fully implemented yet but will be soon. Content creators set their price and can accept mass-produced ads or can offer highly valued custom placements (creators pitching the product in their own way). Direct Marketplace is essentially an exchange for advertising that allows ad buyers to target specific audiences without any intermediaries. All ad buys and ads themselves are linked on the blockchain, therefore ad buying is completely trustless.
+
+image::rewards_01.png[align="center"]
+
+Comment tipping on posts pins the comment and adds a badge. In order to do this, you must donate any amount of PKOIN to a user's post then you can comment on the post and that comment will be pinned to the top (assuming you have the highest donation) and the amount will be shown beside your name as a badge.
+
+In 2022, there is an initiative where you will receive a bonus copy of whatever tips you receive matched by the Pocketnet team that will be time-locked for a year. This means if someone tips you 5 PKOIN, you will also be given 5 time-locked PKOIN. They would still be in your wallet, just time locked. This is a fun way to encourage people to tip each other and essentially get a free copy bonus of that tip.
+
+_"Do you earn more PKOIN from having a higher reputation and or being upvoted by someone with a higher reputation?"_
+
+* You do not earn more from having a higher reputation and your votes aren’t worth more either.
+* Rep 100, 100 users give you 5 stars, over time the threshold decreases, so after 3 months, you
+may only need 30 users to give you 5 stars to be eligible to affect others reputation.
+
+_"How are rewards given out, every 24 hours, immediately, every 7 days?"_
+
+* Rewards are given out randomly to 25 winners per block in a lottery and you earn more entries by getting more high ratings. Blocks are mined and rewards are given out every minute.
+
+* After 6 months there is an expiration for your ability to earn more rewards.
+
+_"Do you earn pkoin rewards from curating content / rating content?"_
+
+* No, you do not earn from curating content.

@@ -1,0 +1,14 @@
+= Getting Started
+include::ROOT:partial$authors.adoc[tag=scottcbusiness]
+
+You can create an account with a username and image, and you will be given a passphrase and then you are able to start using Bastyon immediately. We will cover your keys and 12-words key passphrase later. You have the option to use an email though it isn’t needed nor linked to your profile.
+
+image::basics/getting_started_01.png[align="center"]
+
+After clicking “Join Now”, you may be prompted with a captcha, then you will be asked to pick from various themes you’d like to follow.
+
+Then once you’re in Bastyon, you will be given you Private key. We will cover the importance of this later, but save it for now.
+
+At the top left, you’ll also see the Bastyon logo with the language settings to the right of it in case you’d like to change to your preferred language.
+
+You are now ready to begin.

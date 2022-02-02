@@ -1,0 +1,10 @@
+= Referrals
+include::ROOT:partial$authors.adoc[tag=scottcbusiness]
+
+As mentioned in the previous tab, your referral link can be acquired by going to your profile and clicking the “Share” tab and then copying your direct link with the referral box checked so you can earn from having other join too.
+
+image::basics/referrals_01.png[align="center"]
+
+You can find the number of users you’ve referred under “My Videos” in the settings section.
+
+For the first 6 months you will also receive 20% of the new referrals’ earnings. They will not earn less; you will just receive the bonus.

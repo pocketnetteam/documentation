@@ -1,0 +1,19 @@
+= Videos
+include::ROOT:partial$authors.adoc[tag=scottcbusiness]
+
+When you go to upload a video, you will be presented with the page seen below. There is a bonus program you can participate in that’s currently being shared. You can get $1,000 for every 15k views and
+ 
+1,250 five-star ratings, and 1,000 users. Note that for English speakers the referral limit will be lowered to 500.
+When you upload there is a range of video formats, but you are limited to a 4gb video. You can always use something like Handbrake to compress your videos to make it work or you can import directly from a YouTube URL.
+
+image::basics/videos_01.png[align="center"]
+
+This is what it looks like when you’re setting up your video, you can change the thumbnail at the top left via the “Change Preview Image,” add your video title, description, and tags, and then you can share it within the video section.
+
+Because there are many different ways to view and consume content, it’s beneficial to share various forms of content including video.
+
+Under settings, you can access “My Videos” which shows your overall total ratings from videos, unique voters, your video views, and your max upload amount based on your reputation.
+
+image::basics/videos_02.png[align="center"]
+
+Eventually, videos that have no or very little engagement will be removed after 6 months, but you will be able to pay PKOIN to keep your video up. Video node servers will also be rewarded with a portion of the earnings.

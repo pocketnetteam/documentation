@@ -1,0 +1,3 @@
+# tag::scottcbusiness[]
+:author: Scott Cunningham (@scottcbusiness) – www.scottcbusiness.com
+# end::scottcbusiness[]

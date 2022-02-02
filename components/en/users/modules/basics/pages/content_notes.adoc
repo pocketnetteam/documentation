@@ -1,0 +1,9 @@
+= Content Notes
+include::ROOT:partial$authors.adoc[tag=scottcbusiness]
+
+You currently cannot officially delete or edit the content after posting it as it is baked into the blockchain. However, there is a feature to create an overwrite transaction as well "hide" transactions, which would effectively translate to edit or delete. Functionally you are able to edit a post within the first 24 hours of posting and otherwise, you can "remove" it, which again is actually just hiding it.
+
+"Can you clarify how editing/deleting content?"
+
+* For text content, overwriting for editing and deleted content is "hidden".
+* For video & images, when these are deleted, they are fully removed. Only the record and text are kept on the blockchain.

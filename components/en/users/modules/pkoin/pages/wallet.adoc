@@ -1,0 +1,12 @@
+= Wallet
+include::ROOT:partial$authors.adoc[tag=scottcbusiness]
+
+You can access your wallet from the settings or by clicking the number of PKOIN you have listed beside your profile.
+
+image::wallet_01.png[align="center"]
+
+After navigating there you should see this:
+
+image::wallet_02.png[align="center"]
+
+This is a basic wallet that lets you send and receive PKOIN.

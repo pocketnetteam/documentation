@@ -1,0 +1,6 @@
+= Settings
+include::ROOT:partial$authors.adoc[tag=scottcbusiness]
+
+To navigate to settings, click on “Manage” on your profile.
+
+image::basics/settings_01.png[align="center"]

@@ -1,0 +1,10 @@
+= Posting
+include::ROOT:partial$authors.adoc[tag=scottcbusiness]
+
+When you’re on the main feed, you will see the posting area located at the top.
+
+image::basics/posting_01.png[align="center"]
+
+You can post a status post, add images, upload videos (Need 50 PKOIN or a blue verified check), or write a full article.
+
+You can also add hashtags/categories for more reach as well as change who you’re sharing to via the visibility.

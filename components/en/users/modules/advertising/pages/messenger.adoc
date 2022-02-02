@@ -1,0 +1,15 @@
+= Messenger
+include::ROOT:partial$authors.adoc[tag=scottcbusiness]
+
+Bastyon has a private messenger that feels similar to the Facebook messenger on the right side of your screen
+
+image::messenger_01.png[align="center"]
+
+Chat Features:
+
+* Private messenger that is NOT connected to your phone number
+* End-To-End Encryption of every 1-on-1 conversation by default
+* All images sent or received through chat are stored encrypted
+* History of messages is saved for 7 days only and then deleted
+
+Bastyon provides an encrypted chat system, not associated with any phone number or personal data, protected with 1 to 1 encryption model. No one except the two persons involved in the chat session can access the messages and governments has no way to look into the database since the communication is encrypted and there are no backdoors and no "master keys" that can be used for decryption. Moreover, all the chat messages are automatically deleted after 7 days.

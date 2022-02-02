@@ -1,0 +1,12 @@
+= Boosting
+include::ROOT:partial$authors.adoc[tag=scottcbusiness]
+
+A feature that will allow users to spend PKOIN to “boost” their normal feed post on Bastyon within the network to be shown to more users and increase its visibility.
+
+* 1 user would only see 3 boosted posts out of 30, so 10% of posts in the feed out of the top 30 would be boosted. The determination of how posts are shown is random with each post receiving lottery tickets in the proportion of the boost. All of the posts that are currently boosted are randomly entered to be shown in the boost spots.
+* The amount you put in determines how likely you are to be shown. The interface will give you likely statistics and estimated results based on the PKOIN you use. There is a chance that with a very low amount, your boost may not be shown, but the interface should tell you.
+* Boosts should be queued up for bidding and last about 8 hours.
+* You are competing with the other boosters to be shown to the users.
+* All actions for boosting and related to PKOIN will be done by a Pocketnet button that will be
+below the post. Anyone can boost anyone’s post.
+* Boosts are paid directly to the nodes to fund the network.

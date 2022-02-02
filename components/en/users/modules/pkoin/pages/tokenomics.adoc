@@ -1,0 +1,14 @@
+= Tokenomics
+include::ROOT:partial$authors.adoc[tag=scottcbusiness]
+
+Let’s discuss the tokenomics behind PKOIN and the basics you need to know.
+
+It has a total supply of 24.37 million. Blocks are mined every minute with rewards being distributed randomly amongst 25 creators each time based on their ratings used as entries into the lottery draw.
+
+Emissions are paid to creators, nodes, and developers. Currently the team is paid via PKOIN from the early nodes. Now there is no money being made or being paid to the developers.
+
+It’s almost the exact same as Bitcoin’s system except with creators staking content, and nodes that stake PKOIN to earn and support the system.
+
+So, it follows Bitcoin with the halvings and all the other mechanisms it offers. Taproot for example, will be implemented and all updates will be incorporated into the PKOIN ecosystem.
+   
+The long-term vision is that while PKOIN becomes scarcer and less rewards are given out, the value will go up alongside that. Also, the advertising and boosting systems are intended to create a closed loop where creators earn it and sell it and advertisers buy it and then pay creators.

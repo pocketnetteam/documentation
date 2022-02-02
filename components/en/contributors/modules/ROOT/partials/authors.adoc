@@ -1,0 +1,3 @@
+# tag::andyoknen[]
+:author: Andy Oknen <andy.oknen@ya.ru>
+# end::andyoknen[]

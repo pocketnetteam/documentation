@@ -1,0 +1,7 @@
+= Advertising
+include::ROOT:partial$authors.adoc[tag=scottcbusiness]
+
+This is different from boosting where these are actual ads that are served to users versus content on Bastyon being boosted.
+
+* You will also be able to launch ads that are pay per view or pay per click soon (this will be similar to offers on Minds) – Offers will not be editable after the fact, you have options to post forever, 24 hours, or 48 hours. While boosting is paid to the nodes, advertising is paid directly to the blogger.
+* You can create ads directly from the posting section or from the advertising section and creators will have an offers section to receive ads.

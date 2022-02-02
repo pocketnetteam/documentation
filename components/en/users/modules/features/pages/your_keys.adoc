@@ -1,0 +1,8 @@
+= Your Keys
+include::ROOT:partial$authors.adoc[tag=scottcbusiness]
+
+Your public address is what Bastyon uses to verify you own the account. Essentially, your private key is a really large number (that can be represented with a 12-word sequence or a QR code). This number gets multiplied by another that everyone knows (called a base point) and Bastyon gets a public key. When you enter your private key, they can multiply it by the base point to get your public key and we can match it against public address. If they match, they know it is you. It is impossible to go back i.e. to divide the public key by the base point to get your private key. The way multiplication in cryptography works is it is only one way and cannot be reversed, so your key is safe. Bastyon uses the same exact cryptography as Bitcoin.
+
+As such when you registered, keeping your seed phrase for logging in and resetting your password is critical. Since it’s truly decentralized, no one can help you recover your account if you lose these.
+
+When logged in you can navigate to the settings and view your private key by clicking “Private Key” in case for some reason you’ve lost it but still have access or forgot to save it.

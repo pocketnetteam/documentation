@@ -1,0 +1,16 @@
+= The Guide To Bastyon & PKOIN
+include::ROOT:partial$authors.adoc[tag=scottcbusiness]
+
+Welcome to the comprehensive guide to the crypto-monetized social platform Bastyon and their cryptocurrency PKOIN. We will cover every aspect of the platform and using the cryptocurrency in this tutorial.
+
+In this guide we will go over the basics of Bastyon: what is Bastyon, profile setup, posting, the content feed, the search feature, settings, video content, and content in general.
+
+We will also cover intermediate features on Bastyon: moderation, the reputation system, your keys, using multiple accounts, earning crypto rewards, KYC requirements, and messenger.
+
+We will also discuss some insights on Bastyon such as the roadmap, whitepaper, cover some statistics & data, and decentralization & anti-censorship technology.
+
+We will briefly cover setting up a node as well as the desktop and mobile applications.
+
+We will also cover PKOIN, the cryptocurrency discussing what is PKOIN, its tokenomics, your wallet, the block explorer, transferring PKOIN, withdrawing & selling PKOIN, buying & depositing PKOIN, and future uses of PKOIN.
+
+Throughout the guide, I will also insert questions and answers I asked directly to the creator for clarification and confirmation.The team currently is 24 developers and they are putting in a lot of work to improve the platforms.

@@ -1,0 +1,7 @@
+name: contributors
+title: Contributor's Guide
+version: '0.1'
+nav:
+- modules/ROOT/nav.adoc
+- modules/node/nav.adoc
+- modules/video/nav.adoc

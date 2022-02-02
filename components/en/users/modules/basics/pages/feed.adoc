@@ -1,0 +1,22 @@
+= The Feed
+include::ROOT:partial$authors.adoc[tag=scottcbusiness]
+
+The feed of post content being shared looks like this below:
+
+image::basics/feed_01.png[align="center"]
+
+You have your categories/hashtags on the left side, recent comments on the right side, top videos at the top, and then your regular content feed based on who you follow and the topics you follow shown in the middle.
+
+You can rate content based on how good you think it was. This will determine their PKOIN rewards for that post and their overall reputation which we will dive into later.
+
+image::basics/feed_02.png[align="center"]
+
+On the left hand side you have your categories that you can easily check or uncheck to see the topics you’d like. By pressing the + button at the top of the categories section allows you to add your own custom category that can include many topics.
+
+image::basics/feed_03.png[align="center"]
+
+I created a Decentralization category that essentially includes everything I’m interested all in one topic category. You can also use these custom tags to tag your own posts more effectively though you can only use up to 5 tags on one post.
+
+image::basics/feed_04.png[align="center"]
+
+At the top of the feed, you can filter between all types of content, only the people you’re following, video content, and top trending content. This allows you to prioritize the types of content you’re interested in viewing.

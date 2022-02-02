@@ -1,0 +1,12 @@
+name: users
+title: User's Guide
+version: '0.1'
+nav: 
+- modules/ROOT/nav.adoc
+- modules/basics/nav.adoc
+- modules/features/nav.adoc
+- modules/advertising/nav.adoc
+- modules/insights/nav.adoc
+- modules/easynode/nav.adoc
+- modules/applications/nav.adoc
+- modules/pkoin/nav.adoc

@@ -1,0 +1,4 @@
+= Verification
+include::ROOT:partial$authors.adoc[tag=scottcbusiness]
+
+Currently, this is the only thing being done manually by developers. Eventually, this will be decentralized and decided via voting. You would make a post to apply and ask for the blue checkmark and it will be done via the community in the future.
