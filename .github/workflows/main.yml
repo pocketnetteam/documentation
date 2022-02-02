@@ -1,0 +1,51 @@
+name: default.documentation
+
+on:
+  push:
+    branches: [ users, contributors, developers ]
+
+  workflow_dispatch:
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install
+        run: npm i
+
+      - name: Build
+        run: npm run build
+          
+      - name: Pack Artifacts
+        run: tar czf build.tgz ./build/
+          
+      - name: Save artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: build
+          path: |
+            build.tgz
+
+  deploy:
+    runs-on: doc-en-deploy
+    needs: build
+    steps:
+      - name: Download artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: build
+          
+      - name: Extract artifacts
+        run: tar xzf build.tgz .
+        
+      - name: Remove existed
+        run: rm -Recurse -Force ${{env.DOCS_EN_ROOT}}/*
+        
+      - name: Copy artifacts
+        run: cp -Recurse -Force ./build/site/* ${{env.DOCS_EN_ROOT}}/
