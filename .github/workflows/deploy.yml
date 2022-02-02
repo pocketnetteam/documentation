@@ -1,0 +1,41 @@
+name: deploy
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ users, contributors, developers ]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install
+        run: npm i
+
+      - name: Build
+        run: npm run build
+  
+      - name: Save artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: build
+          path: build/
+          retention-days: 1
+
+  deploy:
+    runs-on: docs-en-deploy
+    needs: build
+    steps:
+      - name: Download artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: build
+                    
+      - name: Copy artifacts
+        run: cp -Recurse -Force ./site/* c:/inetpub/wwwroot/documentation/en/
