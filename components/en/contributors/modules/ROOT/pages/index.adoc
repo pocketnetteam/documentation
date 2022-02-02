@@ -1,1 +1,1 @@
-= Welcome to Contributor's Guide!
+# TODO: write general information about this component

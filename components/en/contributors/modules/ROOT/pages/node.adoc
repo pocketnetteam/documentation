@@ -1,0 +1,284 @@
+= PocketNet Core Node Setup
+
+This guide provides instructions on how to setup a compute node to support the PocketNet blockchain network and Bastyon decentralized social media app. PocketNet Core node operators are rewarded in the platform cryptocurrency, PKOIN, by participating in a process called staking, which generates new blocks on the blockchain.
+More detail about the PocketNet network can be found in the link:https://pocketnet.app/docs/Pocketnet%20Whitepaper%20Draft%20v2.pdf[whitepaper here]
+
+The Bastyon social media site can be visited at bastyon.com
+
+
+== Supported Operating Systems
+The below operating systems have been validated to work with PocketNet Core software by the developer and node operator community:
+
+* Docker
+* Linux Debian Bullseye and Bookworm
+* Linux Mint Cinnamon
+* Linux Ubuntu 20.04 and 18.04
+* Windows 10
+* Windows 11
+
+
+== Minimum System Requirements
+Below are the minimum system requirements to run a PocketNet node to use as a wallet, for coin staking to earn PKOIN, and to use as a local node on your home network.  A node with these requirements may need to be upgraded within the next 1 - 2 years.
+
+* 2 core x86-64 CPU
+* 4GB RAM
+* 100 GB harddrive
+* 10 Mbps internet connection
+
+
+== Recommended System Requirements
+The below system requirements are recommended for a node which will act as a public node to service the Bastyon front end, in addition to wallet, and coin staking capabilities.  The recommended requirements should provide enough headroom to support the PocketNet network for at least 2 years into the future.
+
+* 4 core x86-64 CPU
+* 16 GB RAM
+* 500 GB SSD Harddrive
+* 100 Mbps internet connection
+* publicly accessible IP address and ports (see Network Setup below)
+
+
+== Linux Getting Started  (Ubuntu, Debian, Mint, etc.)
+
+Download the latest `pocketnetcore_*_linux_x64_setup.deb` package from the project releases page at: https://github.com/pocketnetteam/pocketnet.core/releases
+
+Install package with root privilegies. To do this, open the terminal in the directory where you downloaded the installer and execute the command:
+
+[source,shell]
+$ sudo dpkg -i pocketnetcore_*_linux_x64_setup.deb
+
+Download and copy the checkpoints file from the releases to the `.pocketcoin/checkpoints` directory:
+
+[source,shell]
+$ mkdir ~/.pocketcoin
+$ mkdir ~/.pocketcoin/checkpoints
+$ cd ~/.pocketcoin/checkpoints
+$ wget https://github.com/pocketnetteam/pocketnet.core/releases/latest/download/main.sqlite3
+$ cd ~
+
+After installation, start the GUI pocketcoin client from the command line.  (If you would like to run the PocketNet Core node from the command line or in headless mode, go to the "Running a Headless Node from the Command Line" section later in this document.)
+
+[source,shell]
+$ pocketcoin-qt
+
+At this point the PocketNet Core client will start synchornizing with the network.  Depending on network performance full synchronization can take anywhere from a few days to over a week to complete.  If it is necessary to bring a node up in a short period of time, it is possible to download a checkpoint following the instructions in the "Starting from Checkpoint" section.  However, it is recommended to allow a node to synchronize with the network on it's own as this validates the public block chain and provides additional security and decentralization.
+
+If it is desired to run a full node to support the Bastyon front-end app, proceed to the Network Setup section.
+
+
+== Windows Getting Started
+
+Download the `pocketnetcore_*_win_x64_setup.exe` installer and the `main.sqlite3` file from the GitHub releases page here: https://github.com/pocketnetteam/pocketnet.core/releases
+
+Run the installer.
+
+Before starting the PocketNet app for the first time, download the file for the main.sqlite3 file from the releases page: 
+
+The `main.sqlite3` file must be copied into the checkpoints folder in the default Pocketcoin data directory, which typically is in the folder `%APPDATA%\Pocketcoin\checkpoints`.
+Below are example commands to copy the file into the correct folder, assuming the `main.sqlite3` file was downloaded to the folder `%HOMEPATH%\Downloads`:
+
+[source,shell]
+cd %APPDATA%
+mkdir Pocketcoin
+cd Pocketcoin
+mkdir checkpoints
+copy %HOMEPATH%\Downloads\main.sqlite3 %APPDATA%\Pocketcoin\checkpoints\main.sqlite3
+
+Start the PocketNet Core application from the Windows Start menu. A Windows Security Alert will pop up for Windows Defender Firewall. Select "Allow access" to allow PocketNet Core through the Windows Defender Firewall for Private networks.
+
+image::windows_firewall.png[align=center]
+
+At this point the PocketNet Core client will start synchornizing with the network. Depending on network performance full synchronization can take anywhere from a few days to over a week to complete. If it is necessary to bring a node up in a short period of time, it is possible to download a checkpoint following the instructions in the "Starting from Checkpoint" section below. However it is recommended to allow a node to synchronize with the network on it's own as this validates the public block chain and provides additional security and decentralization.
+
+
+== Docker Setup
+
+Make sure that enough CPU, memory and disk space are allocated to your Docker container according to the "Minimum System Requirements" section above.
+You can start your node with a single command from Docker.
+
+[source,shell]
+$ docker run -d \
+    --name=pocketnet.main \
+    -p 37070:37070 \
+    -p 38081:38081 \
+    -p 8087:8087 \
+    -v /var/pocketnet/.data:/home/pocketcoin/.pocketcoin \
+    pocketnetteam/pocketnet.core:latest
+
+The node can be controlled in Docker using the pocketcoin-cli and pocketcoin-tx commands demonstrated below:
+
+[source,shell]
+$ docker ps --format '{{.ID}}\t{{.Names}}\t{{.Image}}'
+ea7759a47250    pocketnet.main      pocketnetteam/pocketnet.core:latest
+$
+$ docker exec -it pocketnet.main /bin/sh
+$
+$ pocketcoin-cli --help
+$ pocketcoin-tx --help
+
+More information: https://hub.docker.com/r/pocketnetteam/pocketnet.core
+
+
+== Starting Node from a Blockchain Snapshot
+
+It is recommended to allow a PocketNet Core node to sync with the blockchain on it's own to maximize network security and decentralization.  If it is desired to bring up a node in a short amount of time, the development team provides periodic archives of the block chain which can be downloaded from https://snapshot.pocketnet.app/latest.tgz.  Be sure to back up your wallet.dat file before attempting loading the blockchain from archive.
+The Linux bash shell commands below will delete the existing blockchain data on disk, download the blockchain archive, and extract it to the default location:
+
+[source,shell]
+$ cd ~/.pocketcoin
+$ rm -r blocks
+$ rm -r chainstate
+$ rm -r indexes
+$ rm -r pocketdb
+$ wget https://snapshot.pocketnet.app/latest.tgz
+$ tar -xzf latest.tgz -C ./
+
+
+== Running a Headless Node From the Command Line
+
+Running the pocketcoind command will start PocketNet core is text only mode from a command terminal.  On Linux, it is possible to launch pocketcoind as a daemon process running in the background by using the -daemon parameter:
+[source,shell]
+$ pocketcoind -daemon
+
+To see other available options with pocketcoind:
+[source,shell]
+$ pocketcoind -?
+
+Commands can be sent to pocketcoind by using the pocketcoin-cli program.  These same commands can also be run through the pocketcoin-qt debug terminal.  Below are some common and useful commands.
+
+Display list of available commands to send to the node:
+[source,shell]
+$ pocketcoin-cli help
+
+Get specific help on command name "command":
+[source,shell]
+$ pocketcoin-cli help "command"
+
+Send a command to the pocketcoind process to gracefully shutdown:
+[source,shell]
+$ pocketcoin-cli stop
+
+Display your current balance of PKOIN:
+[source,shell]
+$ pocketcoin-cli getbalance
+
+Generate a new receive address to have another party send PKOIN to (such as after buying PKOIN on an exchange) with a descriptive "label" to identify it later on:
+[source,shell]
+$ pocketcoin-cli getnewaddress "label"
+
+List receive addresses which have been previously generated or used on your node:
+[source,shell]
+$ pocketcoin-cli listreceivedbyaddress
+
+Send amount of PKOIN to "address":
+[source,shell]
+$ pocketcoin-cli sendtoaddress "address" amount
+
+View a report of the number of PKOINs won through staking by your node:
+[source,shell]
+$ pocketcoin-cli getstakereport
+
+View whether or not your node is currently staking:
+[source,shell]
+$ pocketcoin-cli getstakinginfo
+
+View a list of connected peers (useful to verify you are connected to the PocketNet network):
+[source,shell]
+$ pocketcoin-cli getpeerinfo
+
+Pocketcoin-cli has the capability to send commands to a remote node to enable remote managment and headless node operation. This is an advanced topic beyond the scope of this guide, however the `pocketcoin-cli --help` lists necessary commands for remote operation. 
+
+
+== Network Setup
+
+In order for your node to receive incoming connections from the Bastyon front end and other nodes on the network, the following network ports must be open to your node: 8087, 37070, and 38081.
+
+On home networks, enabling port forwarding is specific to your brand of internet router. For routers that support it, mapping to a different port should *not* be used, i.e. port external port 38081 should map to internal port 38081 on the router.  Below are links to instructions for some popular router models:
+
+Netgear: https://kb.netgear.com/24290/How-do-I-add-a-custom-port-forwarding-service-on-my-Nighthawk-router
+
+Linksys: https://www.linksys.com/us/support-article?articleNum=138535
+
+Google WiFi: https://support.google.com/googlenest/answer/6274503?hl=en
+
+
+== Getting Started with Staking
+
+Staking is the process where your node works to generate new blocks on the PocketNet blockchain, and in return is rewarded with PKOIN awards. New blocks are generated on the PocketNet blockchain every 1 minute, and 5 PKOIN are awarded to a winning node each round. A stake reward halving occurs every 2.1 million blocks, where the stake reward is cut in half. The first reward halving on the PocketNet network will occur early 2023, after which the stake reward will be reduced to 2.5 coins per block.
+
+To participate in staking, you must deposit at least 50 PKOIN to your node wallet address and ensure. The more PKOIN desposited to your wallet address, the better your chances of winning a stake round.
+
+IMPORTANT: Your wallet must be unlocked and unencrypted in order for staking to work.  It is recommended to not encrypt your wallet on a node you intend to use to stake PKOIN.
+
+Running the "getstakinginfo" command from pocketcoin-cli or the debug window of Pocketcoin-qt will tell you if your node is staking, for example:
+
+[source,shell]
+$ pocketcoin-cli getstakinginfo
+{
+  "enabled": true,
+  "staking": true,
+  "errors": "",
+  "currentblockweight": 63528,
+  "currentblocktx": 52,
+  "difficulty": 228206.0349124698,
+  "search-interval": 16,
+  "weight": 2305157068183,
+  "balance": 2305157068183,
+  "netstakeweight": 272146840647277,
+  "expectedtime": 17708
+}
+
+If the "enabled" and "staking" fields are set to "true" the node is actively staking. The "expectedtime" field above gives the estimated time in seconds until the next stake win. Stake wins are based on chance and can be highly variable. The first time a node is setup for staking, it may take several hours for the "enabled" and "staking" fields to show up as "true".
+
+
+=== Buying + Selling PKOIN
+
+PKOIN, the digital currency of Bastyon and Pocketnet platform, can be purchased or sold at these exchanges:
+
+https://bitforex.com
+
+https://digifinex.com
+
+Purchase with credit card on Indacoin:
+
+https://buy.pkoin.indacoin.io/
+
+
+=== Sending PKOIN
+
+To send PKOIN to another user's address or an exchange's PKOIN address:
+
+. Open the pocketcoin-qt application
+. Choose the "Send" icon from the top menubar
+. In "Pay To" field, enter the Pocketcoin address of the recipient you wish to send to
+. Optionally, enter a label in the "Label" field to help remind you what this payment was for
+. In the "Amount" field, enter the number of PKOIN you want to send to this address
+. Select the "Send" button in the bottom left corner of the window
+
+IMPORTANT: Only send PKOIN to another valid PKOIN wallet address. Attempting to send coins to an address on another chain (Bitcoin, Ethereum, etc) may result in permanent loss of those coins.
+
+
+=== Receive PKOIN
+
+. Open the pocketcoin-qt application
+. Choose the "Receive" icon from the top menubar
+. Optionally, enter a descriptive label for this payment request 
+. Enter the amount of PKOIN
+. Optionally, enter a message to send along with the payment request
+. Select the "Request payment" button
+. A Window will pop up displaying a QR code and payment address.  This is the address you will send to the other party to send payment. If you are sending coins from a cryptocurency exhange account, this is the address you will send the coins to.
+
+
+=== Getting Help
+If PocketNet Core fails in some manner, the first step is to check the debug.log file in the pocketcoin directory (`~/.pocketcoin` on Linux, `%HOMEPATH%\appdata\roaming\pocketcoin` on Windows).  This can oftentimes provide clues as to what went wrong with the program.
+
+Post to the Bastyon/Pocknet tag on the Bastion social media app to get help with node setup.
+
+To report software defects and view current issues check our GitHub issues page: https://github.com/pocketnetteam/pocketnet.core/issues
+
+@Tawmaz on Bastyon for issues with this document.
+
+
+=== How Can I Help Out?
+
+Contribute to our Github projects.  We are looking for C/C++, Javascript Node JS coders, and anyone with a willingness to learn.
+
+https://github.com/pocketnetteam

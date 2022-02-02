@@ -16,3 +16,4 @@ ui:
 asciidoc:
   attributes:
     page-pagination: true
+    icons: font
