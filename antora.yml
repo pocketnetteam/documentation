@@ -14,3 +14,6 @@ ui:
   bundle:
     url: https://gitlab.com/brangr/antora-bastyon-ui/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable
     snapshot: true
+asciidoc:
+  attributes:
+    page-pagination: true
