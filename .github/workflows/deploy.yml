@@ -30,7 +30,7 @@ jobs:
           retention-days: 1
 
   deploy:
-    runs-on: doc-en-deploy
+    runs-on: docs-en-deploy
     needs: build
     steps:
       - name: Download artifacts
