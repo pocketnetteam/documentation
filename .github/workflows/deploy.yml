@@ -4,8 +4,6 @@ on:
   push:
     branches: [ users, contributors, developers ]
 
-  workflow_dispatch:
-
 jobs:
 
   build:
