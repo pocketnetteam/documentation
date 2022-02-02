@@ -1,12 +1,15 @@
 site:
-  title: Pocketnet Documentation
-  start_page: en::index.adoc 
+  title: The Users Guide To Bastyon & PKOIN
+  start_page: users:ROOT:index.adoc 
 content:
   sources:
-    - url: ./
-      branches: en
-    - url: ./
-      branches: ru
+    - url: https://github.com/pocketnetteam/documentation.git
+    # - url: ~/Work/pocketnet/documentation
+      branches: users
+    - url: https://github.com/pocketnetteam/documentation.git
+      branches: contributors
+    - url: https://github.com/pocketnetteam/documentation.git
+      branches: developers
 ui: 
   bundle:
     url: https://gitlab.com/brangr/antora-bastyon-ui/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable
