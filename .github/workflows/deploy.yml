@@ -3,7 +3,6 @@ name: deploy
 on:
   workflow_dispatch:
   push:
-    branches: [ users, contributors, developers ]
 
 jobs:
 
