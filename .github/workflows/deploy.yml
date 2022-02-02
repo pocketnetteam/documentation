@@ -21,16 +21,13 @@ jobs:
 
       - name: Build
         run: npm run build
-          
-      - name: Pack Artifacts
-        run: tar czf build.tgz ./build/
-          
+  
       - name: Save artifacts
         uses: actions/upload-artifact@v2
         with:
           name: build
-          path: |
-            build.tgz
+          path: build/
+          retention-days: 1
 
   deploy:
     runs-on: doc-en-deploy
@@ -40,10 +37,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: build
-          
-      - name: Extract artifacts
-        run: tar xzf build.tgz .
-        
+                
       - name: Remove existed
         run: rm -Recurse -Force ${{env.DOCS_EN_ROOT}}/*
         
