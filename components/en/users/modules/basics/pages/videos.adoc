@@ -1,4 +1,31 @@
 = Videos
+
+
+== Where do you save the video content?
+
+Bastyon uses a modified open source platform called PeerTube, connected to the Pocketnet blockchain and the Bastyon app. PeerTube is fully integrated with Bastyon authorization, each video server is registered on the blockchain.
+
+== Who can load video in Bastyon?
+
+Bastyon does not have centralized servers or venture capital financing, all video is stored on servers maintained by users. Therefore, we cannot allow everyone to load video, servers will fill up quickly. To load video you need to have 5 PKOIN (500 MB) or 50 PKOIN (4 GB) in your account. You can buy PKOIN from other users if you select a category PKOIN/Peer-to-Peer.
+
+== Where can I see my video stats?
+
+Go to your profile and see My Videos.
+
+
+== What player do you use to play the video?
+
+Bastyon has its own player, which is a significantly modified version of PeerTube. Same as PeerTube it uses WebTorrent technology to reduce the load on the server. This means that users watching the video are sharing it. Note, that in some cases it means users can see IP addresses of each other. Bastyon servers do not have any mechanism to record these IP addresses, however, if you really care about exposing your IP address, you should use a reliable VPN provider. If you want to minimize any peer-to-peer sharing, you can use download video function in Bastyon.
+
+== Why is the video taking time to upload?
+
+Again, Bastyon does not have the resources the Google has. Video needs to be loaded to one of the video nodes and it also needs to be transcoded. Remember, YouTube is not free, it extracts value by using your private information and monetizing it. Bastyon is run by the community and a little bit of a delay is a small price to pay for privace and freedom. Besides, Bastyon devs have made the process of loading super-easy and much more robust than other freedom oriented platforms (they frequently don't even do transcoding for different qualities).
+
+
+
+
+
 include::ROOT:partial$authors.adoc[tag=scottcbusiness]
 
 When you go to upload a video, you will be presented with the page seen below. There is a bonus program you can participate in that’s currently being shared. You can get $1,000 for every 15k views and

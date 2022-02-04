@@ -1,0 +1,30 @@
+= How do I find the private key?
+
+Click your avatar icon in the top right corner
+
+image::privatekey1 (1).jpg[align="left"]
+
+Then, click “Manage” button
+
+
+image::privatekey2 (1).jpg[align="left"]
+
+
+Click “private key” button.
+
+
+image::privatekey3 (1).jpg[align="left"]
+
+
+Then, click “Yes”
+
+image::privatekey4 (1).jpg[align="left"]
+
+Then, you can see your private key. Keep it in a safe place. This key cannot be restored if it’s lost
+
+
+image::privatekey5 (1).jpg[align="left"]
+
+
+
+

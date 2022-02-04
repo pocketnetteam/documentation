@@ -1,0 +1,86 @@
+= How can I buy PKOIN?
+
+Select PKOIN/Peer-to-Peer Category on the right and look for ads, then connect in chat
+
+
+image::pertoper2.jpg[align="center"]
+
+== You can buy PKOIN in the following ways:
+
+
+You can buy PKOIN for cryptocurrencies:
+pkoin.net
+www.bitforex.com
+www.digifinex.com
+indacoin.io - you can buy PKOIN for credit cards.
+
+== Pkoin.net
+
+
+Choose a cryptocurrency and enter amount of the crypto into the left field. After that, enter your own PKOIN wallet address.
+
+
+image::buy-pkoin2 (1).jpg[align="center"]
+
+
+Your PKOIN wallet address is placed in your account.
+For looking that Click your avatar icon into the right top corner
+
+
+image::buy-pkoin3 (1).jpg[align="center"]
+
+
+Then click to PKOIN address for copy
+
+
+image::buy-pkoin4 (1).jpg[align="center"]
+
+
+Then, you should to enter your PKOIN wallet address in the above field and click “Purchase” button.
+
+
+image::buy-pkoin5 (1).jpg[align="center"]
+
+
+After that you should to send your BTC (or another crypto which was chosen) to this address
+
+
+image::buy-pkoin6.jpg[align="center"]
+
+
+== Buy.pkoin.indacoin.io
+
+
+First step – choose currency, enter amount, your email address and PKOIN address. Then click “Buy PKOIN ” button.
+
+
+image::buy-pkoin7 (1).jpg[align="center"]
+
+
+Then you can see “Buy PKOIN with credit or debit card” window. Click “Continue” button
+
+
+image::buy-pkoin8 (1).jpg[align="center"]
+
+
+Then, enter your Address, ZIP and your Country
+
+
+image::buy-pkoin9 (1).jpg[align="center"]
+
+
+Then enter your Full Name, Country, Date of berth
+
+
+image::buy-pkoin10 (1).jpg[align="center"]
+
+Then, enter your card data and click “Continue” button
+
+
+image::buy-pkoin11 (1).jpg[align="center"]
+
+
+
+
+
+

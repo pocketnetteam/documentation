@@ -2,3 +2,4 @@
 ** xref:tokenomics.adoc[Tokenomics]
 ** xref:wallet.adoc[Wallet]
 ** xref:block_explorer.adoc[Block Explorer]
+** xref:buypkoin.adoc[How can I buy PKOIN?]

@@ -1,0 +1,38 @@
+= My Videos
+
+Click your avatar icon in the top right corner
+
+
+image::basics/Myvideos1.jpg[align="center"]
+
+Then, click “Manage” button
+
+
+image::basics/Myvideos2.jpg[align="center"]
+
+Then, click “My Videos”
+
+image::basics/Myvideos3.jpg[align="center"]
+
+
+
+Then, you can see your video cabinet, which contain information about your uploaded videos, average rating, video views and video settings.
+
+image::basics/Myvideos4.jpg[align="center"]
+
+
+If you want to change the video description, name or a preview image, click the three dots and choose necessary action.
+
+image::basics/Myvideos5 (1).jpg[align="center"]
+
+
+On the top of the video cabinet page you can see your Daily Uploading Quota, Total Referral Users, Total Ratings, Total Video Views, Unique Raters, Search Field and also you can sort your videos.
+
+
+
+image::basics/Myvideos6.jpg[align="center"]
+
+
+
+
+

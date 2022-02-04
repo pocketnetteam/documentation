@@ -1,0 +1,40 @@
+= Uploading videos
+
+Important: The uploading video function is available for users who have at least 5 PKOIN, or high enough rating. If you have 50 PKOIN you can upload 4 Gb video per day, with 50 PKOIN you can upload up to 4 GB. Note, you do not spend PKOIN, it just has to be in your account to verify that you are not a bot.
+
+Click to the “What`s new?” section on the “All Posts” tab.
+
+image::basics/Uploading2 (1).jpg[align="center"]
+
+Then, click “Upload Video” button and in the popup click “Select video file” button. After that, choose necessary video file from your PC and wait for uploading to be finished.
+
+
+
+image::basics/Uploading3 (1).jpg[align="center"]
+
+image::basics/Uploading4 (1).jpg[align="center"]
+
+Click to the “What`s new?” section on the “All Posts” tab.
+
+
+image::basics/Uploading5 (1).jpg[align="center"]
+
+
+Then, when uploading ends, add title, description, category and choose visibility for your post:
+“Visible for everyone”, 
+“Visible only for subscribers”,
+“Visible only for Bastyon users”,
+After that, click “Post” button.
+
+
+image::basics/Uploading6 (1).jpg[align="center"]
+
+
+image::basics/Uploading7 (1).jpg[align="center"]
+
+
+
+
+
+
+

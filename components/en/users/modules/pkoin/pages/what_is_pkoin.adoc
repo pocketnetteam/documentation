@@ -2,3 +2,33 @@
 include::ROOT:partial$authors.adoc[tag=scottcbusiness]
 
 Pocketcoin is a network token. It is used exclusively to buy advertising from Pocketnet contributors and to pay transaction fees for such payments. Pocketcoin emission depends on the number of users of Pocketnet and has inherent algorithmic factors tying its long term value to Annual Revenue Per User (ARPU). ARPU is a term in digital advertising which signifies the total amount of revenue platform receives for one active user per year. In Pocketnet all of the revenue is split between content creators and nodes
+
+
+== What can be expected to purchase with PKOIN?
+
+PKOIN has a multitude of uses on Bastyon. First, 50 PKOIN in your account removes all posting limitations and allows you to load video. PKOIN can be used to boost comments, making your comments visible to everyone. The PKOIN from boosted comments goes to the blogger, and bloggers should reply or feature such comments to encourage such boosts. You can boost a post to move it up in the feed. It is used for staking in nodes, you can run a node and earn more PKOIN by staking PKOIN. It will be used in a Decentralized Ad Marketplace with 100% of proceeds going to bloggers. It will also be used to buy special wallpaper profiles, animated profile images etc.
+
+
+== Is Pocketcoin like a share of stock in Bastyon?
+
+Definitely no. Bastyon is not even a corporation and does not have any ownership. It is an open source code that anyone can copy and run. Pocketcoin is a token that facilitates value exchange, specifically advertising transactions. In addition, Bastyon will include a marketplace where goods and services will be sold directly for Pocketcoin
+
+
+== Can I buy additional Pocketcoin?
+
+
+Yes, currently you can buy Pocketcoin on the following exchanges: DigiFinex, Bitforex, Mercatox. You can also buy it for 19 different cryptos at pkoin.net and there is a Category within Bastyon called PKOIN/Peer-to-Peer where you can buy and sell it with other users.
+
+== Can I buy Pocketcoin for US Dollars or other fiat currency?
+
+
+Yes, you can buy it under the category PKOIN/Peer-to-Peer or through a company called Indacoin at :hide-uri-scheme: 
+
+https://indacoin.io. Indacoin has nothing to do with Bastyon, they are just selling PKOIN for credit cards after buying it on exchanges.
+
+
+== Why do I need to buy Pocketcoin?
+
+
+Bastyon has no backing by bankers or venture capitalists, it is a decentralized social platform that is supported by PKOIN. When you use Bastyon, you are using users' nodes, video nodes, they all have to pay for computers, internet and electricity. Bloggers need to earn for content. The only way Bastyon can function is if users own and support PKOIN. So, buying PKOIN is a way to support decentralization and freedom. However, there is one other important reason to own Pocketcoin. Soon it is very possible that even having a bank account will be tied to submitting your freedom, to some QR code. Pocketcoin is not tied to your name or passport, it is a way to do commerce in a world where financial censorship reigns, it might be the only way to buy food soon without a certain certificate or a QR code. So, buy some PKOIN for freedom.
+

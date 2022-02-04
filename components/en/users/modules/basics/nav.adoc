@@ -9,5 +9,7 @@
 ** xref:search.adoc[Search]
 ** xref:settings.adoc[Settings]
 ** xref:videos.adoc[Videos]
+** xref:uploadingvideos.adoc[Uploading videos]
+** xref:myvideos.adoc[My videos]
 ** xref:verification.adoc[Verification]
 ** xref:content_notes.adoc[Content Notes]
