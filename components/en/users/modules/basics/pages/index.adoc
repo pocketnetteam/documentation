@@ -1,0 +1,29 @@
+= Bastyon Basics
+
+:leveloffset: +1
+
+include::what_is_bastyon.adoc[]
+
+include::getting_started.adoc[]
+
+include::profile.adoc[]
+
+include::referrals.adoc[]
+
+include::feed.adoc[]
+
+include::posting.adoc[]
+
+include::articles.adoc[]
+
+include::search.adoc[]
+
+include::settings.adoc[]
+
+include::videos.adoc[]
+
+include::verification.adoc[]
+
+include::content_notes.adoc[]
+
+:leveloffset: -1

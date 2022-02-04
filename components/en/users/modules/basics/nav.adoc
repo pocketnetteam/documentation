@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 * xref:what_is_bastyon.adoc[Bastyon Basics]
 ** xref:what_is_bastyon.adoc[What Is Bastyon?]
 ** xref:getting_started.adoc[Gettings Started]
@@ -13,3 +14,18 @@
 ** xref:myvideos.adoc[My videos]
 ** xref:verification.adoc[Verification]
 ** xref:content_notes.adoc[Content Notes]
+=======
+* xref:index.adoc[Bastyon Basics]
+// ** xref:what_is_bastyon.adoc[What Is Bastyon?]
+// ** xref:getting_started.adoc[Gettings Started]
+// ** xref:profile.adoc[Profile]
+// ** xref:referrals.adoc[Referrals]
+// ** xref:posting.adoc[Posting]
+// ** xref:articles.adoc[Articles]
+// ** xref:feed.adoc[The Feed]
+// ** xref:search.adoc[Search]
+// ** xref:settings.adoc[Settings]
+// ** xref:videos.adoc[Videos]
+// ** xref:verification.adoc[Verification]
+// ** xref:content_notes.adoc[Content Notes]
+>>>>>>> db41d45af5f7e2d7f830887f4245d50472254088

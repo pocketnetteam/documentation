@@ -1,8 +1,0 @@
-.Pocketnet/Bastyon Node
-* xref:node:overview.adoc[Overview]
-* xref:node:install.adoc[Install]
-* xref:node:usage.adoc[Usage]
-
-.Bastyon Video Server
-
-.Bastyon Message Chat

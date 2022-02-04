@@ -1,0 +1,1 @@
+* xref:node.adoc[PocketNet Core Node Setup Guide]
