@@ -1,6 +1,6 @@
 = Uploading videos
 
-Important: The uploading video function is available for users who have at least 5 PKOIN, or high enough rating. If you have 50 PKOIN you can upload 4 Gb video per day, with 50 PKOIN you can upload up to 4 GB. Note, you do not spend PKOIN, it just has to be in your account to verify that you are not a bot.
+IMPORTANT: The uploading video function is available for users who have at least 5 PKOIN, or high enough rating. If you have 50 PKOIN you can upload 4 Gb video per day, with 50 PKOIN you can upload up to 4 GB. Note, you do not spend PKOIN, it just has to be in your account to verify that you are not a bot.
 
 Click to the “What`s new?” section on the “All Posts” tab.
 
