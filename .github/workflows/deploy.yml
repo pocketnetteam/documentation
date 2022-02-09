@@ -35,6 +35,6 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: build
-                    
+      
       - name: Copy artifacts
-        run: cp -Recurse -Force ./site/* c:/inetpub/wwwroot/documentation/en/
+        run: cp -Recurse -Force ./site/* c:/inetpub/wwwroot/docs/en/
