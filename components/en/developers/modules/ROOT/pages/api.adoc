@@ -27,18 +27,18 @@ The node must provide access to the API in the following ways:
 
 To implement access to a node via NAT, the node must launch a UDP or TCP socket to determine its external IP address (STUN-Address) and port (STUN-Port), which may differ due to the use of NAT routing.
 
-To implement this mechanism, the node must run one `STUN-Server' socket and 'N` 'STUN-Client' sockets, one for each connected peer.
+To implement this mechanism, the node must run one `STUN-Server` socket and `N` `STUN-Client` sockets, one for each connected peer.
 
-`STUN-Server' socket acts as a STUN server and helps other nodes determine their external IP and port.
+`STUN-Server` socket acts as a STUN server and helps other nodes determine their external IP and port.
 
-`STUN-Client' sockets are used to determine the node's external IP address and "reserve" the port in the NAT routing table.
+`STUN-Client` sockets are used to determine the node's external IP address and "reserve" the port in the NAT routing table.
 
-Thus, each node, in addition to the local IP address and static open ports, can receive an external IP address and a set of ports for external connections. As long as the node maintains a connection to the peer (STUN server), the port remains open and in most cases the NAT will skip incoming connection requests from clients.
+Thus, each node, in addition to the local IP address and static open ports, can receive an external IP address and a set of ports for external connections. As long as the node maintains a connection to the peer, the port remains open and in most cases the NAT will skip incoming connection requests from clients.
 
 Nodes should ensure the exchange of information about known STUN data between nodes and clients:
 
 * API methods 'getnodeinfo' and 'getpeerinfo' should return STUN data
 * Nodes must receive and send their STUN data to known peers
-* Nodes must save STUN data of peers who requested data via 'STUN-Server`
+* Nodes must save STUN data of peers who requested data via `STUN-Server`
 
 
