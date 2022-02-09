@@ -1,3 +1,7 @@
 # tag::scottcbusiness[]
 :author: Scott Cunningham (@scottcbusiness) – www.scottcbusiness.com
 # end::scottcbusiness[]
+
+# tag::network_support[]
+:author: @Network_Support - https://bastyon.com/network_support
+# end::network_support[]

@@ -1,6 +1,7 @@
 = Earn PKOIN with EasyNode?
+:figure-caption!:
 
-Requirements:
+== Requirements:
 
 • Your machine is not running any other Bastyon/Pocketnet node software
 • Your hard drive is SSD (not HDD)
@@ -9,54 +10,65 @@ Requirements:
 • Your internet speed is at least 10 Mb/sec
 
 
-Go to “Node” tab in “Manage” page
+== Installation
 
-image::earnbastyon2en (1).jpg[align="center"]
+To start the node, log in to the account (1) in the application, then to management (2).
 
-You can change the node and data directory if there is not enough free space on your C drive
+[#img-screenshot1] 
+.Screenshot 1
+image::earnbastyon1en.png[align="center"]
 
-image::earnbastyon3en (1).jpg[align="center"]
+Go to Node page (1) and check the minimum system requirements (2).
+You can change the installation path of the blockchain database if there is not enough space on the C disk (3).
 
-Click “Download and install node”
+IMPORTANT: Place only on the SSD disk!
 
-image::earnbastyon4en (1).jpg[align="center"]
+By default, this path is `C:\\Users\<YOUR_USERNAME>\AppData\Roaming\Pocketnet\pocketcoin`
 
-You will see the progress bar
+Click start installation (4).
 
-image::earnbastyon5en (1).jpg[align="center"]
+image::earnbastyon2en.png[align="center"]
 
-Wait until the next step and Status Running. First launch of the node can take several hours – DO NOT TURN OFF YOUR COMPUTER
+You will see the process of downloading the archive with the blockchain database and its installation and verification, it will take some time.
 
-image::earnbastyon6en (1).jpg[align="center"]
-
-
-
-image::earnbastyon7en (1).jpg[align="center"]
-
-
-image::earnbastyon8en (1).jpg[align="center"]
+image::earnbastyon3en.png[align="center"]
 
 
-You will need to deposit PKOIN to earn stakes, click Deposit. After clicking Deposit you will see a PKOIN address. You can copy the address and send PKOIN to it. If you did not yet buy PKOIN, you can buy it in the following ways:
+== Launch
 
-1. Buy for cryptocurrency at pkoin.net (or on DigiFinex or Bitforex exchanges)
-2. Buy it by selecting PKOIN/Peer-to-Peer tag on the left side of the Bastyon application. Select a seller and write to them in chat (at your own risk)
+After a while, your node will start and start syncing with other nodes.
 
-image::earnbastyon9ru (1) (1).jpg[align="center"]
+image::earnbastyon4en.png[align="center"]
 
-Other functions are available:
+image::earnbastyon5en.png[align="center"]
 
-•  Withdraw - withdraw PKOIN (reduces your chance of winning coins)
-•  Save Wallet (backup node wallet, very important, saves your private keys if your node crashes)
-•  Import Wallet (you can import an outside wallet with private keys)
+After the synchronization ends, you will see a message that your node cannot win bets. To activate this function, deposit at least 50 PKOIN to the account and wait 60 minutes.
 
-image::earnbastyon10en (1).jpg[align="center"]
+image::earnbastyon6en.png[align="center"]
+
+You will need to deposit PKOIN to earn bets, click "Deposit". After clicking "Deposit" you will see the PKOIN address. You can copy the address and send PKOIN to it. If you haven't bought PKOIN yet, you can buy it in the following ways:
+
+* Buy for cryptocurrency on pkoin.net (or on DigiFinex or Bitforex exchanges)
+
+* Buy it by selecting the PKOIN/Peer-to-Peer tag on the left side of the Bastyon app. Choose a seller and write to him in the chat (at your own risk)
+
+WARNING: Until the synchronization is completed, if you deposit Pkoin to the node's account, the balance will not be displayed, wait for the end of synchronization.
 
 
-In this example you see that 500 PKOIN was deposited. Note, that your node wallet is separate from your default Bastyon wallet, they are not connected. You need to transfer coins to the node from the wallet to win stakes.
+== Wallet
 
-After you deposit PKOIN, 60 blocks needs to pass (approx. 60 minutes). Once you see the green checkmark that says Staking, you are now ready to start earning PKOIN. You can periodically go in and see how your balance is changing with winning stakes. For any questions, write to support@bastyon.com
+In this example, you can see that the node is fully synchronized and 500 PKOIN has been deposited. Note that your node wallet is separated from your Bastyon wallet by default, they are not connected. After making PKOIN, you need to go through 60 blocks (about 60 minutes). As soon as you see the green check mark with the inscription Betting, you are ready to start earning PKOIN. You can log in periodically and see how your balance changes with winning bets.
 
+image::earnbastyon7en.png[align="center"]
+
+•  Withdraw PKOIN (reduces your chance of winning coins)
+•  Export wallet (the backup wallet of the node, very important, saves your private keys in case of failure of your node or computer). Be sure to save this file on another storage medium for security.
+•  Import Wallet (you can import an external wallet with private keys)
+
+
+== Help
+
+For any questions, write to mailto:support@pocketnet.com[support@pocketnet.com] or mailto:core@pocketnet.app[core@pocketnet.app]
 
 
 
