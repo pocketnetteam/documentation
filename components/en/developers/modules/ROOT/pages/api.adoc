@@ -37,7 +37,7 @@ Thus, each node, in addition to the local IP address and static open ports, can 
 
 Nodes should ensure the exchange of information about known STUN data between nodes and clients:
 
-* API methods 'getnodeinfo' and 'getpeerinfo' should return STUN data
+* API methods `getnodeinfo` and `getpeerinfo` should return STUN data
 * Nodes must receive and send their STUN data to known peers
 * Nodes must save STUN data of peers who requested data via `STUN-Server`
 
