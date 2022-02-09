@@ -1,9 +1,9 @@
 = PocketNet Core Node Setup
 
 This guide provides instructions on how to setup a compute node to support the PocketNet blockchain network and Bastyon decentralized social media app. PocketNet Core node operators are rewarded in the platform cryptocurrency, PKOIN, by participating in a process called staking, which generates new blocks on the blockchain.
-More detail about the PocketNet network can be found in the link:https://pocketnet.app/docs/Pocketnet%20Whitepaper%20Draft%20v2.pdf[whitepaper here]
+More detail about the PocketNet network can be found at the https://pocketnet.app/docs/Pocketnet%20Whitepaper%20Draft%20v2.pdf[whitepaper here]
 
-The Bastyon social media site can be visited at bastyon.com
+The Bastyon social media site can be visited at https://bastyon.com
 
 
 == Supported Operating Systems
@@ -204,7 +204,7 @@ Google WiFi: https://support.google.com/googlenest/answer/6274503?hl=en
 
 Staking is the process where your node works to generate new blocks on the PocketNet blockchain, and in return is rewarded with PKOIN awards. New blocks are generated on the PocketNet blockchain every 1 minute, and 5 PKOIN are awarded to a winning node each round. A stake reward halving occurs every 2.1 million blocks, where the stake reward is cut in half. The first reward halving on the PocketNet network will occur early 2023, after which the stake reward will be reduced to 2.5 coins per block.
 
-To participate in staking, you must deposit at least 50 PKOIN to your node wallet address and ensure. The more PKOIN desposited to your wallet address, the better your chances of winning a stake round.
+To participate in staking, you must deposit at least 50 PKOIN to your node wallet address. The more PKOIN desposited to your wallet address, the better your chances of winning a stake round.
 
 IMPORTANT: Your wallet must be unlocked and unencrypted in order for staking to work.  It is recommended to not encrypt your wallet on a node you intend to use to stake PKOIN.
 
@@ -226,7 +226,7 @@ $ pocketcoin-cli getstakinginfo
   "expectedtime": 17708
 }
 
-If the "enabled" and "staking" fields are set to "true" the node is actively staking. The "expectedtime" field above gives the estimated time in seconds until the next stake win. Stake wins are based on chance and can be highly variable. The first time a node is setup for staking, it may take several hours for the "enabled" and "staking" fields to show up as "true".
+If the "enabled" and "staking" fields are set to "true" the node is actively staking. The "expectedtime" field above gives the estimated time in seconds until the next stake win. Stake wins are based on chance and can be highly variable. The first time a node is setup for staking, it will take 60 minutes for the "enabled" and "staking" fields to show up as "true".
 
 
 === Buying + Selling PKOIN

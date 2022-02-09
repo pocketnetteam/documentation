@@ -6,7 +6,7 @@ content:
   sources:
     - url: ./
       branches: main
-      start_paths: components/en/users, components/en/contributors, components/en/developers
+      start_paths: components/en/users, components/en/developers
 
 ui: 
   bundle:
