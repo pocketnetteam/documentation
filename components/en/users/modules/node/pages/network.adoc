@@ -1,0 +1,11 @@
+= Network Setup Guide
+
+In order for your node to receive incoming connections from the Bastyon front end and other nodes on the network, the following network ports must be open to your node: 8087, 37070, and 38081.
+
+On home networks, enabling port forwarding is specific to your brand of internet router. For routers that support it, mapping to a different port should *not* be used, i.e. port external port 38081 should map to internal port 38081 on the router.  Below are links to instructions for some popular router models:
+
+Netgear: https://kb.netgear.com/24290/How-do-I-add-a-custom-port-forwarding-service-on-my-Nighthawk-router
+
+Linksys: https://www.linksys.com/us/support-article?articleNum=138535
+
+Google WiFi: https://support.google.com/googlenest/answer/6274503?hl=en

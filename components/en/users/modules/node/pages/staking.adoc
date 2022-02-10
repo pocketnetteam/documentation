@@ -1,0 +1,67 @@
+= Staking Guide
+
+== Getting Started
+
+Staking is the process where your node works to generate new blocks on the PocketNet blockchain, and in return is rewarded with PKOIN awards. New blocks are generated on the PocketNet blockchain every 1 minute, and 5 PKOIN are awarded to a winning node each round. A stake reward halving occurs every 2.1 million blocks, where the stake reward is cut in half. The first reward halving on the PocketNet network will occur early 2023, after which the stake reward will be reduced to 2.5 coins per block.
+
+To participate in staking, you must deposit at least 50 PKOIN to your node wallet address. The more PKOIN desposited to your wallet address, the better your chances of winning a stake round.
+
+IMPORTANT: Your wallet must be unlocked and unencrypted in order for staking to work.  It is recommended to not encrypt your wallet on a node you intend to use to stake PKOIN.
+
+Running the "getstakinginfo" command from pocketcoin-cli or the debug window of Pocketcoin-qt will tell you if your node is staking, for example:
+
+[source,shell]
+$ pocketcoin-cli getstakinginfo
+{
+  "enabled": true,
+  "staking": true,
+  "errors": "",
+  "currentblockweight": 63528,
+  "currentblocktx": 52,
+  "difficulty": 228206.0349124698,
+  "search-interval": 16,
+  "weight": 2305157068183,
+  "balance": 2305157068183,
+  "netstakeweight": 272146840647277,
+  "expectedtime": 17708
+}
+
+If the "enabled" and "staking" fields are set to "true" the node is actively staking. The "expectedtime" field above gives the estimated time in seconds until the next stake win. Stake wins are based on chance and can be highly variable. The first time a node is setup for staking, it will take 60 minutes for the "enabled" and "staking" fields to show up as "true".
+
+
+== Buying + Selling PKOIN
+
+PKOIN, the digital currency of Bastyon and Pocketnet platform, can be purchased or sold at these exchanges:
+
+https://bitforex.com
+
+https://digifinex.com
+
+Purchase with credit card on Indacoin:
+
+https://buy.pkoin.indacoin.io/
+
+
+== Sending PKOIN
+
+To send PKOIN to another user's address or an exchange's PKOIN address:
+
+. Open the pocketcoin-qt application
+. Choose the "Send" icon from the top menubar
+. In "Pay To" field, enter the Pocketcoin address of the recipient you wish to send to
+. Optionally, enter a label in the "Label" field to help remind you what this payment was for
+. In the "Amount" field, enter the number of PKOIN you want to send to this address
+. Select the "Send" button in the bottom left corner of the window
+
+IMPORTANT: Only send PKOIN to another valid PKOIN wallet address. Attempting to send coins to an address on another chain (Bitcoin, Ethereum, etc) may result in permanent loss of those coins.
+
+
+== Receive PKOIN
+
+. Open the pocketcoin-qt application
+. Choose the "Receive" icon from the top menubar
+. Optionally, enter a descriptive label for this payment request 
+. Enter the amount of PKOIN
+. Optionally, enter a message to send along with the payment request
+. Select the "Request payment" button
+. A Window will pop up displaying a QR code and payment address.  This is the address you will send to the other party to send payment. If you are sending coins from a cryptocurency exhange account, this is the address you will send the coins to.

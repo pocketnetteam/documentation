@@ -1,1 +1,7 @@
-# TODO: write general information about this component
+= Full Node Guide
+
+This guide provides instructions on how to setup a compute node to support the PocketNet blockchain network and Bastyon decentralized social media app.
+
+PocketNet Core node operators are rewarded in the platform cryptocurrency, PKOIN, by participating in a process called staking, which generates new blocks on the blockchain. More detail about the PocketNet network can be found at the whitepaper here
+
+The Bastyon social media site can be visited at https://bastyon.com

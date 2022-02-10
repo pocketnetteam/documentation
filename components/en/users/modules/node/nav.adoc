@@ -1,1 +1,4 @@
-* xref:node.adoc[Running a Full Node]
+* xref:index.adoc[Full Node Guide]
+** xref:install.adoc[Setup]
+** xref:network.adoc[Network]
+** xref:staking.adoc[Staking]

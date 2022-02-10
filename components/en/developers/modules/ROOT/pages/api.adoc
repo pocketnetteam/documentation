@@ -41,4 +41,4 @@ Nodes should ensure the exchange of information about known STUN data between no
 * Nodes must receive and send their STUN data to known peers
 * Nodes must save STUN data of peers who requested data via `STUN-Server`
 
-
+More information about Port Hole Punching: https://bford.info/pub/net/p2pnat/index.html
