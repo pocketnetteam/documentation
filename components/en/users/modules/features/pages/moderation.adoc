@@ -1,18 +1,48 @@
-= Moderation
-include::ROOT:partial$authors.adoc[tag=scottcbusiness]
+NEW JURY SYSTEM (IN DEVELOPMENT)
+We are assuming that there are two levels of high reputation users: SuperTops (rep>1K and more than 1 year on the platform) and Mods. 
 
-To begin with, not all types of content are allowed. However, and this is crucial, the enforcement is transparent and up to the community in the way, we will explain below. Enforcement is done by the community and is in the open with no hidden shadowbans or selective banning practiced by Silicon Valley.
+Module 1: Flags
+We create a special transaction called Flag a user. Tops and Mods can flag any user. Flag has to specify one of the following reasons:
 
-It is very similar to the concept used on Hive for reputation and ratings to moderate content.
-When your reputation gets to 100 and you press on dots in the upper right of any post, you will see an option to Complain. If enough complaints come in, the post will not be shown anymore. When someone has more than 2 posts that are voted off the platform in 24 hours, they cannot post for another 48 hours after the second post. Complain is completed when a number of complaints is at least 1⁄3 of the number of 4 and 5-star ratings, subject to a minimum of 10 complaints (which will be adjusted over time in consultation with the community).
+Pornography or Pedophilia
+Direct Threat of Violence
+Promotion of illegal narcotics
 
-Sometimes we can have a user who comes in with a specific purpose to attack Pocketnet by posting a series of vile images. To protect against that we have a following mechanism. If someone’s reputation reaches -50 (negative 50), their account is automatically blocked. Getting a reputation of -50 is equivalent to having 25 one-star ratings and no four or five-star ratings. This is nearly impossible to achieve without having lots of bad posts.
+Also, a flag contains the specific illegal post or comment of the user.
 
-_"So when someone is getting blocked at -50, what exactly does that entail?"_
+Module 2: Jury
+When there are more than X flags for user in Y blocks, we use the hash of the previous block to run a lottery on the blockchain. Lottery chooses N mods with public addresses closest to the hash of the previous block. We also set a quorum L<N, where L is enough Mods in the jury to render a decision.
+*Note that for trial users numbers X and N will be significantly lower and they will be banned much quicker.
 
-* That is currently an old system that will be updated.
-* The new algorithm will be Flagging leads to high rep users to be randomly chosen to be jury
-members to judge a specific piece of content/user that the content did in fact break the rules.
-* Users' funds will remain available and will not be affected, only their ability to post based on the
-decision outcome.
-* Appeals will be allowed.
+Each Mod that is N mods chosen receives a notification about being selected for a jury on the special user. They click on notification and it opens in a special window the illegal post or comment, along with the reason the user was flagged. Mod has two choices Confirm Flag   or No Offense
+
+If all mods agree on Confirm Flag, the user gets a 4 week ban from posting, all nodes should reject transactions from user.
+
+After three months, the user can be subject to another jury (second jury cannot contain any members from the first one) and if “convicted” the second time, a forever ban is instituted. The ban does not affect the PKOIN in the account, only social network privileges.
+
+*for trial accounts, the first conviction will ban forever
+If at least one Mod disagrees, then nothing happens and the user is immune from jury for three months.
+If a Mod votes 5 times in a row or 5 times  within 1 month as a single dissenting voice, the Mod loses Mod privileges. *yes, this is controversial, but the rules of Bastyon are very simple and likelihood of being a single dissenting voice of integrity are very low for 5 votes.
+*we an add other rules for Mod who abuses moderation with clever strategies, to prevent such gaming
+What we need on the node:
+1.	A new status Mod (to be discussed below)
+2.	Flag transaction
+3.	Constant accounting of flags to see when a limit has been breached to call a jury
+4.	Algorithm to select mods based on the hash of the previous block (need to consider reorgs)
+5.	Counter to count the number of mods who voted until reaches quorum, then stop
+6.	API to send notifications to mods that they were selected
+7.	Accounting of previous trials and three month immunity or alternatively a four week ban
+8.	Enforcement of list of forever banned accounts
+What we need on the Front End:
+1.	Flag transaction send
+2.	Notifications to Mods 
+3.	A window to vote
+4.	Messages regarding the statuses of your case
+
+
+Module 3: Appointments
+Where do Moderators come from? Total # of moderators=# of SuperTops * 3 
+1/3 SuperTops (rep>1K and more than 2 years on the platform) 
+1/3 appointed by bloggers, proportional to active followers (defined by number of followers who commented at least 3 posts in the last 3 months)
+1/3 appointed nodes (addresses) which held PKOIN more than 1 year
+*bloggers and nodes have a way to track what their appontees
