@@ -1,4 +1,5 @@
 * xref:index.adoc[Full Node Guide]
 ** xref:install.adoc[Setup]
 ** xref:network.adoc[Network]
+** xref:seeds.adoc[Static Seeds List]
 ** xref:staking.adoc[Staking]

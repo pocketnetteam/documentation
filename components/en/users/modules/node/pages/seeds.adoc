@@ -1,0 +1,22 @@
+= Publishing the public IP address of the Node to the source code
+
+To maintain network stability, there is a list of public static IP addresses of full nodes operating 24/7. Such nodes have a complete database and can support access through the API and be used for initial synchronization with the network.
+
+There are two ways to add your IP address to the node source code:
+
+. Add issue to the node repository
+. Fix the permanent node list file yourself and create a pull request to merge the code.
+
+
+== Issue Creation
+
+Go to the page link:https://github.com/pocketnetteam/pocketnet.core/issues/new?assignees=&labels=seeds&template=request-to-add-an-ip-address-to-the-source-code.md&title=Request+to+add+an+IP+address+to+the+source+code[create a new issue] and fill the template.
+
+// TODO Screenshot for example
+
+
+== Pull Request Creation
+
+* Create a fork of the repository https://github.com/pocketnetteam/pocketnet.core
+* Add your IP address to the file https://github.com/pocketnetteam/pocketnet.core/blob/0.20/contrib/seeds/nodes_main.txt
+* Create a Pull Request to the `0.20` branch with the header `Request to add an IP address to the source code`
