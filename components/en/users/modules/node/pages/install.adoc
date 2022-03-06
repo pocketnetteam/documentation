@@ -54,6 +54,11 @@ $ cd ~/.pocketcoin/checkpoints
 $ wget https://github.com/pocketnetteam/pocketnet.core/releases/latest/download/main.sqlite3
 $ cd ~
 
+On Ubuntu and many Linux distributions it will be necessary to set the open files limit to 10000 in order to prevent errors.  Run "ulimit -n" to view the current open file limit.  Run below command to set ulimit to 10000 open files:
+
+[source,shell]
+$ ulimit -n 10000
+
 After installation, start the GUI pocketcoin client from the command line.  (If you would like to run the PocketNet Core node from the command line or in headless mode, go to the "Running a Headless Node from the Command Line" section later in this document.)
 
 [source,shell]
