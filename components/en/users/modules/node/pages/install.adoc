@@ -139,7 +139,7 @@ $ tar -xzf latest.tgz -C ./
 
 == Running a Headless Node From the Command Line
 
-Running the pocketcoind command will start PocketNet core is text only mode from a command terminal.  On Linux, it is possible to launch pocketcoind as a daemon process running in the background by using the -daemon parameter:
+Running the pocketcoind command will start PocketNet core in text only mode from a command terminal.  On Linux, it is possible to launch pocketcoind as a daemon process running in the background by using the -daemon parameter:
 [source,shell]
 $ pocketcoind -daemon
 
