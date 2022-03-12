@@ -196,6 +196,8 @@ If PocketNet Core fails in some manner, the first step is to check the debug.log
 
 Post to the Bastyon/Pocknet tag on the Bastion social media app to get help with node setup.
 
+Join the Node Owners chat on Bastyon to connect with other node operators and keep up with developments and alerts!  Message SnowflakeCrusher, Vortex_v, or Malaka on Bastyon to be added to the group. 
+
 To report software defects and view current issues check our GitHub issues page: https://github.com/pocketnetteam/pocketnet.core/issues
 
 @Tawmaz on Bastyon for issues with this document.
