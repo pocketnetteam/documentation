@@ -34,7 +34,7 @@ jobs:
           path: assets/
           retention-days: 1
 
-  deploy:
+  deploy_win:
     runs-on: docs-en-deploy
     needs: build
     steps:
@@ -45,3 +45,15 @@ jobs:
         run: |
           cp -Recurse -Force ./build/site/* c:/inetpub/wwwroot/docs/en/
           cp -Recurse -Force ./assets/* c:/inetpub/wwwroot/docs/ -Exclude @("site")
+          
+  deploy_docs_bastyon_com:
+    runs-on: docs.bastyon.com
+    needs: build
+    steps:
+      - name: Download artifacts
+        uses: actions/download-artifact@v2
+      
+      - name: Copy artifacts
+        run: |
+          cp -r ./build/site/* /data/docs/en/
+          cp -r !(site) ./assets/* /data/docs/
