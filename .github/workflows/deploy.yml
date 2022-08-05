@@ -56,4 +56,4 @@ jobs:
       - name: Copy artifacts
         run: |
           cp -r ./build/site/* /data/docs/en/
-          cp -r !(site) ./assets/* /data/docs/
+          cp -r ./assets/* /data/docs/
