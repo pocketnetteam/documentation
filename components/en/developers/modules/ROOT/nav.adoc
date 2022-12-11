@@ -1,2 +1,3 @@
-* xref:ReleaseProcess.adoc[Release Node Process]
+* xref:contribution.adoc[Contribution]
+* xref:releasep_rocess.adoc[Release Node Process]
 * xref:api.adoc[Bastyon Cloud API Reference]

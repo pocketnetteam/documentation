@@ -1,0 +1,20 @@
+= Contribution
+:author: Andy Oknen <andy.oknen@ya.ru>
+
+== Infrastructure Repositories
+- https://github.com/pocketnetteam/documentation
+
+== Backend Repositories
+- https://github.com/pocketnetteam/pocketnet.core
+- https://github.com/pocketnetteam/pocketnet.explorer
+- https://github.com/pocketnetteam/pocketnet.api
+- https://github.com/pocketnetteam/pocketnet.control
+
+== Frontend Repositories
+- https://github.com/pocketnetteam/pocketnet.gui
+- https://github.com/pocketnetteam/bastyon-video
+- https://github.com/pocketnetteam/bastyon-chat
+- https://github.com/pocketnetteam/bastyon-calls
+  
+
+
