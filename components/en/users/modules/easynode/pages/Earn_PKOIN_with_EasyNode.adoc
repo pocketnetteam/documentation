@@ -5,7 +5,7 @@
 
 • Your machine is not running any other Bastyon/Pocketnet node software
 • Your hard drive is SSD (not HDD)
-• Your computer has at least 50 GB empty space on your SSD
+• Your computer has at least 150 GB empty space on your SSD
 • Your computer has at least 2 GB free RAM
 • Your internet speed is at least 10 Mb/sec
 
