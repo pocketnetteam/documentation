@@ -1,10 +1,10 @@
-= Documentation
+= :book:Documentation:book:
 
 Welcome to the official documentation repository of Pocketnet/Bastyon.
 
 This repository contains documentation in link:https://asciidoc.org/[AsciiDoc] format and must comply with the requirements and recommendations of link:https://antora.org/[Antora].
 
-This content deployed to https://pocketnet.app/documentation
+This content deployed to https://docs.bastyon.com
 
 == Building
 To build, run the following commands:
