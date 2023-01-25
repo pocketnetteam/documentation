@@ -1,3 +1,4 @@
 * xref:contribution.adoc[Contribution]
 * xref:release_process.adoc[Release Node Process]
 * xref:api.adoc[Bastyon Cloud API Reference]
+* xref:moderation.adoc[Bastyon Moderation System]
