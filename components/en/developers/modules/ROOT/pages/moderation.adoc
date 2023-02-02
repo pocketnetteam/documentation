@@ -150,7 +150,7 @@ The `getuserstate` method returns, among other things, a `badges` object with a 
 ----
 
 
-=== List of moderators appointed in the specified jury
+=== List of moderators assigned in the specified jury
 
 #In developing#
 
@@ -163,7 +163,7 @@ The `getuserstate` method returns, among other things, a `badges` object with a 
 ----
 
 
-=== List of moderators appointed in the specified jury
+=== List of bans for specific address
 
 [,json]
 ----
