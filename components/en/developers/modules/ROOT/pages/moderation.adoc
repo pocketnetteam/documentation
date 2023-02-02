@@ -3,26 +3,27 @@
 
 == Flags
 
-Жалобы позволяют пользователям отмечать контент нежелательным (пост или комментарий и автора).
-Для разграничения жалоб применяется числовое значения `REASON`:
+Reports allow users to flag content as objectionable (post or comment and author). Reports can be sent by users with the "Shark" badge (see API).
 
-1. 111
-2. 222
-3. 333
-4. 444
-5. 555
+The numeric value `REASON` is used to distinguish between complaints:
 
-
-=== Условия создания жюри
-
-Любой флаг может инициировать создание "жюри". Если жюри инициировано, все последующие флаги игнорируются. Для создания жюри учитываются следующие правила:
-
-- Рассматриваемый аккаунт не находится в активном бане
-- Кол-во флагов с таким же `REASON`, `CONTENT_TX_HASH` и `ADDRESS_HASH` должно быть `>= [main:20, test:5, reg:2]`
-- Глубина поиска схожих флагов `FLAG_HEIGHT > (CURRENT_HEIGHT - [main:43200, test:4320, reg:10])`
+1. Pornography
+2. Pedophilia - any even remotely suggestive images/videos/texts with children or adolescents
+3. Direct threat of violence
+4. Illegal narcotics - any positive or promotion of illegal narcotics
+5. Copyrighted content (with clear proof from the owner)
 
 
-=== Транзакция
+=== Conditions for creating a jury
+
+Any flag can initiate the creation of a "jury". If the jury is initiated, all subsequent flags are ignored. To create a jury, the following rules are taken into account:
+
+- The account in question is not in an active ban
+- Number of flags with the same `REASON`, `CONTENT_TX_HASH` and `ADDRESS_HASH` must be `>= [main:20, test:5, reg:2]`
+- Search depth for similar flags `FLAG_HEIGHT > (CURRENT_HEIGHT - [main:43200, test:4320, reg:10])`
+
+
+=== Transaction
 
 .OP_RETURN code
 ----
@@ -42,32 +43,32 @@
 
 == Jury
 
-Жюри не является транзакцией, представляет из себя запись в БД и содержит следующие поля:
+The jury is not a transaction, it is a record in the database and contains the following fields:
 
-- Ссылка на Флаг, инициирующий создание жюри.
-- Ссылка на аккаунт, автора контента.
-- Числовой код причины жалобы.
+- `juryid` - Hash of the Flag that initiates the creation of the jury.
+- `accountid` - Address of the account, the author of the content.
+- `reason` - Numerical code of the reason for the complaint.
 
-Совместно с записью жюри происходит выбор модераторов:
+Together with the jury's entry, the moderators are selected:
 
-- Для фильтрации списка модераторов используется хэш транзакции флага `FLAG_HASH`, инициировавшего создание жюри.
-- В качестве сортировки модераторов используется хэш транзакции регистрации аккаунта модератора `ACCOUNT_HASH`.
-- Для решения вопроса жюри отбираются ТM аккаунтов `[main:80, test:6 reg:4]`
-- Для равномерного распределения модераторов аккаунты отбираются по следующим условиям:
-  * Отбирается TM/2 аккаунтов где `ACCOUNT_HASH < FLAG_HASH`
-  * Отбирается TM/2 аккаунтов где `ACCOUNT_HASH > FLAG_HASH`
+- To filter the list of moderators, the transaction hash of the `FLAG_HASH` flag that initiated the creation of the jury is used.
+- The hash of the moderator account registration transaction `ACCOUNT_HASH` is used as moderator sorting.
+- To decide the jury's question, TM accounts `[main:80, test:6 reg:4]` are selected
+- For an even distribution of moderators, accounts are selected according to the following conditions:
+  * Selected TM/2 accounts where `ACCOUNT_HASH < FLAG_HASH`
+  * Selected TM/2 accounts where `ACCOUNT_HASH > FLAG_HASH`
 
 
 == Vote
 
-Голос модератора, имеющий два значения `0|1`, означающие, согласен модератор с жалобами или нет. Любой голос может иницировать вердикт жюри.
+The moderator's vote, which has two values `0|1` indicating whether the moderator agrees with the complaints or not. Any vote may initiate a jury verdict.
 
-- Вердикт положительный, если голос удовлетворяет условию, что он является N'м по счету положительным голосом `[main:8, test:3, reg:2]`.
-- Отрицательный вердикт выносится вместе с первым отрицательным голосом любого модератора.
-- После вынесения вердикта (положительного или отрицательного) все голоса игнорируются.
-- Жюри без вердикта является бессрочным.
+- The verdict is positive if the vote satisfies the condition that it is the Nth positive vote `[main:8, test:3, reg:2]`.
+- A negative verdict is issued along with the first negative vote of any moderator.
+- After a verdict (positive or negative) is passed, all votes are ignored.
+- A jury without a verdict is indefinite.
 
-=== Транзакция
+=== Transaction
 
 .OP_RETURN code
 ----
@@ -83,30 +84,106 @@
 }
 ----
 
-`JURY_ID` - хэш транзакции флага, инициировавшей жюри
+`JURY_ID` - hash of the flag transaction that initiated the jury
 
-`VERDICT` - числовое значение `0|1`
+`VERDICT` - numeric value `0|1`
 
 
 == Ban Account
 
-Бан аккаунта, также как и жюри, не является транзакцией. Представляет из себя запись в БД и содержит следующие поля:
+An account ban, like a jury, is not a transaction. It is a record in the database and contains the following fields:
 
-- Ссылка на голос, инициирующий блокировку.
-- Ссылка на аккаунт, автора контента.
-- Высота окончания блокировки. Срок блокировки определяется исходя из правил:
-  * Первая блокировка - `[main:43200, test:5000, reg:100]` блоков
-  * Вторая блокировка - `[main:129600, test:10000, reg:200]` блоков
-  * Третья блокировка - `[main:51840000, test:15000, reg:1000]` блоков
+- Link to the voice initiating the blocking.
+- Link to the account, the author of the content.
+- Height of the end of blocking. The blocking period is determined based on the rules:
+  * First lock - `[main:43200, test:5000, reg:100]` blocks
+  * Second lock - `[main:129600, test:10000, reg:200]` blocks
+  * Third lock - `[main:51840000, test:15000, reg:1000]` blocks
 
-Аккаунт, заблокированный нодой, не имеет права создавать Social транзакции, но может создавать денежные транзакции без ограничений.
+An account blocked by a node is not allowed to create Social transactions, but can create monetary transactions without restrictions.
 
-Другие аккаунты имеют право совершать действия с заблокированным аккаунтом (ставить оценки, комментарии и т.д.).
+Other accounts have the right to perform actions with a blocked account (put ratings, comments, etc.).
 
 
 
-== Правила скрытия контента и аккаунтов
+== Rules for hiding content and accounts #In developing#
 
-Аккаунты, находящиеся в активном жюри, бане или имеющих N активных жалоб должны скрываться из ленты и поиска.
+Accounts that are in the active jury, banned or have N active complaints should be hidden from the feed and search.
 
-TODO
+
+== API
+
+=== Badges definition
+
+The `getuserstate` method returns, among other things, a `badges` object with a list of "badges" available to the user:
+
+[,json]
+----
+> /rpc/getuserstate <address>
+
+{
+    "result": "success",
+    "data": {
+        ...
+        "badges": [
+            "shark",
+            "moderator",
+            "developer"
+        ],
+        ...
+    }
+}
+----
+
+
+=== List of assigned jury for the moderator
+
+#In developing#
+
+[,json]
+----
+> /rpc/getjuryassigned <address> <topHeight> <pageStart> <pageSize> <orderBy> <desc>
+
+
+...
+
+----
+
+
+=== List of moderators appointed in the specified jury
+
+#In developing#
+
+[,json]
+----
+> /rpc/getjurymoderators <juryid>
+
+...
+
+----
+
+
+=== List of moderators appointed in the specified jury
+
+[,json]
+----
+> /rpc/getbans <address>
+
+{
+  "result": "success",
+    "data": [
+      {
+        "juryId": "HASH",
+        "reason": 1,
+        "ending": 2500000
+      },
+      {
+        "juryId": "HASH",
+        "reason": 2,
+        "ending": 2600000
+      },
+      ...
+    ]
+}
+
+----
