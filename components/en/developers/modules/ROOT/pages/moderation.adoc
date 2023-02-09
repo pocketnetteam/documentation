@@ -188,9 +188,9 @@ The `getuserstate` method returns, among other things, a `badges` object with a 
     ...
   ]
 }
-
-
 ----
+
+Here `versions` this is a list of transaction hashes of the edited versions of the content.
 
 
 === List of moderators assigned in the specified jury
@@ -234,4 +234,44 @@ The `getuserstate` method returns, among other things, a `badges` object with a 
     ]
 }
 
+----
+
+
+=== List of bans for specific address
+
+[,json]
+----
+> /rpc/getbans <address>
+
+{
+  "result": "success",
+    "data": [
+      {
+        "juryId": "HASH",
+        "reason": 1,
+        "ending": 2500000
+      },
+      {
+        "juryId": "HASH",
+        "reason": 2,
+        "ending": 2600000
+      },
+      ...
+    ]
+}
+----
+
+
+=== Get specific version of content
+
+[,json]
+----
+> /rpc/getcontent ["HASH", "HASH", ...] <address> <LAST - 0|1>
+
+{
+  "result": "success",
+    "data": [
+      ...
+    ]
+}
 ----
