@@ -136,29 +136,77 @@ The `getuserstate` method returns, among other things, a `badges` object with a 
 ----
 
 
-=== List of assigned jury for the moderator
+=== List of all jury
 
-#In developing#
+[,json]
+----
+> /rpc/getalljury
+
+{
+    "result": "success",
+    "data": [
+      {
+        "id": "HASH",
+        "address": "Address of profile",
+        "reason": "REASON numeric value",
+        "verdict": "Verdict - 0 or 1"
+      },
+      ...
+    ]
+}
+
+----
+
+
+=== List of assigned jury for the moderator
 
 [,json]
 ----
 > /rpc/getjuryassigned <address> <topHeight> <pageStart> <pageSize> <orderBy> <desc>
 
+{
+  "result": "success",
+  "data": [
+    {
+      "hash": "9f6cb0d0cd57d6227f38d70840eae89971bf44c74e4082914f9fd641dc573e52",
+      "txid": "e32rr0d0cd57d6227f38d70840eae89971bf44c74e4082914f9fd641dc573e52",
+      "id": 32,
+      "address": "mzaEy5FGymhhk8bZd2NbeZiecW8ZLtVceb",
+      ...
+      "versions": [
+          {
+              "h": 1054,
+              "hs": "e32rr0d0cd57d6227f38d70840eae89971bf44c74e4082914f9fd641dc573e52"
+          }
+      ],
+      "jury": {
+        "juryid": "5435230506fcb1951fd0e7384fb7cad5659a154856dd10258a8d77f243507f07",
+        "height": 1064,
+        "reason": 1
+      }
+    },
+    ...
+  ]
+}
 
-...
 
 ----
 
 
 === List of moderators assigned in the specified jury
 
-#In developing#
-
 [,json]
 ----
 > /rpc/getjurymoderators <juryid>
 
-...
+{
+    "result": "success",
+    "data": [
+      "Address of profile",
+      "Address of profile",
+      ...
+    ]
+}
 
 ----
 
