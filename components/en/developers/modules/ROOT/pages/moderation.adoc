@@ -162,7 +162,7 @@ The `getuserstate` method returns, among other things, a `badges` object with a 
 
 [,json]
 ----
-> /rpc/getjuryassigned <address> <topHeight> <pageStart> <pageSize> <orderBy> <desc>
+> /rpc/getjuryassigned <address> <verdict - 0|1> <topHeight> <pageStart> <pageSize> <orderBy> <desc>
 
 {
   "result": "success",
