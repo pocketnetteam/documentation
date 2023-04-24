@@ -76,3 +76,58 @@ Barteron транзакции имеют переходную форму пер�
   }
 }
 ----
+
+
+== Barteron APIs
+
+=== Get account information
+[,json]
+----
+> /rpc/getbarteronaccount <address>
+{
+  "result": "success",
+    "data": {
+      ...
+    }
+}
+----
+
+=== Get offer information
+[,json]
+----
+> /rpc/getbarteronoffer <txhash>
+{
+  "result": "success",
+    "data": {
+      ...
+    }
+}
+----
+
+=== Get offers feed
+[,json]
+----
+> /rpc/getbarteronoffersfeed <?filter> <topHeight> <pageStart> <pageSize> <orderBy> <desc>
+{
+  "result": "success",
+    "data": [
+      { offer_instance },
+      { offer_instance },
+      ...
+    ]
+}
+----
+
+=== Get potencial offer deals
+[,json]
+----
+> /rpc/getbarterondeals <txhash of offer>
+{
+  "result": "success",
+    "data": [
+      { offer_instance ? },
+      { offer_instance ? },
+      ...
+    ]
+}
+----
