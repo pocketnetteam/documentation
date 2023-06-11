@@ -17,3 +17,7 @@ ui:
 asciidoc:
   attributes:
     page-pagination: true
+
+antora:
+  extensions:
+  - '@antora/lunr-extension'
