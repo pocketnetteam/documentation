@@ -47,7 +47,8 @@ Barteron транзакции имеют переходную форму пер�
 {
   "p": {
     "s4": {
-      "t": [
+      // Allowed fixed account tags for barter
+      "a": [
         <TAG>,
         <TAG>,
         ...
@@ -71,7 +72,14 @@ Barteron транзакции имеют переходную форму пер�
 {
   "p": {
     "s4": {
-      "t": <TAG>
+      // General offer tag
+      "t": <TAG>,
+      // Allowed offer tags for barter
+      "a": [
+        <TAG>,
+        <TAG>,
+        ...
+      ]
     }
   }
 }
@@ -80,22 +88,32 @@ Barteron транзакции имеют переходную форму пер�
 
 == Barteron APIs
 
-=== Get account information
+=== Get accounts transactions
 [,json]
 ----
-> /rpc/getbarteronaccount <address>
+> /rpc/getbarteronaccounts [ <address1>, <address2>, ... ]
 {
   "result": "success",
-    "data": {
-      ...
-    }
+    "data": [
+      {
+        "hash": "d574b6389d91c42b37cd8bc5ec257ceb803986ad38ebb83cf7fdabee34fe9af7",
+        "type": 104,
+        "height": 1063,
+        "blockHash": "031e4da9305a5d9e8269155a9ad2586c4945bf560c89c2ee584663687a0fad4f",
+        "time": 1690098322,
+        "s1": "muA1gPR5JjsxZbeCj7HB2wrx4h3Ky8iHY3",
+        "p": {
+            "s4": "{\"a\": [1, 2, 3, 4, 5]}"
+        }
+      }
+  ]
 }
 ----
 
-=== Get offer information
+=== Get offers information
 [,json]
 ----
-> /rpc/getbarteronoffer <txhash>
+> /rpc/getbarteronoffers [ <txhash1>, <txhash2>, ... ]
 {
   "result": "success",
     "data": {
