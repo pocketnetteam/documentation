@@ -110,15 +110,49 @@ Barteron транзакции имеют переходную форму пер�
 }
 ----
 
+=== Get address offers information
+[,json]
+----
+> /rpc/getbarteronoffersbyaddress <address>
+{
+  "result": "success",
+    "data": [
+      {
+        "hash": "2e3d9b2c5ee988c2462d4a9a35be6986e8124092b62adf651d0b7d7cbcd11697",
+        "type": 211,
+        "height": 1068,
+        "blockHash": "d6893b30850b3fad44e0da7296d14e099fe6c8f3a54e26437d9a93b47bf403b4",
+        "time": 1690198349,
+        "s1": "n1GN91byHmHGvvKTsDp15dcQzF5cekVCPy",
+        "s2": "2e3d9b2c5ee988c2462d4a9a35be6986e8124092b62adf651d0b7d7cbcd11697",
+        "p": {
+          "s4": "{\"t\": 0, \"a\": [0]}"
+        }
+      }
+    ]
+}
+----
+
 === Get offers information
 [,json]
 ----
-> /rpc/getbarteronoffers [ <txhash1>, <txhash2>, ... ]
+> /rpc/getbarteronoffersbyhashes [ <txhash1>, <txhash2>, ... ]
 {
   "result": "success",
-    "data": {
-      ...
-    }
+    "data": [
+      {
+        "hash": "2e3d9b2c5ee988c2462d4a9a35be6986e8124092b62adf651d0b7d7cbcd11697",
+        "type": 211,
+        "height": 1068,
+        "blockHash": "d6893b30850b3fad44e0da7296d14e099fe6c8f3a54e26437d9a93b47bf403b4",
+        "time": 1690198349,
+        "s1": "n1GN91byHmHGvvKTsDp15dcQzF5cekVCPy",
+        "s2": "2e3d9b2c5ee988c2462d4a9a35be6986e8124092b62adf651d0b7d7cbcd11697",
+        "p": {
+          "s4": "{\"t\": 0, \"a\": [0]}"
+        }
+      }
+    ]
 }
 ----
 
