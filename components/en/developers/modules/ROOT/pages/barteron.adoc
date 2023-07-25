@@ -174,7 +174,7 @@ Barteron транзакции имеют переходную форму пер�
 {
     "lang": "en", // en, ru, etc
     "tags": [1,2,3], // Tags for filter offers
-    "loc": "ABC", // location like 'ABC%'
+    "location": "ABC", // location like 'ABC%'
     "priceMax": 1000, // 0 for unuse
     "priceMin": 0, // 0 for unuse
     "search": "String for fulltext search in Caption and Description",
