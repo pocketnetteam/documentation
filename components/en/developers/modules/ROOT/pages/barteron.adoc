@@ -159,7 +159,7 @@ Barteron транзакции имеют переходную форму пер�
 === Get offers feed
 [,json]
 ----
-> /rpc/getbarteronoffersfeed <?filter> <topHeight> <pageStart> <pageSize> <orderBy> <desc>
+> /rpc/getbarteronfeed <REQUEST_JSON>
 {
   "result": "success",
     "data": [
@@ -167,6 +167,22 @@ Barteron транзакции имеют переходную форму пер�
       { offer_instance },
       ...
     ]
+}
+
+
+<REQUEST_JSON>
+{
+    "lang": "en", // en, ru, etc
+    "tags": [1,2,3], // Tags for filter offers
+    "loc": "ABC", // location like 'ABC%'
+    "priceMax": 1000, // 0 for unuse
+    "priceMin": 0, // 0 for unuse
+    "search": "String for fulltext search in Caption and Description",
+    "topHeight": 100, // Top height for start pagination
+    "pageStart": 0, // Number of first page
+    "pageSize": 10, // Count of offers in page
+    "orderBy": "height", // height | location | price
+    "orderDesc": true, // true | false
 }
 ----
 
