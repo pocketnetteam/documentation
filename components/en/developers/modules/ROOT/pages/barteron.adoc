@@ -188,6 +188,7 @@ Barteron транзакции имеют переходную форму пер�
     "priceMax": 1000, // 0 for unuse
     "priceMin": 0, // 0 for unuse
     "search": "String for fulltext search in Caption and Description",
+    // Pagination
     "topHeight": 100, // Top height for start pagination
     "pageStart": 0, // Number of first page
     "pageSize": 10, // Count of offers in page
@@ -199,13 +200,28 @@ Barteron транзакции имеют переходную форму пер�
 === Get potencial offer deals
 [,json]
 ----
-> /rpc/getbarterondeals <txhash of offer>
+> /rpc/getbarterondeals <REQUEST_JSON>
 {
   "result": "success",
     "data": [
-      { offer_instance ? },
-      { offer_instance ? },
+      { offer_instance },
+      { offer_instance },
       ...
     ]
+}
+
+
+<REQUEST_JSON>
+{
+    "offer": "HASH", // Offer tx hash for find deals
+    "address": "ADDRESS", // Filter potencial offers with this account address
+    "location": -1, // Count of symbols for compare locations: substr(loc1, X) == substr(loc2, X)
+    "price": -1, // Max amount of difference offer prices: abs(price1 - price2) < X
+    // Pagination
+    "topHeight": 100, // Top height for start pagination
+    "pageStart": 0, // Number of first page
+    "pageSize": 10, // Count of offers in page
+    "orderBy": "height", // height | location | price
+    "orderDesc": true, // true | false
 }
 ----
