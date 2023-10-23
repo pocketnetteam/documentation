@@ -178,12 +178,31 @@ Barteron транзакции имеют переходную форму пер�
 > /rpc/getbarteronfeed <REQUEST_JSON>
 {
   "result": "success",
-    "data": [
-      { offer_instance },
-      { offer_instance },
-      ...
-    ]
+    "data": {
+      "offers": [
+        { offer_instance },
+        { offer_instance },
+        ...
+      ],
+      "offerScores": [
+        { score_tx },
+        { score_tx },
+        ...
+      ],
+      "comments": [
+        { comment_tx },
+        { comment_tx },
+        ...
+      ],
+      "commentScores": [
+        { comment_score_tx },
+        { comment_score_tx },
+        ...
+      ]
+    }
 }
+
+"offer_instance", "score_tx", "comment_tx", "comment_score_tx" are just raw transactions and relations between them should be built on client side.
 
 
 <REQUEST_JSON>
