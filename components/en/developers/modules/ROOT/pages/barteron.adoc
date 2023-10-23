@@ -222,7 +222,7 @@ Barteron транзакции имеют переходную форму пер�
 ----
 
 NOTE: `offer_instance`, `score_tx`, `comment_tx`, `comment_score_tx` are just
-raw transactions and relations between them should be built on client side.
+raw transactions and relationships between them should be built on client side.
 
 === Get potencial offer deals
 [,json]
