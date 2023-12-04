@@ -119,12 +119,15 @@ Barteron транзакции имеют переходную форму пер�
             "s4": "{\"t\": <TAG>, \"a\": [1, 2, 3, 4, 5], \"c\": <CONDITION>}"
         },
         "additional": {
-            "regdate": 1690012312
+            "regdate": 1690012312,
+            "rating": 35
         }
       }
   ]
 }
 ----
+
+NOTE: `rating` is integer that represents float * 10, so 35 means that user rating is 3.5 
 
 === Get address offers information
 [,json]
