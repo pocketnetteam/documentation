@@ -240,6 +240,42 @@ NOTE: `rating` is integer that represents float * 10, so 35 means that user rati
 
 NOTE: `location` is literally a regexp in the following format: A percent symbol ("%") matches any sequence of zero or more characters in the string. An underscore ("_") matches any single character in the string. Any other character matches itself or its lower/upper case equivalent (case-insensitive matching)
 
+=== Get potencial complex deals (3-side search)
+[,json]
+----
+> /rpc/getbarteroncomplexdeals <REQUEST_JSON>
+{
+  "result": "success",
+  "data": [
+    {
+      "target": { offer_instance },
+      "intermediates": [
+        { offer_instance },
+        { offer_instance },
+        ...
+      ]
+    },
+    {
+      "target": ...
+    },
+    ...
+  ]
+}
+
+
+<REQUEST_JSON>
+{
+    "myTag": 10,
+    "theirTags": [1,2,3],
+    "location": "ABC%",
+    "excludeAddresses": ["ADDRESS1", "ADDRESS2"]
+}
+----
+
+NOTE: `location` and `excludeAddresses` are used to filter both target and intermediate offers
+
+NOTE: TODO pagination
+
 === Get offer details
 [,json]
 ----
