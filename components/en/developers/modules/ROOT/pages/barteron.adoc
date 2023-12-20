@@ -155,7 +155,7 @@ NOTE: `rating` is integer that represents float * 10, so 35 means that user rati
 === Get offers information
 [,json]
 ----
-> /rpc/getbarteronoffersbyhashes [ <txhash1>, <txhash2>, ... ]
+> /rpc/getbarteronoffersbyroottxhashes [ <txhash1>, <txhash2>, ... ]
 {
   "result": "success",
     "data": [
