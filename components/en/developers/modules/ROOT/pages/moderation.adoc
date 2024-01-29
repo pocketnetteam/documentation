@@ -222,11 +222,13 @@ Here `versions` this is a list of transaction hashes of the edited versions of t
     "data": [
       {
         "juryId": "HASH",
+        "contentId": "HASH",
         "reason": 1,
         "ending": 2500000
       },
       {
         "juryId": "HASH",
+        "contentId": "HASH",
         "reason": 2,
         "ending": 2600000
       },
@@ -273,5 +275,43 @@ Here `versions` this is a list of transaction hashes of the edited versions of t
     "data": [
       ...
     ]
+}
+----
+
+
+=== Notify about new jury assigned to author of content
+
+`txid` - Flag transaction ID and Jury ID
+
+[,json]
+----
+{
+	"addr": "TG69Jioc81PiwMAJtRanfZqUmRY4TUG7nt",
+	"msg": "event",
+	"txid": "0080c9a54b94b7e0602486e41c18a8f54bf3ed4b29508dbef58c20021fd5852d",
+	"time": 1706521030,
+	"contentHash": "cb4866f11e1ba2087364600fcd0c316373639e18223da63ddd9b6115e2313088",
+	"contentRootHash": "cb4866f11e1ba2087364600fcd0c316373639e18223da63ddd9b6115e2313088",
+	"contentType": "200",
+	"mesType": "juryassigned",
+	"reason": "2"
+}
+----
+
+=== Notify about new ban for account
+
+[,json]
+----
+{
+  "addr": "TLAvSHoNbeECY9S6Z7WBMyDT64WWHLm8d7",
+  "msg": "event",
+  "txid": "84858578a2ec42069dc4a0eb752c2d16229e52f65f1ccfd6de3bc77899eef71f",
+  "time": 1706522294,
+  "contentHash": "9a3f634be04c6ac190d01ca376711190925b819314c8dfa0753533a87ef87dea",
+  "contentRootHash": "9a3f634be04c6ac190d01ca376711190925b819314c8dfa0753533a87ef87dea",
+  "contentType": "200",
+  "juryHash": "aeb2e47fb6dec5ebcb91299627e3f87ab37d60997f8a17c16972a4660e3de696",
+  "mesType": "juryverdict",
+  "reason": "1"
 }
 ----
