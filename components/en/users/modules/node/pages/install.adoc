@@ -22,7 +22,7 @@ Below are the minimum system requirements to run a PocketNet node to use as a wa
 
 * 2 core x86-64 CPU
 * 4GB RAM
-* 100 GB harddrive
+* 150 GB harddrive
 * 10 Mbps internet connection
 
 
@@ -45,15 +45,6 @@ Install package with root privilegies. To do this, open the terminal in the dire
 [source,shell]
 $ sudo dpkg -i pocketnetcore_*_linux_x64_setup.deb
 
-Download and copy the checkpoints file from the releases to the `.pocketcoin/checkpoints` directory:
-
-[source,shell]
-$ mkdir ~/.pocketcoin
-$ mkdir ~/.pocketcoin/checkpoints
-$ cd ~/.pocketcoin/checkpoints
-$ wget https://github.com/pocketnetteam/pocketnet.core/releases/latest/download/main.sqlite3 --no-check-certificate
-$ cd ~
-
 On Ubuntu and many Linux distributions it will be necessary to set the open files limit to 10000 in order to prevent errors.  Run "ulimit -n" to view the current open file limit.  Run below command to set ulimit to 10000 open files:
 
 [source,shell]
@@ -71,21 +62,9 @@ If it is desired to run a full node to support the Bastyon front-end app, procee
 
 == Windows Setup
 
-Download the `pocketnetcore_*_win_x64_setup.exe` installer and the `main.sqlite3` file from the GitHub releases page here: https://github.com/pocketnetteam/pocketnet.core/releases
+Download the `pocketnetcore_*_win_x64_setup.exe` installer from the GitHub releases page here: https://github.com/pocketnetteam/pocketnet.core/releases
 
-Run the installer.
-
-Before starting the PocketNet app for the first time, download the file for the main.sqlite3 file from the releases page: 
-
-The `main.sqlite3` file must be copied into the checkpoints folder in the default Pocketcoin data directory, which typically is in the folder `%APPDATA%\Pocketcoin\checkpoints`.
-Below are example commands to copy the file into the correct folder, assuming the `main.sqlite3` file was downloaded to the folder `%HOMEPATH%\Downloads`:
-
-[source,shell]
-cd %APPDATA%
-mkdir Pocketcoin
-cd Pocketcoin
-mkdir checkpoints
-copy %HOMEPATH%\Downloads\main.sqlite3 %APPDATA%\Pocketcoin\checkpoints\main.sqlite3
+Run the installer and follow the instructions, change the installation location if necessary.
 
 Start the PocketNet Core application from the Windows Start menu. A Windows Security Alert will pop up for Windows Defender Firewall. Select "Allow access" to allow PocketNet Core through the Windows Defender Firewall for Private networks.
 
