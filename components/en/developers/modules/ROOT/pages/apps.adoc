@@ -74,7 +74,7 @@
   "topHeight": 100, // Top block height for start pagination
   "pageStart": 0, // Number of first page
   "pageSize": 10, // Count of apps in page
-  "orderBy": "height",
+  "orderBy": "height", // height | rating
   "orderDesc": true, // true | false
 }
 ----
