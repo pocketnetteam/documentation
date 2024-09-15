@@ -21,14 +21,14 @@ jobs:
         run: npm run build
   
       - name: Save Artifact Build
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: build
           path: build/
           retention-days: 1
   
       - name: Save Artifact Assets
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: assets
           path: assets/
@@ -39,7 +39,7 @@ jobs:
     needs: build
     steps:
       - name: Download artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
       
       - name: Copy artifacts
         run: |
@@ -51,7 +51,7 @@ jobs:
     needs: build
     steps:
       - name: Download artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
       
       - name: Copy artifacts
         run: |
