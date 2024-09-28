@@ -1,9 +1,5 @@
 The plan for Developer's Guide
-AI Prompts:
-I am trying to design a documentation strategy for Bastyon. I am a volunteer there who wants to help the project to move forward.
-The project is called Bastyon. It's a decentralized social platform with a messenger. It also wants to build an API set around building miniapps on Bastyon. Its source code is located at https://github.com/pocketnetteam
-The documentation is needed for app usage and developer documentation.
-What I need help with a vision for documentation, roadmap and concrete documentation design that adheres with the theory of information and other theoretical work around documentation design.
+
 
 ### Motivation
 

@@ -1,0 +1,1 @@
+export const siteData = JSON.parse("{\"base\":\"/vuepressdocs/\",\"lang\":\"en-US\",\"title\":\" \",\"description\":\"This documentation will help you get started with Bastyon.\",\"head\":[],\"locales\":{}}")
