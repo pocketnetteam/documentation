@@ -13,6 +13,17 @@ export default defineUserConfig({
 
     navbar: ['/', '/get-started'],
   }),
+  plugins: [
+    [
+      'vuepress-plugin-mathjax',
+      {
+        target: 'svg',
+        macros: {
+          '*': '\\times',
+        },
+      },
+    ],
+  ],
 
   bundler: viteBundler(),
 })

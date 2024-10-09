@@ -1,11 +1,10 @@
 <template><div><h1 id="cpm-derivation" tabindex="-1"><a class="header-anchor" href="#cpm-derivation"><span>CPM Derivation</span></a></h1>
-<h2 id="steps-to-calculate-cpm-on-bastyon" tabindex="-1"><a class="header-anchor" href="#steps-to-calculate-cpm-on-bastyon"><span>STEPS TO CALCULATE CPM ON Bastyon</span></a></h2>
-<p>Bastyon has about 1.68 MILLION unique visitors a month. Average visitor visits 5 times per month, and English language feed is 10% of Bastyon, so TOTAL NUMBER OF MONTHLY VISITS = 840,000</p>
-<p>1.68M visits are distributed across various platforms:</p>
+<p>Bastyon has about 1.63 MILLION unique visitors a month. Average visitor visits 5 times per month, and English language feed is 10% of Bastyon, so TOTAL NUMBER OF MONTHLY VISITS = 1.65M * 10% * 5 = 815,000.<sup>1</sup></p>
+<p>1.63M visits are distributed across various platforms:</p>
 <table>
 <thead>
 <tr>
-<th>Platform</th>
+<th>Platform <sup>2</sup></th>
 <th>Users</th>
 </tr>
 </thead>
@@ -24,27 +23,31 @@
 </tr>
 </tbody>
 </table>
-<p>STEP 1.</p>
+<h3 id="bastyon-com-usage" tabindex="-1"><a class="header-anchor" href="#bastyon-com-usage"><span>Bastyon.com Usage</span></a></h3>
 <p>1.4M is on Bastyon.com (SEMRUSH data)</p>
 <p><img src="@source/en/user-docs/semrush-bastyon-data.png" alt="alt text"></p>
-<p>STEP 2.
-Number of active android users is 130,000+</p>
-<p>STEP 3.
-Number of desktop app users is 150,000+
-(After every app update users gradually update desktop app, approx. Half of users updates one week after update)</p>
-<p><img src="@source/en/user-docs/bastyon-desktop-browser.png" alt="alt text"></p>
-<p>https://github.com/pocketnetteam/pocketnet.gui
-*this screen shows that 76 thousand users updated their apps immediately on day one, only half of the people update so quickly, so the real number is 150k users approximately</p>
-<p>STEP 4.
-Calculate CPM
-Every boost ad runs for 3 hours. So, we divide total monthly visits by 30 days and by 8 to get 3 hour intervals
-Total monthly visits = 8.4 million
-Total daily visits = 28,000
-English feed has 10% of all visitors
-Total visits in 3 hour interval = 28,000/8= 3500
-Average cost of ad is $1
-CPM = $. 28
-28 cents on average is a very low CPM</p>
+<h3 id="desktop-app-usage" tabindex="-1"><a class="header-anchor" href="#desktop-app-usage"><span>Desktop App Usage</span></a></h3>
+<p>Number of desktop app users is 150,000+.<sup>3</sup></p>
+<p><a href="https://github.com/pocketnetteam/pocketnet.gui" target="_blank" rel="noopener noreferrer"><img src="@source/en/user-docs/bastyon-desktop-browser.png" alt="alt text"></a></p>
+<h3 id="android-usage" tabindex="-1"><a class="header-anchor" href="#android-usage"><span>Android Usage</span></a></h3>
+<p>Number of active android users is 130,000+</p>
+<h3 id="ios-usage" tabindex="-1"><a class="header-anchor" href="#ios-usage"><span>iOS Usage</span></a></h3>
+<p>[todo]</p>
+<h3 id="cpm-calculation" tabindex="-1"><a class="header-anchor" href="#cpm-calculation"><span>CPM Calculation</span></a></h3>
+<ol>
+<li>Every boost ad runs for 3 hours. So, we divide total monthly visits by 30 days and by 8 to get 3-hour intervals</li>
+<li>Total monthly visits = 815 thousand</li>
+<li>Total daily visits = 27,100</li>
+<li>English feed has 10% of all visitors</li>
+<li>Total visits in 3 hour interval = 27,100/8 = 3395</li>
+<li>Average cost of ad is $1</li>
+<li>CPM = $. 29</li>
+<li>29 cents on average is a very low CPM</li>
+</ol>
+<hr>
+<p><sup>1</sup>Based on December 2022 data.</p>
+<p><sup>2</sup> iOS was not initially included in the calculations</p>
+<p><sup>3</sup> After every app update users gradually update desktop app, approx. Half of users updates one week after update. The image shows that 76 thousand users updated their apps immediately on day one, only half of the people update so quickly, so the real number is 150k users approximately</p>
 </div></template>
 
 
