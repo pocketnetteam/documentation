@@ -58,7 +58,7 @@ Here are a few resorces.
 
 ### Documentation
 
-To learn more about how to use Bastyon or explore its technical details, please check out our extensive [User Documentation](/en/user-docs/get-started-user.md) and  [Technical Documentation](/en/dev-docs/get-started-dev.md). 
+To learn more about Bastyon's technical details, please check out our extensive [Technical Documentation](/en/dev-docs/get-started-dev.md). 
 
 
 ## How to Leave Feedback on Bastyon

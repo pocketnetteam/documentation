@@ -3,29 +3,28 @@ home: true
 title: Home
 heroImage: /bastyon-logo-256x256.png
 actions:
-  - text: Developers
+  - text: Developer Documentation
     link: /en/dev-docs/get-started-dev.md
     type: primary
 
-  - text: End Users
+  - text: Monetize With Bastyon
     link: /en/user-docs/get-started-user.md
     type: primary
 
 features:
-  - title: Decentralized
+  - title: Freedom of Expression
     details: The platform operates without a central authority, making it resistant to traditional censorship methods.
-  - title: Social
-    details: Users can share posts, videos, and long-form blogs, virtually uncensored.
-  - title: Cryptocurrency
-    details: Bastyon has its own cryptocurrency called PKOIN, which is used for monetization within the platform.
-  - title: Unsensored
-    details: Bastyon is designed to bypass common censorship tactics, such as domain blocking and banning users for dissent.
-  - title: Privacy-focused
-    details: The app does not collect user data, emphasizing user privacy.
-  - title: Blockchain technology
-    details: The platform utilizes blockchain to ensure data immutability and decentralized storage.
-  - title: Cross-platform
-    details: Bastyon is available for iOS and Android devices, as a desktop app, and via web browsers.
+  - title: Diverse Content Sharing
+    details: Users can post a variety of content including text, videos, and long-form blogs with minimal restrictions.
+  - title: Earn Cryptocurrency
+    details: Users can monetize their content and interactions using PKOIN, Bastyon's native cryptocurrency.
+  - title: Enhanced Privacy
+    details: Users can interact on the platform without concerns about their personal data being collected or sold. 
+  - title: Trusted Content Storage
+    details: Users benefit from decentralized technology ensuring their content remains unaltered and accessible.
+  - title: Flexible Access
+    details: Bastyon is available on iOS, Android, as a desktop app, and as a web app via web most web browsers.
 
-footer: Apache License 2.0 | Copyright © 2019-present Bastyon
+
+footer: Apache License-2.0 | Copyright © 2019-present Bastyon
 ---

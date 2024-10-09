@@ -65,7 +65,7 @@ Here are a few resorces.</p>
 <li>We are also just one email away: support@pocketnet.app</li>
 </ul>
 <h3 id="documentation" tabindex="-1"><a class="header-anchor" href="#documentation"><span>Documentation</span></a></h3>
-<p>To learn more about how to use Bastyon or explore its technical details, please check out our extensive <RouteLink to="/en/user-docs/get-started-user.html">User Documentation</RouteLink> and  <RouteLink to="/en/dev-docs/get-started-dev.html">Technical Documentation</RouteLink>.</p>
+<p>To learn more about Bastyon's technical details, please check out our extensive <RouteLink to="/en/dev-docs/get-started-dev.html">Technical Documentation</RouteLink>.</p>
 <h2 id="how-to-leave-feedback-on-bastyon" tabindex="-1"><a class="header-anchor" href="#how-to-leave-feedback-on-bastyon"><span>How to Leave Feedback on Bastyon</span></a></h2>
 <p>You can provide feedback either through <a href="https://github.com/pocketnetteam" target="_blank" rel="noopener noreferrer">GitHub</a>, or <a href="mailto:support@pocketnet.app" target="_blank" rel="noopener noreferrer">Shoot us an email</a>.</p>
 <p>Alternativey, feel free to comment at the bottom of the page. [todo] enable the comment box once the plugin is installed</p>
