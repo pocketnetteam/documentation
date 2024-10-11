@@ -3,9 +3,12 @@
 Bastyon, a decentralized social media platform, offers various opportunities for users to monetize their content and engagement. Here are some effective ways to make money on Bastyon
 
 ## Advertisers
-Advertisers on Bastyon have accesss to one of the best CPM (cost per thousands impressions) in the industry for large networks. On Bastyon you can get to about ¢28 cents as opposed to the industry's avergae over $1. Checkout [Calculations page](advertisement-cpm-calculation.md) for details on the calculations.
+Advertisers on Bastyon have accesss to one of the best CPM (cost per thousands impressions) in the industry for large networks. On Bastyon you can get to about **¢29 cents as opposed to the industry's avergae over $1**. Checkout [Calculations page](advertisement-cpm-calculation.md) for details on the calculations.
 
 todo: advertise on bastyon video goes here
+
+<iframe width="640" style="aspect-ratio:1.7770833333333333" src="https://bastyon.com/embedVideo.php?embed=true&amp;autoplay=true&amp;s=2cdab966cf0cce28b52597a42d9f4290489b120a2ec64a09e6a6650ffb090f66&amp;host=peertube23.pocketnet.app&amp;id=cf7b0d22-6d10-46bc-bb9b-de6d51482153" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
 
 <div style="display: flex; justify-content: center; width: 100%;">
     <div style="display: flex; max-width: 600px;">
@@ -38,28 +41,23 @@ todo: advertise on bastyon video goes here
 
 ![alt text](bastyon-usage-audience.png)
 
-<p align="center">Reach</p>
-Average cost of thousand impressions (CPM) is 28 cents
 
-Please follow this link to see where to buy PKOIN
+### How to Start Advertising
 
-<p align="center">Where to buy PKOIN?</p>
+1. Launching ads on Bastyon is very simple. To do this, you need:
+2. Prepare an advertising publication (video, post or article)
+3. [Buy PKOIN](buying-pkoin.md)
+4. Deposit the required amount of PKOIN to start advertising
 
-PKOIN can be purchased on the following sites.
+#### Click the lightning bolt icon in the lower right corner of the selected post
 
-[![Alt text](tapbit.png)](Tapbit.com)
+![alt text](lightning-bolt-action.png)
 
-[![alt text](Digifinex.png)](Digifinex.com)
+#### Enter PKOIN in the "Amount" field and click "Send"
 
-https://pkoin.net/
+![alt text](lift-up-the-post.png)
 
-
-
-
-PKOIN.NET - here you can buy PKOIN for other cryptocurrencies.
-Buying PKOIN peer-to-peer on Bastyon
-
-PKOIN purchase is possible from other Bastyon users. You can agree on the terms of purchase/sale in personal correspondence with the seller / buyer, whom you can find in the news feed under the category 'PKOIN/peer-to-peer'
+#### <span style="color: magenta;">Congratulations! You have launched an advertisement on Bastyon!</span>
 
 ## Authors: Content Creators
 

@@ -7,6 +7,7 @@ export const routes = Object.fromEntries([
   ["/en/user-docs/advertisement-cpm-calculation.html", { loader: () => import(/* webpackChunkName: "en_user-docs_advertisement-cpm-calculation.html" */"/home/user/projects/bastyon/documentation/vuepress-starter/docs/.vuepress/.temp/pages/en/user-docs/advertisement-cpm-calculation.html.js"), meta: {"title":"CPM Derivation"} }],
   ["/en/user-docs/get-started-user.html", { loader: () => import(/* webpackChunkName: "en_user-docs_get-started-user.html" */"/home/user/projects/bastyon/documentation/vuepress-starter/docs/.vuepress/.temp/pages/en/user-docs/get-started-user.html.js"), meta: {"title":"Ways to Monetize"} }],
   ["/404.html", { loader: () => import(/* webpackChunkName: "404.html" */"/home/user/projects/bastyon/documentation/vuepress-starter/docs/.vuepress/.temp/pages/404.html.js"), meta: {"title":""} }],
+  ["/en/user-docs/buying-pkoin.html", { loader: () => import(/* webpackChunkName: "en_user-docs_buying-pkoin.html" */"/home/user/projects/bastyon/documentation/vuepress-starter/docs/.vuepress/.temp/pages/en/user-docs/buying-pkoin.html.js"), meta: {"title":"Buying PKOIN"} }],
 ]);
 
 if (import.meta.webpackHot) {
