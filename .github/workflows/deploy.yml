@@ -44,16 +44,15 @@ jobs:
         with:
           node-version: 20
       - name: Build
-        working-directory: ./vuepress-starter/
         run: |
+          cd ./vuepress-starter/
           npm ci
           npm run docs:build
       - name: Save Artifact Build
-        working-directory: ./vuepress-starter/
         uses: actions/upload-artifact@v3
         with:
           name: dist
-          path: docs/.vuepress/dist/
+          path: ./vuepress-starter/docs/.vuepress/dist/
           retention-days: 1
   
   deploy_win:
@@ -62,7 +61,6 @@ jobs:
     steps:
       - name: Download artifacts
         uses: actions/download-artifact@v3
-      
       - name: Copy artifacts
         run: |
           cp -Recurse -Force ./build/site/* c:/inetpub/wwwroot/docs/en/
