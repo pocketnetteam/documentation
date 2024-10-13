@@ -41,10 +41,8 @@ jobs:
         with:
           fetch-depth: 0
       - uses: actions/setup-node@v3
-        working-directory: ./vuepress-starter/
         with:
           node-version: 20
-          cache: npm
       - name: Build
         working-directory: ./vuepress-starter/
         run: |
