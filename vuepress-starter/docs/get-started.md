@@ -1,9 +1,15 @@
 
 # <h1 style="text-align: center;">Get Started</h1>
 
+<!--embed:start -->
 ## Overview
 
 Bastyon is an innovative, open-source social network and video sharing platform designed to prioritize freedom of speech and user privacy. Unlike mainstream social networks, Bastyon operates without centralized corporate control, instead relying on a distributed network of nodes worldwide.
+
+> **Vision:**
+Bastyon aims to create a resilient, decentralized ecosystem that empowers individuals with unrestricted access to communication, information, and personal data management. Our vision is to build a platform that stands strong against censorship and ensures user sovereignty in the digital realm.
+
+<!--embed:end -->
 
 Key Features:
 

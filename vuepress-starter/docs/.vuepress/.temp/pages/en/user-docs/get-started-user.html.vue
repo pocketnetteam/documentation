@@ -38,6 +38,7 @@
 <h4 id="enter-pkoin-in-the-amount-field-and-click-send" tabindex="-1"><a class="header-anchor" href="#enter-pkoin-in-the-amount-field-and-click-send"><span>Enter PKOIN in the &quot;Amount&quot; field and click &quot;Send&quot;</span></a></h4>
 <p><img src="@source/en/user-docs/lift-up-the-post.png" alt="alt text"></p>
 <h4 id="congratulations-you-have-launched-an-advertisement-on-bastyon" tabindex="-1"><a class="header-anchor" href="#congratulations-you-have-launched-an-advertisement-on-bastyon"><span><span style="color: magenta;">Congratulations! You have launched an advertisement on Bastyon!</span></span></a></h4>
+<p>To learn more about advertisement, you can check out this <a href="https://night.bastyon.com/monetization" target="_blank" rel="noopener noreferrer">article</a></p>
 <h2 id="authors-content-creators" tabindex="-1"><a class="header-anchor" href="#authors-content-creators"><span>Authors: Content Creators</span></a></h2>
 <h2 id="node-runners" tabindex="-1"><a class="header-anchor" href="#node-runners"><span>Node Runners</span></a></h2>
 </div></template>
