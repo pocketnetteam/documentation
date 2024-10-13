@@ -46,7 +46,7 @@ jobs:
       - name: Build
         run: |
           cd ./vuepress-starter/
-          npm ci
+          npm i
           npm run docs:build
       - name: Save Artifact Build
         uses: actions/upload-artifact@v3
