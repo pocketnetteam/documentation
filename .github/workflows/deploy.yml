@@ -34,6 +34,28 @@ jobs:
           path: assets/
           retention-days: 1
 
+  build_vue:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: npm
+      - name: Build
+        working-directory: ./vuepress-starter/
+        run: |
+          npm ci
+          npm run docs:build
+      - name: Save Artifact Build
+        uses: actions/upload-artifact@v3
+        with:
+          name: dist
+          path: docs/.vuepress/dist/
+          retention-days: 1
+  
   deploy_win:
     runs-on: docs-en-deploy
     needs: build
@@ -52,8 +74,18 @@ jobs:
     steps:
       - name: Download artifacts
         uses: actions/download-artifact@v3
-      
       - name: Copy artifacts
         run: |
           cp -r ./build/site/* /data/docs/en/
           cp -r ./assets/* /data/docs/
+
+  deploy_docs_pocketnet_app:
+    runs-on: docs.bastyon.com
+    needs: build_vue
+    steps:
+      - name: Download artifacts
+        uses: actions/download-artifact@v3
+      - name: Copy artifacts
+        run: |
+          rm -rf /data/documentation/*
+          cp -r ./dist/* /data/documentation/
