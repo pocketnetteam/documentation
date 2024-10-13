@@ -41,6 +41,7 @@ jobs:
         with:
           fetch-depth: 0
       - uses: actions/setup-node@v3
+        working-directory: ./vuepress-starter/
         with:
           node-version: 20
           cache: npm
@@ -50,6 +51,7 @@ jobs:
           npm ci
           npm run docs:build
       - name: Save Artifact Build
+        working-directory: ./vuepress-starter/
         uses: actions/upload-artifact@v3
         with:
           name: dist
