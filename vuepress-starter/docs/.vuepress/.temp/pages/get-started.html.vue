@@ -1,12 +1,10 @@
 <template><div><h1 id="get-started" tabindex="-1"><a class="header-anchor" href="#get-started"><span><h1 style="text-align: center;">Get Started</h1></span></a></h1>
-<!--embed:start -->
 <h2 id="overview" tabindex="-1"><a class="header-anchor" href="#overview"><span>Overview</span></a></h2>
 <p>Bastyon is an innovative, open-source social network and video sharing platform designed to prioritize freedom of speech and user privacy. Unlike mainstream social networks, Bastyon operates without centralized corporate control, instead relying on a distributed network of nodes worldwide.</p>
 <blockquote>
 <p><strong>Vision:</strong>
 Bastyon aims to create a resilient, decentralized ecosystem that empowers individuals with unrestricted access to communication, information, and personal data management. Our vision is to build a platform that stands strong against censorship and ensures user sovereignty in the digital realm.</p>
 </blockquote>
-<!--embed:end -->
 <p>Key Features:</p>
 <ol>
 <li>
@@ -67,14 +65,19 @@ Bastyon aims to create a resilient, decentralized ecosystem that empowers indivi
 Here are a few resorces.</p>
 <ul>
 <li>You can reach out to us on <a href="https://github.com/pocketnetteam" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-<li>[todo]: provide a post that will contain support accounts in different languages</li>
-<li>We are also just one email away: support@pocketnet.app</li>
+<li>We are also just one <a href="mailto:support@pocketnet.app" target="_blank" rel="noopener noreferrer">an email</a></li>
 </ul>
+<!---
+todo: provide a post that will contain support accounts in different languages
+--->
 <h3 id="documentation" tabindex="-1"><a class="header-anchor" href="#documentation"><span>Documentation</span></a></h3>
 <p>To learn more about Bastyon's technical details, please check out our extensive <RouteLink to="/en/dev-docs/get-started-dev.html">Technical Documentation</RouteLink>.</p>
 <h2 id="how-to-leave-feedback-on-bastyon" tabindex="-1"><a class="header-anchor" href="#how-to-leave-feedback-on-bastyon"><span>How to Leave Feedback on Bastyon</span></a></h2>
 <p>You can provide feedback either through <a href="https://github.com/pocketnetteam" target="_blank" rel="noopener noreferrer">GitHub</a>, or <a href="mailto:support@pocketnet.app" target="_blank" rel="noopener noreferrer">Shoot us an email</a>.</p>
-<p>Alternativey, feel free to comment at the bottom of the page. [todo] enable the comment box once the plugin is installed</p>
+<p>Alternativey, feel free to comment at the bottom of the page.</p>
+<!---
+todo: enable the comment box once the plugin is installed
+--->
 <h2 id="faqs" tabindex="-1"><a class="header-anchor" href="#faqs"><span>FAQs</span></a></h2>
 <p>Please visit our <a href="https://bastyon.com/about?id=about-faq" target="_blank" rel="noopener noreferrer">FAQ</a> page for commonly asked questions.</p>
 </div></template>

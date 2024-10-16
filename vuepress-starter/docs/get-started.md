@@ -1,7 +1,6 @@
 
 # <h1 style="text-align: center;">Get Started</h1>
 
-<!--embed:start -->
 ## Overview
 
 Bastyon is an innovative, open-source social network and video sharing platform designed to prioritize freedom of speech and user privacy. Unlike mainstream social networks, Bastyon operates without centralized corporate control, instead relying on a distributed network of nodes worldwide.
@@ -9,7 +8,6 @@ Bastyon is an innovative, open-source social network and video sharing platform 
 > **Vision:**
 Bastyon aims to create a resilient, decentralized ecosystem that empowers individuals with unrestricted access to communication, information, and personal data management. Our vision is to build a platform that stands strong against censorship and ensures user sovereignty in the digital realm.
 
-<!--embed:end -->
 
 Key Features:
 
@@ -58,9 +56,11 @@ This project exists, thanks to the dedication of people who are passionate about
 Here are a few resorces.
 
 - You can reach out to us on [GitHub](https://github.com/pocketnetteam)
-- [todo]: provide a post that will contain support accounts in different languages
-- We are also just one email away: support@pocketnet.app
+- We are also just one [an email](mailto:support@pocketnet.app)
 
+<!---
+todo: provide a post that will contain support accounts in different languages
+--->
 
 ### Documentation
 
@@ -71,7 +71,10 @@ To learn more about Bastyon's technical details, please check out our extensive 
 
 You can provide feedback either through [GitHub](https://github.com/pocketnetteam), or [Shoot us an email](mailto:support@pocketnet.app).
 
-Alternativey, feel free to comment at the bottom of the page. [todo] enable the comment box once the plugin is installed
+Alternativey, feel free to comment at the bottom of the page. 
+<!---
+todo: enable the comment box once the plugin is installed
+--->
 
 ## FAQs
 

@@ -32,7 +32,7 @@
 <h3 id="android-usage" tabindex="-1"><a class="header-anchor" href="#android-usage"><span>Android Usage</span></a></h3>
 <p>Number of active android users is 130,000+</p>
 <h3 id="ios-usage" tabindex="-1"><a class="header-anchor" href="#ios-usage"><span>iOS Usage</span></a></h3>
-<p>[todo]</p>
+<!--- todo --->
 <h3 id="cpm-calculation" tabindex="-1"><a class="header-anchor" href="#cpm-calculation"><span>CPM Calculation</span></a></h3>
 <ol>
 <li>Every boost ad runs for 3 hours. So, we divide total monthly visits by 30 days and by 8 to get 3-hour intervals</li>

@@ -1,5 +1,4 @@
 <template><div><h1 id="buying-pkoin" tabindex="-1"><a class="header-anchor" href="#buying-pkoin"><span>Buying PKOIN</span></a></h1>
-<p>You need PKOIN cryptocurrency fund your advertising campaigns.</p>
 <p>PKOIN is the native cryptocurrency of the Bastyon platform. It serves as the economic backbone of the ecosystem, enabling users to monetize their content and interactions. Users can earn PKOIN through various activities on the platform, such as creating popular posts, receiving likes, being the node-runners.</p>
 <p>PKOIN can be used for:</p>
 <ol>

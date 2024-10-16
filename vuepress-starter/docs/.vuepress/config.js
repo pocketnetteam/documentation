@@ -3,7 +3,6 @@ import { defineUserConfig } from 'vuepress/cli'
 import { viteBundler } from '@vuepress/bundler-vite'
 
 export default defineUserConfig({
-  //base: '/vuepressdocs/',
   lang: 'en-US',
   title: ' ',  
   description: 'This documentation will help you get started with Bastyon.',
