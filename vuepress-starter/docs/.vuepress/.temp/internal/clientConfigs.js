@@ -1,13 +1,13 @@
-import * as clientConfig0 from '/home/user/projects/bastyon/documentation/vuepress-starter/node_modules/@vuepress/plugin-active-header-links/lib/client/config.js'
-import * as clientConfig1 from '/home/user/projects/bastyon/documentation/vuepress-starter/node_modules/@vuepress/plugin-back-to-top/lib/client/config.js'
-import * as clientConfig2 from '/home/user/projects/bastyon/documentation/vuepress-starter/node_modules/@vuepress/plugin-copy-code/lib/client/config.js'
-import * as clientConfig3 from '/home/user/projects/bastyon/documentation/vuepress-starter/node_modules/@vuepress/plugin-markdown-hint/lib/client/config.js'
-import * as clientConfig4 from '/home/user/projects/bastyon/documentation/vuepress-starter/node_modules/@vuepress/plugin-medium-zoom/lib/client/config.js'
-import * as clientConfig5 from '/home/user/projects/bastyon/documentation/vuepress-starter/node_modules/@vuepress/plugin-nprogress/lib/client/config.js'
-import * as clientConfig6 from '/home/user/projects/bastyon/documentation/vuepress-starter/docs/.vuepress/.temp/prismjs/config.js'
-import * as clientConfig7 from '/home/user/projects/bastyon/documentation/vuepress-starter/docs/.vuepress/.temp/markdown-tab/config.js'
-import * as clientConfig8 from '/home/user/projects/bastyon/documentation/vuepress-starter/node_modules/@vuepress/plugin-theme-data/lib/client/config.js'
-import * as clientConfig9 from '/home/user/projects/bastyon/documentation/vuepress-starter/node_modules/@vuepress/theme-default/lib/client/config.js'
+import * as clientConfig0 from '/data/work/bastyon/apps/documentation/vuepress-starter/node_modules/@vuepress/plugin-active-header-links/lib/client/config.js'
+import * as clientConfig1 from '/data/work/bastyon/apps/documentation/vuepress-starter/node_modules/@vuepress/plugin-back-to-top/lib/client/config.js'
+import * as clientConfig2 from '/data/work/bastyon/apps/documentation/vuepress-starter/node_modules/@vuepress/plugin-copy-code/lib/client/config.js'
+import * as clientConfig3 from '/data/work/bastyon/apps/documentation/vuepress-starter/node_modules/@vuepress/plugin-markdown-hint/lib/client/config.js'
+import * as clientConfig4 from '/data/work/bastyon/apps/documentation/vuepress-starter/node_modules/@vuepress/plugin-medium-zoom/lib/client/config.js'
+import * as clientConfig5 from '/data/work/bastyon/apps/documentation/vuepress-starter/node_modules/@vuepress/plugin-nprogress/lib/client/config.js'
+import * as clientConfig6 from '/data/work/bastyon/apps/documentation/vuepress-starter/docs/.vuepress/.temp/prismjs/config.js'
+import * as clientConfig7 from '/data/work/bastyon/apps/documentation/vuepress-starter/docs/.vuepress/.temp/markdown-tab/config.js'
+import * as clientConfig8 from '/data/work/bastyon/apps/documentation/vuepress-starter/node_modules/@vuepress/plugin-theme-data/lib/client/config.js'
+import * as clientConfig9 from '/data/work/bastyon/apps/documentation/vuepress-starter/node_modules/@vuepress/theme-default/lib/client/config.js'
 
 export const clientConfigs = [
   clientConfig0,
