@@ -18,7 +18,8 @@ Bastyon is on a mission to democratize how people communicate. Today, most commu
 
 >Our vision is to create a resilient, decentralized ecosystem that empowers individuals with unrestricted access to communication, information, and personal data management. Our vision is to build a platform that stands strong against censorship and ensures user sovereignty in the digital realm.
 
-# Bastyon Documentation
+# Bastyon Documentation 🕮
+TODO description
 
 ## Description
 This documentation will help you get started with Bastyon.
