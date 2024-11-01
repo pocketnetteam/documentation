@@ -4,7 +4,7 @@ title: Home
 heroImage: /bastyon-logo-256x256.png
 actions:
   - text: Developer Documentation
-    link: /en/dev-docs/get-started-dev.md
+    link: /en/dev/getting-started.html
     type: primary
 
   - text: Monetize With Bastyon

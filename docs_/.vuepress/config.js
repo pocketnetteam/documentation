@@ -9,7 +9,6 @@ export default defineUserConfig({
 
   theme: defaultTheme({
     logo: '/bastyon-logo-32x32.png',
-
     navbar: ['/', '/get-started'],
   }),
   plugins: [
