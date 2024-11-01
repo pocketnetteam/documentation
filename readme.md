@@ -1,3 +1,7 @@
+<div align="right">
+  <b>en</b> | <a href="readme_ru.md">ru</a>
+</div>
+
 <div align="center">
   <img src="https://github.com/pocketnetteam/get.started/blob/main/assets/img/bastyon-logo-256x256.png" width="196" alt="bastyon logo">
 </div>
@@ -35,9 +39,9 @@ This repository is designed for:
 📁 assets/
    # Static materials
 📁 docs/
-   ├─ .vuepress/ # configs and scripts
+   ├─ .vuepress/ # configs and scripts of vuepress
    ├─ .../ # TODO root folders in documentation
-   ├─ ru/ # Russian copy of documentation
+   ├─ ru/ # Localized copy of the materials
       ├─ .../ # TODO Russian root folders in documentation
 ```
 
