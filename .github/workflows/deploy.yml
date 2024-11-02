@@ -17,7 +17,6 @@ jobs:
           node-version: 20
       - name: Build
         run: |
-          cd ./vuepress-starter/
           npm i
           npm run docs:build
       - name: Save Artifact Build
