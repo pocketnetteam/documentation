@@ -3,7 +3,7 @@ home: true
 title: Home
 heroImage: /images/bastyon-logo-256x256.png
 actions:
-  - text: Get Started
+  - text: Monetize With Bastyon
     link: /guide/getting-started.html
     type: primary
 

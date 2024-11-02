@@ -7,6 +7,7 @@ export const navbarEn: NavbarOptions = [
     children: [
       '/guide/introduction.md',
       '/guide/getting-started.md',
+      '/guide/monetization/index.md',
       '/guide/configuration.md',
       '/guide/page.md',
       '/guide/markdown.md',
@@ -21,7 +22,7 @@ export const navbarEn: NavbarOptions = [
     ],
   },
   {
-    text: 'Reference',
+    text: 'Developers',
     children: [
       {
         text: 'Core',

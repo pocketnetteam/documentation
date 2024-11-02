@@ -7,6 +7,7 @@ export const sidebarEn: SidebarOptions = {
       children: [
         '/guide/introduction.md',
         '/guide/getting-started.md',
+        '/guide/monetization/index.md',
         '/guide/configuration.md',
         '/guide/page.md',
         '/guide/markdown.md',
@@ -18,28 +19,6 @@ export const sidebarEn: SidebarOptions = {
         '/guide/bundler.md',
         '/guide/migration.md',
         '/guide/troubleshooting.md',
-      ],
-    },
-  ],
-  '/advanced/': [
-    {
-      text: 'Advanced',
-      children: [
-        '/advanced/architecture.md',
-        '/advanced/plugin.md',
-        '/advanced/theme.md',
-      ],
-    },
-    {
-      text: 'Cookbook',
-      children: [
-        '/advanced/cookbook/README.md',
-        '/advanced/cookbook/usage-of-client-config.md',
-        '/advanced/cookbook/adding-extra-pages.md',
-        '/advanced/cookbook/making-a-theme-extendable.md',
-        '/advanced/cookbook/passing-data-to-client-code.md',
-        '/advanced/cookbook/markdown-and-vue-sfc.md',
-        '/advanced/cookbook/resolving-routes.md',
       ],
     },
   ],
@@ -73,6 +52,28 @@ export const sidebarEn: SidebarOptions = {
           text: 'Plugins',
           link: 'https://ecosystem.vuejs.press/plugins/',
         },
+      ],
+    },
+  ],
+  '/advanced/': [
+    {
+      text: 'Advanced',
+      children: [
+        '/advanced/architecture.md',
+        '/advanced/plugin.md',
+        '/advanced/theme.md',
+      ],
+    },
+    {
+      text: 'Cookbook',
+      children: [
+        '/advanced/cookbook/README.md',
+        '/advanced/cookbook/usage-of-client-config.md',
+        '/advanced/cookbook/adding-extra-pages.md',
+        '/advanced/cookbook/making-a-theme-extendable.md',
+        '/advanced/cookbook/passing-data-to-client-code.md',
+        '/advanced/cookbook/markdown-and-vue-sfc.md',
+        '/advanced/cookbook/resolving-routes.md',
       ],
     },
   ],
