@@ -1,0 +1,21 @@
+{
+  "name": "Bastyon",
+  "short_name": "Bastyon",
+  "description": ".......",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#fff",
+  "theme_color": "#3eaf7c",
+  "icons": [
+    {
+      "src": "/images/bastyon-logo-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/bastyon-logo-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }
+  ]
+}
