@@ -7,7 +7,9 @@ export const sidebarEn: SidebarOptions = {
       children: [
         '/guide/introduction.md',
         '/guide/getting-started.md',
-        '/guide/monetization/index.md',
+        '/guide/monetization/',
+        '/guide/full-node-setup/',
+        '/guide/easy-node-setup/',
         '/guide/configuration.md',
         '/guide/page.md',
         '/guide/markdown.md',
@@ -22,36 +24,36 @@ export const sidebarEn: SidebarOptions = {
       ],
     },
   ],
-  '/reference/': [
+  '/dev/': [
     {
-      text: 'Core',
-      collapsible: true,
+      text: 'Development',
       children: [
-        '/reference/cli.md',
-        '/reference/config.md',
-        '/reference/frontmatter.md',
-        '/reference/components.md',
-        '/reference/plugin-api.md',
-        '/reference/theme-api.md',
-        '/reference/client-api.md',
-        '/reference/node-api.md',
+        '/dev/introduction.md',
+        '/dev/get-started.md',
+        '/dev/infrastructure.md',
+        '/dev/contribution.md',
       ],
     },
     {
-      text: 'Bundlers',
-      children: ['/reference/bundler/vite.md', '/reference/bundler/webpack.md'],
+      text: 'Proxy & API',
+      children: [
+        '/dev/api/get-started.md',
+      ],
     },
     {
-      text: 'Ecosystem',
+      text: 'Client Applications',
       children: [
-        {
-          text: 'Default Theme',
-          link: 'https://ecosystem.vuejs.press/themes/default/',
-        },
-        {
-          text: 'Plugins',
-          link: 'https://ecosystem.vuejs.press/plugins/',
-        },
+        '/dev/apps/get-started.md',
+      ],
+    },
+    {
+      text: 'Blockchain Node',
+      children: [
+        '/dev/node/get-started.md',
+        '/dev/node/requirements.md',
+        '/dev/node/environment.md',
+        '/dev/node/building.md',
+        '/dev/node/contribution.md',
       ],
     },
   ],
