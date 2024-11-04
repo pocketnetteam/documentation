@@ -76,35 +76,35 @@ For optimal performance as a public node, ensure:
 2. Launch the client and create a new Bastyon account or log into an existing one.
 3. To install and launch Easy Node, go to your account menu in the top right corner of the Bastyon / Brighteon home page.
 
-![Bastyon homepage header](bastyon-homepage-header.png)
+![Bastyon homepage header](./assets/img/bastyon-homepage-header.png)
 
 4. Go to the menu (Management) - (Node).
 
-![Easy Node management](easy-node-management.png)
+![Easy Node management](./assets/img/easy-node-management.png)
 
 5. Specify the directory for blockchain files storage (must be on an SSD, path in English only).
 6. Click "Default Directory" to set the path, then "Download and install node".
 7. The download of the database checkpoint and its further unzipping will begin.
 
-![Easy Node installing](easy-node-installing.png)
+![Easy Node installing](./assets/img/easy-node-installing.png)
 
 8. The process of checking the database and starting synchronization with the network will begin.
 
-![Easy Node Bastyon node](easy-node-bastyon-node.png)
+![Easy Node Bastyon node](./assets/img/easy-node-bastyon-node.png)
 
 > **Pay attention to the height:** First number = blocks on your node / Second number = blocks on the network
 
-![Easy Node Bastyon data sync](easy-node-bastyon-data-sync.png)
+![Easy Node Bastyon data sync](./assets/img/easy-node-bastyon-data-sync.png)
 
 9. Wait for full network synchronization (indicated by matching blockchain heights).
 
-![Easy Node Bastyon data sync complete](easy-node-bastyon-data-sync-complete.png)
+![Easy Node Bastyon data sync complete](./assets/img/easy-node-bastyon-data-sync-complete.png)
 
 ## Using Easy Node
 
 After installation and synchronization, the Easy Node window will display:
 
-![Easy Node ready and running](easy-node-ready-running.png)
+![Easy Node ready and running](./assets/img/easy-node-ready-running.png)
 
 ### Synchronization
 - Status: active (Node is running)

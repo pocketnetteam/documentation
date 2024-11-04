@@ -7,8 +7,8 @@ actions:
     link: /guide/monetization/
     type: primary
 
-  - text: Introduction
-    link: /guide/introduction.html
+  - text: Development
+    link: /dev/introduction.md
     type: secondary
 
 features:
