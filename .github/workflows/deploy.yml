@@ -48,6 +48,7 @@ jobs:
           name: dist
       - name: Copy artifacts
         run: |
+          ls -lR
           rm -rf /data/documentation/*
           cp -r ./dist/* /data/documentation/
           rm -rf *
