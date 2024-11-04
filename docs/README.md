@@ -4,7 +4,7 @@ title: Home
 heroImage: /images/bastyon-logo-256x256.png
 actions:
   - text: Monetize With Bastyon
-    link: /guide/getting-started.html
+    link: /guide/monetization/
     type: primary
 
   - text: Introduction

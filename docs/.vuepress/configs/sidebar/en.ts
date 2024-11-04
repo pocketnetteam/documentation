@@ -7,7 +7,8 @@ export const sidebarEn: SidebarOptions = {
       children: [
         '/guide/introduction.md',
         '/guide/getting-started.md',
-        '/guide/monetization/index.md',
+        '/guide/monetization/',
+        '/guide/full-node-setup/',
         '/guide/configuration.md',
         '/guide/page.md',
         '/guide/markdown.md',
