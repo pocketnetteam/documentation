@@ -51,3 +51,4 @@ jobs:
           ls -lR
           rm -rf /data/documentation/*
           cp -r ./dist/* /data/documentation/
+          rm -rf *
