@@ -46,9 +46,9 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: dist
+          path: ./dist
       - name: Copy artifacts
         run: |
-          ls -lR
           rm -rf /data/documentation/*
           cp -r ./dist/* /data/documentation/
           rm -rf *
