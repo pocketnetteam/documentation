@@ -1,252 +1,80 @@
 # Getting Started
 
-::: warning
-VuePress v2 is currently in RC (Release Candidate) stage. It's ready to be used for building your site, but the config and API are not stable enough, which is possibly to have minor breaking changes. So make sure to read the [changelog](https://github.com/vuepress/core/blob/main/CHANGELOG.md) carefully each time you upgrade a RC version.
-:::
+## Overview
 
-## Try It Online
+Bastyon is an innovative, open-source social network and video sharing platform designed to prioritize freedom of speech and user privacy. Unlike mainstream social networks, Bastyon operates without centralized corporate control, instead relying on a distributed network of nodes worldwide.
 
-You can try VuePress directly in your browser on [StackBlitz](https://stackblitz.com/fork/vuepress).
+> **Vision:**
+Bastyon aims to create a resilient, decentralized ecosystem that empowers individuals with unrestricted access to communication, information, and personal data management. Our vision is to build a platform that stands strong against censorship and ensures user sovereignty in the digital realm.
 
-## Installation
 
-### Prerequisites
+Key Features:
 
-- [Node.js v18.19.0+](https://nodejs.org/)
-- Package manager like [pnpm](https://pnpm.io), [yarn](https://classic.yarnpkg.com/en/), [npm](https://www.npmjs.com), etc.
+1. Decentralized Architecture
 
-::: tip
+   Bastyon's infrastructure is built on a global network of nodes, ensuring continuous accessibility and resilience against censorship attempts.
 
-- When using [pnpm](https://pnpm.io/), you need to install `vue` as peer-dependencies.
-- When using [yarn 2+](https://yarnpkg.com/), you need to set `nodeLinker: 'node-modules'` in your [`.yarnrc.yml`](https://yarnpkg.com/configuration/yarnrc#nodeLinker) file.
+2. Anonymity and Privacy
 
-:::
+   Users can register without providing personal information such as email addresses or phone numbers. Bastyon does not store IP or MAC addresses, safeguarding user identities from potential tracking or surveillance.
 
-### Project Setup
+3. Censorship Resistance
 
-#### Setup via CLI
+   By design, Bastyon enables users to connect, view content, and post freely as long as they have an internet connection, without fear of content removal or account suspension due to ideological differences.
 
-You can use [create-vuepress](https://www.npmjs.com/package/create-vuepress) to generate a template directly.
+4. Open-Source Development
 
-::: code-tabs#shell
+   A team of dedicated developers and experts collaboratively maintain and improve the platform, fostering transparency and community involvement.
 
-@tab pnpm
+5. Cryptocurrency Integration
 
-```bash
-pnpm create vuepress vuepress-starter
-```
+   Bastyon incorporates its own cryptocurrency, facilitating secure and decentralized transactions within the platform.
 
-@tab yarn
+Founded by Daniel Satchkov, Bastyon aims to provide a secure, anonymous social platform where users can communicate and share content without the risk of corporate or government interference. This commitment to digital freedom sets Bastyon apart in the landscape of social media.
 
-```bash
-yarn create vuepress vuepress-starter
-```
+For more information about Bastyon's vision and the team behind it, you can find interviews with Daniel Satchkov on various platforms, including YouTube and Odysee.
 
-@tab npm
+Join Bastyon today and experience a social network that truly puts your freedom and privacy first.
 
-```bash
-npm init vuepress vuepress-starter
-```
 
-:::
+## Quick Start Guide
 
-#### Setup Manually
+### Installation
+Bastyion is available on major desktop and mobile platforms. To quickly get started, you can download Bastyon app for your most favorite platform or use an internet browser.
 
-This section will help you build a basic VuePress documentation site from ground up.
+| Desktop                                                | Mobile                                      | Web|
+|----------|---------------------------------------------|-------------------------------------------------|
+| [Linux](https://bastyon.com/about?id=about-download)   | [Android](https://bastyon.com/about?id=about-download)                                                       | [Web Browser](https://bastyon.com/registration) |
+| [MacOS](https://bastyon.com/about?id=about-download)   | [iOS](https://bastyon.com/about?id=about-download)                                       |                                                         |
+| [Windows](https://bastyon.com/about?id=about-download) |                                                  |
 
-- Create and change into a new directory
 
-```bash
-mkdir vuepress-starter
-cd vuepress-starter
-```
+### Contribution
 
-- Initialize your project
+This project exists, thanks to the dedication of people who are passionate about liberating communications across the globe. Whether you are an engineer, an author, a community advocate, or just a believer, we would love your help with this project! Here are a few resources to help you with any questions you may have.
+Here are a few resorces.
 
-::: code-tabs#shell
+- You can reach out to us on [GitHub](https://github.com/pocketnetteam)
+- We are also just one [an email](mailto:support@pocketnet.app)
 
-@tab pnpm
+<!---
+todo: provide a post that will contain support accounts in different languages
+--->
 
-```bash
-git init
-pnpm init
-```
+### Documentation
 
-@tab yarn
+To learn more about Bastyon's technical details, please check out our extensive [Technical Documentation](/dev/get-started.md). 
 
-```bash
-git init
-yarn init
-```
 
-@tab npm
+## How to Leave Feedback on Bastyon
 
-```bash
-git init
-npm init
-```
+You can provide feedback either through [GitHub](https://github.com/pocketnetteam), or [Shoot us an email](mailto:support@pocketnet.app).
 
-:::
+Alternativey, feel free to comment at the bottom of the page. 
+<!---
+todo: enable the comment box once the plugin is installed
+--->
 
-- Install VuePress
+## FAQs
 
-::: code-tabs#shell
-
-@tab pnpm
-
-```bash
-# install vuepress and vue
-pnpm add -D vuepress@next vue
-# install bundler and theme
-pnpm add -D @vuepress/bundler-vite@next @vuepress/theme-default@next
-```
-
-@tab yarn
-
-```bash
-# install vuepress
-yarn add -D vuepress@next
-# install bundler and theme
-yarn add -D @vuepress/bundler-vite@next @vuepress/theme-default@next
-```
-
-@tab npm
-
-```bash
-# install vuepress
-npm install -D vuepress@next
-# install bundler and theme
-npm install -D @vuepress/bundler-vite@next @vuepress/theme-default@next
-```
-
-:::
-
-- Create `docs` directory and `docs/.vuepress` directory
-
-```bash
-mkdir docs
-mkdir docs/.vuepress
-```
-
-- Create the VuePress config file `docs/.vuepress/config.js`
-
-```ts
-import { viteBundler } from '@vuepress/bundler-vite'
-import { defaultTheme } from '@vuepress/theme-default'
-import { defineUserConfig } from 'vuepress'
-
-export default defineUserConfig({
-  bundler: viteBundler(),
-  theme: defaultTheme(),
-})
-```
-
-- Create your first document
-
-```bash
-echo '# Hello VuePress' > docs/README.md
-```
-
-## Directory Structure
-
-After the setup, the minimal structure of your project should look like this:
-
-```
-├─ docs
-│  ├─ .vuepress
-│  │  └─ config.js
-│  └─ README.md
-└─ package.json
-```
-
-The `docs` directory is where you put your markdown files, and it will be used as the source directory of VuePress.
-
-The `docs/.vuepress` directory, i.e. the `.vuepress` directory in the source directory, is where all VuePress-specific files will be placed. Currently there is only one config file in it. By default, the temp, cache and output directory will also be generated inside this directory. It is suggested to add them to your `.gitignore` file.
-
-::: details Example `.gitignore` file
-
-```
-# VuePress default temp directory
-.vuepress/.temp
-# VuePress default cache directory
-.vuepress/.cache
-# VuePress default build output directory
-.vuepress/dist
-```
-
-:::
-
-## Work with VuePress
-
-### Start Dev Server
-
-You can add some [scripts](https://classic.yarnpkg.com/en/docs/package-json#toc-scripts) to `package.json`:
-
-```json
-{
-  "scripts": {
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
-  }
-}
-```
-
-Then, run `docs:dev` script to start the dev server:
-
-::: code-tabs#shell
-
-@tab pnpm
-
-```bash
-pnpm docs:dev
-```
-
-@tab yarn
-
-```bash
-yarn docs:dev
-```
-
-@tab npm
-
-```bash
-npm run docs:dev
-```
-
-:::
-
-VuePress will start a hot-reloading development server at [http://localhost:8080](http://localhost:8080). When you modify your markdown files, the content in the browser will be auto updated.
-
-### Build Your Site
-
-To build your site, run `docs:build` script:
-
-::: code-tabs#shell
-
-@tab pnpm
-
-```bash
-pnpm docs:build
-```
-
-@tab yarn
-
-```bash
-yarn docs:build
-```
-
-@tab npm
-
-```bash
-npm run docs:build
-```
-
-:::
-
-You will see the generated static files in the `docs/.vuepress/dist` directory. You can check out [deployment](./deployment.md) for how to deploy them.
-
-## Learn More about VuePress
-
-By now, you should have a basic but functional VuePress site. But you may still need to read the subsequent guide to learn more about VuePress.
-
-Next step, learn more about the [configuration](./configuration.md).
+Please visit our [FAQ](https://bastyon.com/about?id=about-faq) page for commonly asked questions.

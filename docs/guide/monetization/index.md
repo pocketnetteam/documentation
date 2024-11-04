@@ -123,8 +123,8 @@ Users can run a Bastyon node to secure the network and earn PKOIN through stakin
 To begin earning PKOIN:
 
 1. Download and Install Node Software
-   - [Full Node Setup Guide](full-node-setup.md)
-   - [Easy Node Setup Guide](easy-node-setup.md)
+   - [Full Node Setup Guide](/guide/full-node/)
+   - [Easy Node Setup Guide](/guide/easy-node/)
 2. [Buy PKOIN](buying-pkoin.md)
 3. Deposit PKOIN to Your Node Wallet (minimum 50 PKOIN)
 

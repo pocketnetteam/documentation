@@ -228,4 +228,4 @@ To report software defects and view current issues, check our [GitHub issues pag
 
 ## Contributions
 
-We welcome contributions to our Github projects. We are looking for C/C++ and Javascript Node.js coders, as well as anyone with a willingness to learn. For more information, check out our [contributions'](../../getting-started.md) documentation.
+We welcome contributions to our Github projects. We are looking for C/C++ and Javascript Node.js coders, as well as anyone with a willingness to learn. For more information, check out our [contributions'](/dev/contribution.md) documentation.
