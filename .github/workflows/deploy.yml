@@ -24,7 +24,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: dist
-          path: ./vuepress-starter/docs/.vuepress/dist/
+          path: ./docs/.vuepress/dist/
           retention-days: 1
 
   # deploy_docs_bastyon_com:
