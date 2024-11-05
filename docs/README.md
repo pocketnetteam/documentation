@@ -3,12 +3,12 @@ home: true
 title: Home
 heroImage: /images/bastyon-logo-256x256.png
 actions:
-  - text: Monetize With Bastyon
-    link: /guide/monetization/
+  - text: Get Started
+    link: /dev/get-started.md
     type: primary
 
-  - text: Development
-    link: /dev/introduction.md
+  - text: Public API
+    link: /dev/api/introduction.md
     type: secondary
 
 features:

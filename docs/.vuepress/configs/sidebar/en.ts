@@ -1,21 +1,9 @@
 import type { SidebarOptions } from '@vuepress/theme-default'
 
 export const sidebarEn: SidebarOptions = {
-  '/guide/': [
-    {
-      text: 'Guide',
-      children: [
-        '/guide/introduction.md',
-        '/guide/getting-started.md',
-        '/guide/monetization/',
-        '/guide/full-node/',
-        '/guide/easy-node/',
-      ],
-    },
-  ],
   '/dev/': [
     {
-      text: 'Development',
+      text: 'Guide',
       children: [
         '/dev/introduction.md',
         '/dev/get-started.md',
@@ -23,20 +11,10 @@ export const sidebarEn: SidebarOptions = {
         '/dev/contribution.md',
       ],
     },
+  ],
+  '/dev/node': [
     {
-      text: 'Proxy & API',
-      children: [
-        '/dev/api/get-started.md',
-      ],
-    },
-    {
-      text: 'Client Applications',
-      children: [
-        '/dev/apps/get-started.md',
-      ],
-    },
-    {
-      text: 'Blockchain Node',
+      text: 'Blockchain',
       children: [
         '/dev/node/get-started.md',
         '/dev/node/requirements.md',
@@ -46,26 +24,23 @@ export const sidebarEn: SidebarOptions = {
       ],
     },
   ],
-  '/advanced/': [
+  '/dev/api': [
     {
-      text: 'Advanced',
+      text: 'Proxy & API',
       children: [
-        '/advanced/architecture.md',
-        '/advanced/plugin.md',
-        '/advanced/theme.md',
-      ],
-    },
-    {
-      text: 'Cookbook',
-      children: [
-        '/advanced/cookbook/README.md',
-        '/advanced/cookbook/usage-of-client-config.md',
-        '/advanced/cookbook/adding-extra-pages.md',
-        '/advanced/cookbook/making-a-theme-extendable.md',
-        '/advanced/cookbook/passing-data-to-client-code.md',
-        '/advanced/cookbook/markdown-and-vue-sfc.md',
-        '/advanced/cookbook/resolving-routes.md',
+        '/dev/api/introduction.md',
+        '/dev/api/get-started.md',
       ],
     },
   ],
+  '/dev/apps': [
+    {
+      text: 'Applications',
+      children: [
+        '/dev/apps/introduction.md',
+        '/dev/apps/get-started.md',
+      ],
+    },
+  ],
+  
 }
