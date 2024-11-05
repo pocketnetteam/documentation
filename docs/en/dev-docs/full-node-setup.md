@@ -78,29 +78,29 @@ At this point, the PocketNet Core client will start synchronizing with the netwo
 
 3. Start the PocketNet Core application from the Windows Start menu. A Windows Security Alert will pop up for Windows Defender Firewall. Select "Allow access" to allow PocketNet Core through the Windows Defender Firewall for Private networks.
 
-   ![Windows Security Alert](windows-security-alert.png)
+   ![Windows Security Alert](/images/windows-security-alert.png)
 
 4. You will be prompted with a Setup Wizard:
 
-   ![Setup Wizard](setup-wizzard.png)
+   ![Setup Wizard](/images/setup-wizzard.png)
 
    > **Important!** After installing the node program and launching it for the first time, you need to specify the path to the node's working directory!
 
 5. Select "Use custom data directory" and specify the path to the node's working directory, then click OK.
 
-   ![Welcome Path Setup](welcome-path-setup.png)
+   ![Welcome Path Setup](/images/welcome-path-setup.png)
 
 6. The program will launch and begin indexing the database:
 
-   ![Database Indexing](db-indexing.png)
+   ![Database Indexing](/images/db-indexing.png)
 
 7. The PocketNet Core client will start synchronizing with the network. Depending on network performance, full synchronization can take anywhere from a few days to over a week to complete. For faster setup, you can download a checkpoint by following the instructions in the [Starting a Node From a Blockchain Snapshot](#starting-node-from-a-blockchain-snapshot) section below. However, it's recommended to allow a node to synchronize with the network on its own, as this validates the public blockchain and provides additional security and decentralization.
 
-   ![PocketNet Network Synchronization](pocketnet-network-synchronization.png)
+   ![PocketNet Network Synchronization](/images/pocketnet-network-synchronization.png)
 
 8. After synchronization, the main node window will launch:
 
-   ![PocketNet App Window](pocketnet-app-window.png)
+   ![PocketNet App Window](/images/pocketnet-app-window.png)
 
 ## Docker Setup
 

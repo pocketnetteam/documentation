@@ -8,6 +8,8 @@ import { shikiPlugin } from '@vuepress/plugin-shiki'
 import { defaultTheme } from '@vuepress/theme-default'
 import { defineUserConfig } from 'vuepress'
 import { getDirname, path } from 'vuepress/utils'
+import { mdEnhancePlugin } from 'vuepress-plugin-md-enhance'
+
 import {
   head,
   navbarEn,
@@ -111,7 +113,6 @@ export default defineUserConfig({
       prismjs: !isProd,
     },
   }),
-
   // configure markdown
   markdown: {
     importCode: {
@@ -133,7 +134,11 @@ export default defineUserConfig({
   },
 
   // use plugins
-  plugins: [
+  plugins: [  
+    mdEnhancePlugin({
+      // Enable mermaid
+      mermaid: true
+    }),
     docsearchPlugin({
       appId: '', // TODO appId
       apiKey: '', // TODO apiKey

@@ -3,98 +3,86 @@ import { VERSION } from '../meta.js'
 
 export const navbarEn: NavbarOptions = [
   {
-    text: 'Guide',
+    text: 'Get Started',
+    link: '/en/get-started.md',
+  },
+  {
+    text: 'Monetization',
+    link: '/en/monetization/get-started-monetization.md',
+  },
+  {
+    text: 'Developer Docs',
     children: [
-      '/guide/introduction.md',
-      '/guide/getting-started.md',
-      '/guide/monetization/index.md',
-      '/guide/configuration.md',
-      '/guide/page.md',
-      '/guide/markdown.md',
-      '/guide/assets.md',
-      '/guide/i18n.md',
-      '/guide/deployment.md',
-      '/guide/theme.md',
-      '/guide/plugin.md',
-      '/guide/bundler.md',
-      '/guide/migration.md',
-      '/guide/troubleshooting.md',
+      {
+        text: 'Platform Overview',
+        children: [
+            '/en/dev-docs/get-started-dev.md',
+            '/en/CONTRIBUTING.md',    
+        ],
+      },
+      {
+        text: 'MiniApps',
+        children: [
+          '/en/dev-docs/mini-apps.md',
+        ],
+      },
+      {
+        text: 'Barteron',
+        children: [
+          '/en/dev-docs/barteron-app.md',
+        ],
+      },
+      {
+        text: 'Node Maintenance',
+        children: [
+          {
+            text: 'Full Node Setup',
+            link: '/en/dev-docs/full-node-setup.md',
+          },
+        ],
+      },
     ],
   },
   {
-    text: 'Developers',
+    text: 'User Docs',
     children: [
-      {
-        text: 'Core',
-        children: [
-          {
-            text: 'CLI',
-            link: '/reference/cli.html',
-          },
-          '/reference/config.md',
-          '/reference/frontmatter.md',
-          '/reference/components.md',
-          '/reference/plugin-api.md',
-          '/reference/theme-api.md',
-          '/reference/client-api.md',
-          '/reference/node-api.md',
-        ],
-      },
-      {
-        text: 'Bundlers',
-        children: [
-          '/reference/bundler/vite.md',
-          '/reference/bundler/webpack.md',
-        ],
-      },
-      {
-        text: 'Ecosystem',
-        children: [
-          {
-            text: 'Default Theme',
-            link: 'https://ecosystem.vuejs.press/themes/default/',
-          },
-          {
-            text: 'Plugins',
-            link: 'https://ecosystem.vuejs.press/plugins/',
-          },
-        ],
-      },
+      '/en/get-started.md',
+      'en/user-docs/easy-node-setup.md',      
     ],
   },
 
-  {
-    text: 'Learn More',
-    children: [
-      {
-        text: 'Advanced',
-        children: [
-          '/advanced/architecture.md',
-          '/advanced/plugin.md',
-          '/advanced/theme.md',
-          {
-            text: 'Cookbook',
-            link: '/advanced/cookbook/',
-          },
-        ],
-      },
-      {
-        text: 'Resources',
-        children: [
-          {
-            text: 'Ecosystem',
-            link: 'https://ecosystem.vuejs.press/',
-          },
-          {
-            text: 'MarketPlace',
-            link: 'https://marketplace.vuejs.press',
-          },
-          {
-            text: 'Contributing Guide',
-            link: 'https://github.com/vuepress/core/blob/main/CONTRIBUTING.md',
-          },
-        ],
-      },
-    ],
-  },
+  // {
+  //   text: 'User Docs',
+  //   children: [
+  //     {
+  //       text: 'Advanced',
+  //       children: [
+  //         '/advanced/architecture.md',
+  //         '/advanced/plugin.md',
+  //         '/advanced/theme.md',
+  //         {
+  //           text: 'Cookbook',
+  //           link: '/advanced/cookbook/',
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       text: 'Resources',
+  //       children: [
+  //         {
+  //           text: 'Ecosystem',
+  //           link: 'https://ecosystem.vuejs.press/',
+  //         },
+  //         {
+  //           text: 'MarketPlace',
+  //           link: 'https://marketplace.vuejs.press',
+  //         },
+  //         {
+  //           text: 'Contributing Guide',
+  //           link: 'https://github.com/vuepress/core/blob/main/CONTRIBUTING.md',
+  //         },
+  //       ],
+  //     },
+  //   ],
+  // },
 ] as NavbarOptions
