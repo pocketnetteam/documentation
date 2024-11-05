@@ -18,7 +18,7 @@ Bastyon offers advertisers access to one of the best CPM (cost per thousand impr
 For detailed CPM calculations, see the [Calculations page](advertisement-cpm-calculation.md).
 
 <div style="display: flex; justify-content: center; align-items: center;">
-    <iframe width="640" style="aspect-ratio:1.7770833333333333" src="https://bastyon.com/embedVideo.php?embed=true&amp;autoplay=false&amp;s=2cdab966cf0cce28b52597a42d9f4290489b120a2ec64a09e6a6650ffb090f66&amp;host=peertube23.pocketnet.app&amp;id=cf7b0d22-6d10-46bc-bb9b-de6d51482153" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+    <iframe width="640" style="aspect-ratio:1.7770833333333333" src="https://bastyon.com/embedVideo.php?embed=true&amp;autoplay=false&amp;s=2cdab966cf0cce28b52597a42d9f4290489b120a2ec64a09e6a6650ffb090f66&amp;host=peertube23.pocketnet.app&amp;id=cf7b0d22-6d10-46bc-bb9b-de6d51482153" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 </div>
 
 <div style="display: flex; justify-content: center; width: 100%;">
@@ -40,15 +40,15 @@ For detailed CPM calculations, see the [Calculations page](advertisement-cpm-cal
 
 <p align="center"> Distribution by Country</p>
 
-![alt text](bastyon-usage-distribution-by-country.png)
+![alt text](./assets/img/bastyon-usage-distribution-by-country.png)
 
 <p align="center">Employment Status</p>
 
-![alt text](bastyon-usage-employment-status.png)
+![alt text](./assets/img/bastyon-usage-employment-status.png)
 
 <p align="center">Usage Demographics</p>
 
-![alt text](bastyon-usage-audience.png)
+![alt text](./assets/img/bastyon-usage-audience.png)
 
 ### How to Start Advertising
 
@@ -57,11 +57,11 @@ For detailed CPM calculations, see the [Calculations page](advertisement-cpm-cal
 3. Deposit the required amount of PKOIN to start advertising
 4. Click the lightning bolt icon in the lower right corner of the selected post
 
-![alt text](lightning-bolt-action.png)
+![alt text](./assets/img/lightning-bolt-action.png)
 
 5. Enter PKOIN in the "Amount" field and click "Send"
 
-![alt text](lift-up-the-post.png)
+![alt text](./assets/img/lift-up-the-post.png)
 
 **Congratulations! You have launched an advertisement on Bastyon!**
 
@@ -112,7 +112,7 @@ Active channels can earn the equivalent of $50-75 per week or more.
 
 **Internal economy of Bastyon: Pocketcoin (PKOIN)**
 
-![monetization-on-bastyon](monetization-on-bastyon.png)
+![monetization-on-bastyon](./assets/img/monetization-on-bastyon.png)
 
 ## Running a Node and Staking on Bastyon
 
@@ -123,8 +123,8 @@ Users can run a Bastyon node to secure the network and earn PKOIN through stakin
 To begin earning PKOIN:
 
 1. Download and Install Node Software
-   - [Full Node Setup Guide](full-node-setup.md)
-   - [Easy Node Setup Guide](easy-node-setup.md)
+   - [Full Node Setup Guide](/guide/full-node/)
+   - [Easy Node Setup Guide](/guide/easy-node/)
 2. [Buy PKOIN](buying-pkoin.md)
 3. Deposit PKOIN to Your Node Wallet (minimum 50 PKOIN)
 
@@ -150,6 +150,6 @@ By participating in Bastyon's ecosystem through advertising, content creation, o
 
 ## Appendix
 
-### [Full Node Setup Guide](full-node-setup.md)
+### [Full Node Setup Guide](../full-node-setup/)
 
-### [Easy Node Setup Guide](easy-node-setup.md)
+### [Easy Node Setup Guide](../easy-node-setup/)

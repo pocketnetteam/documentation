@@ -8,11 +8,12 @@ jobs:
 
   build_vue:
     runs-on: ubuntu-latest
+    if: github.repository == 'pocketnetteam/documentation'
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: 20
       - name: Build
@@ -20,10 +21,10 @@ jobs:
           npm i
           npm run docs:build
       - name: Save Artifact Build
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: dist
-          path: ./vuepress-starter/docs/.vuepress/dist/
+          path: ./docs/.vuepress/dist/
           retention-days: 1
 
   # deploy_docs_bastyon_com:
@@ -43,7 +44,11 @@ jobs:
     steps:
       - name: Download artifacts
         uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: ./dist
       - name: Copy artifacts
         run: |
           rm -rf /data/documentation/*
           cp -r ./dist/* /data/documentation/
+          rm -rf *

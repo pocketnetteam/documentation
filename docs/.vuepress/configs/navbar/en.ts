@@ -8,93 +8,40 @@ export const navbarEn: NavbarOptions = [
       '/guide/introduction.md',
       '/guide/getting-started.md',
       '/guide/monetization/index.md',
-      '/guide/configuration.md',
-      '/guide/page.md',
-      '/guide/markdown.md',
-      '/guide/assets.md',
-      '/guide/i18n.md',
-      '/guide/deployment.md',
-      '/guide/theme.md',
-      '/guide/plugin.md',
-      '/guide/bundler.md',
-      '/guide/migration.md',
-      '/guide/troubleshooting.md',
+      '/guide/full-node/',
+      '/guide/easy-node/',
     ],
   },
   {
-    text: 'Developers',
+    text: 'Development',
     children: [
+      '/dev/introduction.md',
+      '/dev/get-started.md',
+      '/dev/infrastructure.md',
+      '/dev/contribution.md',
       {
-        text: 'Core',
+        text: 'Proxy & API',
         children: [
-          {
-            text: 'CLI',
-            link: '/reference/cli.html',
-          },
-          '/reference/config.md',
-          '/reference/frontmatter.md',
-          '/reference/components.md',
-          '/reference/plugin-api.md',
-          '/reference/theme-api.md',
-          '/reference/client-api.md',
-          '/reference/node-api.md',
+          '/dev/api/get-started.md',
         ],
       },
       {
-        text: 'Bundlers',
+        text: 'Client Applications',
         children: [
-          '/reference/bundler/vite.md',
-          '/reference/bundler/webpack.md',
+          '/dev/apps/get-started.md',
         ],
       },
       {
-        text: 'Ecosystem',
+        text: 'Blockchain Node',
         children: [
-          {
-            text: 'Default Theme',
-            link: 'https://ecosystem.vuejs.press/themes/default/',
-          },
-          {
-            text: 'Plugins',
-            link: 'https://ecosystem.vuejs.press/plugins/',
-          },
+          '/dev/node/get-started.md',
+          '/dev/node/requirements.md',
+          '/dev/node/environment.md',
+          '/dev/node/building.md',
+          '/dev/node/contribution.md',
         ],
       },
     ],
   },
 
-  {
-    text: 'Learn More',
-    children: [
-      {
-        text: 'Advanced',
-        children: [
-          '/advanced/architecture.md',
-          '/advanced/plugin.md',
-          '/advanced/theme.md',
-          {
-            text: 'Cookbook',
-            link: '/advanced/cookbook/',
-          },
-        ],
-      },
-      {
-        text: 'Resources',
-        children: [
-          {
-            text: 'Ecosystem',
-            link: 'https://ecosystem.vuejs.press/',
-          },
-          {
-            text: 'MarketPlace',
-            link: 'https://marketplace.vuejs.press',
-          },
-          {
-            text: 'Contributing Guide',
-            link: 'https://github.com/vuepress/core/blob/main/CONTRIBUTING.md',
-          },
-        ],
-      },
-    ],
-  },
 ] as NavbarOptions
