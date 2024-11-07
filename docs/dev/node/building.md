@@ -37,31 +37,31 @@ git checkout $(git describe --tags "$(git rev-list --tags --max-count=1)")
 
 The next stage involves preparing the environment and installing the minimum set of packages needed to start project compilation. Depending on the target OS, the set of additional packages and process varies slightly.
 
-### Target OS: Linux x64
+### Linux x64
 
 ```bash
 apt-get update && apt-get install git make automake cmake curl g++-multilib libtool binutils-gold bsdmainutils pkg-config python3 patch bison
 ```
 
-### Target OS: Linux arm64
+### Linux arm64
 
 ```bash
 
 ```
 
-### Target OS: Windows x64
+### Windows x64
 
 ```bash
 
 ```
 
-### Target OS: MacOS x64 (intel)
+### MacOS x64 (intel)
 
 ```bash
 
 ```
 
-### Target OS: MacOS arm64 (mX)
+### MacOS arm64 (mX)
 
 ```bash
 
@@ -83,9 +83,10 @@ Common `host-platform-triplets` for cross compilation are:
 - `x86_64-apple-darwin16` for macOS (64-bit)
 - `arm64-apple-darwin` for ARM macOS (64-bit)
 
-### Configuration and Compilation
 
-#### `cmake`
+## Конфигурирование и компиляция
+
+### `cmake`
 
 :::tip
 This type of build is in testing phase and not intended for production use.
@@ -107,7 +108,7 @@ The following files will be compiled as a result:
       ├─ pocketcoin-cli
 ```
 
-#### `make`
+### `make`
 
 The main method for building executables and installation packages.
 
