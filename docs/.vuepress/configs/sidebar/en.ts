@@ -1,14 +1,23 @@
 import type { SidebarOptions } from '@vuepress/theme-default'
 
 export const sidebarEn: SidebarOptions = {
+  '/guide/': [
+    {
+      text: 'Users',
+      children: [
+        '/guide/getting-started.md',
+        '/guide/monetization/index.md',
+        '/guide/easy-node/index.md',
+      ],
+    },
+  ],
+
   '/dev/': [
     {
-      text: 'Guide',
+      text: 'Developers',
       children: [
-        '/dev/introduction.md',
-        '/dev/get-started.md',
-        '/dev/infrastructure.md',
-        '/dev/contribution.md',
+        'introduction.md',
+        'CONTRIBUTING.md',
       ],
     },
   ],
@@ -16,11 +25,10 @@ export const sidebarEn: SidebarOptions = {
     {
       text: 'Blockchain',
       children: [
-        '/dev/node/get-started.md',
-        '/dev/node/requirements.md',
-        '/dev/node/environment.md',
-        '/dev/node/building.md',
-        '/dev/node/contribution.md',
+        'get-started.md',
+        'requirements.md',
+        'environment.md',
+        'building.md',
       ],
     },
   ],
@@ -28,8 +36,8 @@ export const sidebarEn: SidebarOptions = {
     {
       text: 'Proxy & API',
       children: [
-        '/dev/api/introduction.md',
-        '/dev/api/get-started.md',
+        'introduction.md',
+        'get-started.md',
       ],
     },
   ],
@@ -37,8 +45,10 @@ export const sidebarEn: SidebarOptions = {
     {
       text: 'Applications',
       children: [
-        '/dev/apps/introduction.md',
-        '/dev/apps/get-started.md',
+        'introduction.md',
+        'get-started.md',
+        'mini-apps.md',
+        'barteron-app.md',
       ],
     },
   ],

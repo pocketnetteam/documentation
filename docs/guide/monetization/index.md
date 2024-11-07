@@ -15,7 +15,7 @@ Bastyon offers advertisers access to one of the best CPM (cost per thousand impr
 - Promote content, including videos
 - Lower cost of impressions compared to traditional ad networks
 
-For detailed CPM calculations, see the [Calculations page](advertisement-cpm-calculation.md).
+For detailed CPM calculations, see the [Calculations page](assets/img/advertisement-cpm-calculation.md).
 
 <div style="display: flex; justify-content: center; align-items: center;">
     <iframe width="640" style="aspect-ratio:1.7770833333333333" src="https://bastyon.com/embedVideo.php?embed=true&amp;autoplay=false&amp;s=2cdab966cf0cce28b52597a42d9f4290489b120a2ec64a09e6a6650ffb090f66&amp;host=peertube23.pocketnet.app&amp;id=cf7b0d22-6d10-46bc-bb9b-de6d51482153" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
