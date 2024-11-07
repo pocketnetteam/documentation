@@ -1,31 +1,30 @@
 # Building
 
-## Вступление
+## Introduction
 
-Блокчейн нода Бастион это форк Биткоин, поэтому большинство решений идентичны процессу 
-сборки Биткоин узла. Можно разделить данный пакет на ключевые исполняемые файлы:
-- `pocketcoind`: демон узла, позволяющий запустить узел в терминале или docker-контейнере. Управление узлом в этом варианте реализуется через конфигурационный файл `pocketcoin.conf` или HTTP (далее RPC) интерфейс.
-- `pocketcoin-qt`: графический вариант, включающий в себя весь функционал демона. Основа интерфейса составляет кошелек со всеми присущими ему функциями. Также интерфейс дополняют такие инструменты, как консоль RPC, панель управления пирами, настройки узла и т.д.
-- `pocketcoin-cli`: консольная утилита для управления узлом через RPC интерфейс, позволяет взаимодействовать с кошельком, получать статистику или настраивать уровни и категории логирования.
+The Bastyon blockchain node is a Bitcoin fork, so most solutions are identical to the Bitcoin node building process. This package can be divided into key executable files:
+- `pocketcoind`: node daemon, allowing you to run the node in terminal or docker container. Node management in this variant is implemented through the `pocketcoin.conf` configuration file or HTTP (RPC) interface.
+- `pocketcoin-qt`: graphical variant that includes all daemon functionality. The interface is based on a wallet with all its inherent functions. The interface also includes tools such as RPC console, peer management panel, node settings, etc.
+- `pocketcoin-cli`: console utility for managing the node through RPC interface, allows interaction with the wallet, getting statistics or configuring logging levels and categories.
 
-Каждый из этих исполняемых файлов может быть собран как по отдельности, так и целиком, упакованные в установочный пакет (NSIS пакет Windows, DEB архив для Debian/Ubuntu, DMG for MacOS). Способ сборки зависит от личных предпочтений разработчика, в данном руководстве представлены два основных способа (для целей разработки и релизные версии).
+Each of these executables can be built either separately or as a whole, packaged in an installation package (NSIS package for Windows, DEB archive for Debian/Ubuntu, DMG for MacOS). The build method depends on the developer's personal preferences; this guide presents two main methods (for development purposes and release versions).
 
 ## Getting Started
 
-Для успешной сборки могут потребоваться права администратора вашей ОС для установки необходимого ПО. Также предполагается, что пользователь владеет навыками работы с терминалом (установка пакетов и редактирование файлов). Желательны минимальные знания о структуре и назначении файлов при сборке C++ проектов. Также для избегания конфликтов рекомендуется использовать Docker для сборки и запуска узла.
+Administrative rights to your OS may be required for successful building to install the necessary software. It is also assumed that the user has terminal skills (package installation and file editing). Minimal knowledge about the structure and purpose of files when building C++ projects is desirable. Also, to avoid conflicts, it is recommended to use Docker for building and running the node.
 
-## Общие требования
+## General Requirements
 
 - [git](https://git-scm.com/)
 - [cmake](https://cmake.org/) v3.20+
 
-## Сборка в Docker Контейнере
+## Building in Docker Container
 
-Docker предоставляет широкие возможности выбора платформы для работы и изоляции от основной операционной системы. Использование docker контейнеров не обязательное условие, но позволяет избежать проблем с зависимостями в процессе работы. В данном руководстве для описания процесса используется образ `ubuntu:22.04`.
+Docker provides extensive platform choice capabilities and isolation from the main operating system. Using docker containers is not mandatory but helps avoid dependency problems during operation. This guide uses the `ubuntu:22.04` image for process description.
 
-## Загрузка репозитория
+## Repository Download
 
-Загрузите проект из официального репозитория (для этого потребуется установить git). Основная ветвь является допустимой для работы в Main сети, но может включать в себя коммиты, которые принадлежат к стадии BETA. Рекомендуется переключить репозиторий на последний тег.
+Download the project from the official repository (git installation required). The main branch is valid for working in the Main network but may include commits that belong to the BETA stage. It is recommended to switch the repository to the latest tag.
 
 ```bash
 apt-get update && apt-get install git
@@ -34,43 +33,43 @@ cd pocketnet.core/
 git checkout $(git describe --tags "$(git rev-list --tags --max-count=1)")
 ```
 
-## Подготовка пакетов зависимостей
+## Preparing Dependency Packages
 
-Слудующий этап заключается в подготовке окружения и установке минимального набора пакетов, необходимых для запуска компиляции проекта. В зависимости от целевой ОС набор дополнительных пакетов и процесс немного различается.
+The next stage involves preparing the environment and installing the minimum set of packages needed to start project compilation. Depending on the target OS, the set of additional packages and process varies slightly.
 
-### Целевая ОС: Linux x64
+### Target OS: Linux x64
 
 ```bash
 apt-get update && apt-get install git make automake cmake curl g++-multilib libtool binutils-gold bsdmainutils pkg-config python3 patch bison
 ```
 
-#### Целевая ОС: Linux arm64
+### Target OS: Linux arm64
 
 ```bash
 
 ```
 
-#### Целевая ОС: Windows x64
+### Target OS: Windows x64
 
 ```bash
 
 ```
 
-#### Целевая ОС: MacOS x64 (intel)
+### Target OS: MacOS x64 (intel)
 
 ```bash
 
 ```
 
-#### Целевая ОС: MacOS arm64 (mX)
+### Target OS: MacOS arm64 (mX)
 
 ```bash
 
 ```
 
-Каталог `depends/` содержит все необходимые пакеты для сборки, которые позволяют скомпиллироть код для разных платформ.
+The `depends/` directory contains all necessary packages for building, which allow compiling code for different platforms.
 
-Чтобы выполнить сборку зависимостей необходимо передать компилятору `make` аргумент `HOST` с указанием целевой платформы.
+To build dependencies, you need to pass the `HOST` argument to the `make` compiler specifying the target platform.
 
 ```bash
 cd depends/
@@ -84,13 +83,12 @@ Common `host-platform-triplets` for cross compilation are:
 - `x86_64-apple-darwin16` for macOS (64-bit)
 - `arm64-apple-darwin` for ARM macOS (64-bit)
 
-
-### Конфигурирование и компиляция
+### Configuration and Compilation
 
 #### `cmake`
 
 :::tip
-Данный вид сборки находится в стадии тестирования и не предназначен для использования в продакшне.
+This type of build is in testing phase and not intended for production use.
 :::
 
 ```bash
@@ -99,8 +97,8 @@ cmake -DCMAKE_PREFIX_PATH=$PWD/../depends/host-platform-triplets ..
 cmake --build . --config Debug -j 4
 ```
 
-В результате будут скомпилированы следующие файлы:
-``` 
+The following files will be compiled as a result:
+```
 └─ build/
    └─ src/
       └─ qt/
@@ -111,7 +109,7 @@ cmake --build . --config Debug -j 4
 
 #### `make`
 
-Основной способ сборки испоняемых файлов и установочных пакетов.
+The main method for building executables and installation packages.
 
 ```bash
 ./autogen.sh
@@ -120,9 +118,9 @@ make
 make deploy
 ```
 
-В результате будут скомпилированы следующие файлы:
+The following files will be compiled as a result:
 ```
-└─ src
+└─ src/
    └─ qt/
    │  └─ pocketcoin-qt
    ├─ pocketcoind
