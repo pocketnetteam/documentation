@@ -1,4 +1,4 @@
-name: deploy
+name: Deploy to official Bastyon site
 
 on:
   workflow_dispatch:
