@@ -1,23 +1,86 @@
 # Building
 
 ## Introduction
+Welcome to the documentation for the Pocketnet Core project. This document is intended for familiarization with the work on the blockchain node code for the Bastion network. Pocketnet Core is primarily written in C++ and is a fork of Bitcoin, which determines the presence of many parallels with it.
 
-The Bastyon blockchain node is a Bitcoin fork, so most solutions are identical to the Bitcoin node building process. This package can be divided into key executable files:
-- `pocketcoind`: node daemon, allowing you to run the node in terminal or docker container. Node management in this variant is implemented through the `pocketcoin.conf` configuration file or HTTP (RPC) interface.
-- `pocketcoin-qt`: graphical variant that includes all daemon functionality. The interface is based on a wallet with all its inherent functions. The interface also includes tools such as RPC console, peer management panel, node settings, etc.
-- `pocketcoin-cli`: console utility for managing the node through RPC interface, allows interaction with the wallet, getting statistics or configuring logging levels and categories.
+By following the instructions in this document, you can obtain the following binary files and installation packages:
 
-Each of these executables can be built either separately or as a whole, packaged in an installation package (NSIS package for Windows, DEB archive for Debian/Ubuntu, DMG for MacOS). The build method depends on the developer's personal preferences: this guide presents two main methods (for development purposes and release versions).
+- `pocketcoind` - the node daemon, which:
+  - Runs the node in headless mode
+  - Is managed through the `pocketcoin.conf` configuration file
+  - Provides an RPC API for external interaction
+
+- `pocketcoin-qt` - the GUI client, which:
+  - Includes the full functionality of the daemon
+  - Provides a wallet interface
+  - Contains developer tools (RPC console, peer management)
+  - Allows configuring node parameters through a graphical interface
+
+- `pocketcoin-cli` - a console utility for:
+  - Interacting with the node via RPC
+  - Managing the wallet
+  - Retrieving statistics
+  - Configuring logging
+
+The build can be performed for individual components or as a complete package. Installation packages are supported:
+- NSIS for Windows
+- DEB for Debian/Ubuntu
+- DMG for macOS
+
+This guide describes two main approaches to building:
+1. For development (using CMake)
+2. For release versions (using GNU Make)
 
 ## Getting Started
 
-Administrative rights to your OS may be required for successful building to install the necessary software. It is also assumed that the user has terminal skills (package installation and file editing). Minimal knowledge about the structure and purpose of files when building C++ projects is desirable. Also, to avoid conflicts, it is recommended to use Docker for building and running the node.
+### System Requirements
 
-## Building in Docker Container
+- Minimum 4 GB RAM (8 GB recommended)
+- 50 GB free disk space
+- Processor with 64-bit instruction support
+- Operating system:
+  - Linux (Ubuntu 22.04 or newer)
+  - Windows 10/11
+  - macOS 11 or newer
 
-Docker provides extensive platform choice capabilities and isolation from the main operating system. Using docker containers is not mandatory but helps avoid dependency problems during operation. Due to the minimum version requirement of `cmake v3.20+`, the Linux version in the docker container must be at least `ubuntu:22.04`. This restriction does not apply when building with `make`.
+### Prerequisites
 
-## Repository Download
+Before starting the build, make sure you have installed:
+
+- Git
+- C++ compiler (GCC 9+ for Linux, MSVC for Windows, Clang for macOS)
+- CMake 3.20 or newer (for building with CMake)
+- Python 3.8 or newer
+- Administrator rights in the system to install dependencies
+
+### Development Recommendations
+
+- It is recommended to use Docker for development environment isolation
+- Use version control system (git) to track changes
+- For development, it is preferable to use CMake and modern IDEs (VSCode, CLion)
+- When encountering dependency issues, check library versions in `depends/`
+
+### Important Notes
+
+- Build can take significant time (30-60 minutes depending on the system)
+- When building for release, use tags from the main repository
+- It is recommended to start with a debug build for development
+- Document all code changes and update tests when necessary
+
+## Usage Docker Container
+
+[Docker](https://www.docker.com/) provides powerful tools for application development and deployment, offering the following advantages:
+
+- Isolation of development environment from the host operating system
+- Guaranteed environment reproducibility across different machines  
+- Easy dependency management and configuration
+- Quick switching between different environment versions
+- Resource efficiency compared to virtual machines
+- Convenient scaling and deployment
+
+While using Docker is not mandatory for building the project, it helps avoid dependency issues during operation. Due to the minimum version requirement of `cmake v3.20+`, the Linux version in the Docker container must be at least `ubuntu:22.04`. This restriction does not apply when building with `make`.
+
+## Clone Repository
 
 Download the project from the official repository (git installation required). The main branch is valid for working in the Main network but may include commits that belong to the BETA stage. It is recommended to switch the repository to the latest tag.
 
@@ -150,7 +213,7 @@ The following files will be compiled as a result:
 The version of the final files is determined by the `./share/version.sh` script and depends on the current GIT commit. For releases, tags in the format `X.Y.Z` are used.
 :::
 
-## VSCode Setup
+## Usage VSCode
 
 When using the `CMake` extension, you can manage project configuration and compilation using VSCode tools. To do this, you need to create a configuration file `.vscode/settings.json` and specify the full path to the dependencies directory:
 
@@ -171,3 +234,7 @@ CMake control parameters in `.vscode/settings.json` file:
     ...
 }
 ```
+
+## Usage JetBrains CLion
+
+TODO : implement

@@ -48,6 +48,11 @@ Bastyion is available on major desktop and mobile platforms. To quickly get star
 | [MacOS](https://bastyon.com/about?id=about-download)   | [iOS](https://bastyon.com/about?id=about-download)                                       |                                                         |
 | [Windows](https://bastyon.com/about?id=about-download) |                                                  |
 
+Instructions for launching and maintaining a blockchain node:
+
+- [Full Node Setup Guide](/guide/full-node/)
+- [Easy Node Setup Guide](/guide/easy-node/)
+
 
 ### Contribution
 

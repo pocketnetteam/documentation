@@ -6,8 +6,9 @@ export const sidebarEn: SidebarOptions = {
       text: 'Users',
       children: [
         '/guide/getting-started.md',
-        '/guide/monetization/index.md',
-        '/guide/easy-node/index.md',
+        '/guide/monetization/',
+        '/guide/easy-node/',
+        '/guide/full-node/',
       ],
     },
   ],

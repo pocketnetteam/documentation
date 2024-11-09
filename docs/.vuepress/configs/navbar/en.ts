@@ -9,13 +9,14 @@ export const navbarEn: NavbarOptions = [
         text: 'Get Started',
         children: [
           '/guide/getting-started.md',
-          '/guide/easy-node/index.md',
+          '/guide/easy-node/',
+          '/guide/full-node/',
         ],
       },
       {
         text: 'Monetization',
         children: [
-          '/guide/monetization/index.md',
+          '/guide/monetization/',
         ],
       },
     ],
