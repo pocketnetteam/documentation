@@ -97,38 +97,41 @@ git checkout $(git describe --tags "$(git rev-list --tags --max-count=1)")
 
 The next stage involves preparing the environment and installing the minimum set of packages needed to start project compilation. Depending on the target OS, the set of additional packages and process varies slightly.
 
-### Linux x64
+### Installing System Requirements
+
+#### Linux x64
 
 ```sh
 apt-get update
-apt-get install make automake cmake curl bzip2 g++-multilib pkg-config python3 bison \
-   libtool \
-   binutils-gold bsdmainutils   patch 
+apt-get install make automake cmake curl bzip2 g++-multilib pkg-config \
+   python3 bison
 ```
 
-### Linux arm64
+#### Linux arm64
 
 ```sh
 # TODO : implement
 ```
 
-### Windows x64
+#### Windows x64
 
 ```sh
 # TODO : implement
 ```
 
-### MacOS x64 (intel)
+#### MacOS x64 (intel)
 
 ```sh
 # TODO : implement
 ```
 
-### MacOS arm64 (mX)
+#### MacOS arm64 (mX)
 
 ```sh
 # TODO : implement
 ```
+
+### Building Dependencies
 
 The `depends/` directory contains all necessary packages for building, which allow compiling code for different platforms.
 
@@ -141,10 +144,11 @@ cd ..
 To build dependencies for another platform (cross-compilling), you need to pass the `HOST` argument to the `make` compiler specifying the target platform.
 
 ```sh
-make HOST=host-platform-triplet
+host_platform="x86_64-pc-linux-gnu"
+make HOST=$host_platform
 ```
 
-Common tested `host-platform-triplets` for cross compilation are:
+Common tested `host_platform` for cross compilation are:
 - `x86_64-pc-linux-gnu` for Linux (64-bit)
 - `x86_64-w64-mingw32` for Windows (64-bit)
 - `x86_64-apple-darwin16` for macOS (64-bit)
@@ -161,7 +165,7 @@ This type of build is in testing phase and not intended for production use.
 
 ```sh
 mkdir build && cd build
-cmake -DCMAKE_PREFIX_PATH=$PWD/../depends/host-platform-triplets ..
+cmake -DCMAKE_PREFIX_PATH=$PWD/../depends/$host_platform ..
 cmake --build . --config Debug -j 8
 ```
 
@@ -181,7 +185,7 @@ The main method for building executables and installation packages.
 
 ```sh
 ./autogen.sh
-CONFIG_SITE=$PWD/depends/host-platform-triplets/share/config.site ./configure --prefix=/usr/local
+CONFIG_SITE=$PWD/depends/$host_platform/share/config.site ./configure --prefix=/usr/local
 make
 ```
 
@@ -228,7 +232,7 @@ CMake control parameters in `.vscode/settings.json` file:
 {
    ...
     "cmake.configureArgs": [
-        "-DCMAKE_PREFIX_PATH={FULL_PATH_PROJECT}/depends/x86_64-pc-linux-gnu"
+        "-DCMAKE_PREFIX_PATH=/full/path/project/depends/host_platform"
     ],
     "cmake.parallelJobs": 8,
     ...
