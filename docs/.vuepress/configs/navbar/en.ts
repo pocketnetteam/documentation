@@ -45,6 +45,8 @@ export const navbarEn: NavbarOptions = [
         children: [
           '/dev/api/introduction.md',
           '/dev/api/get-started.md',
+          '/dev/api/rpc.md',
+          '/dev/api/miniapps.md',
         ],
       },
       {
