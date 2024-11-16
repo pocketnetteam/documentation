@@ -57,8 +57,8 @@ Instructions for launching and maintaining a blockchain node:
 ### Contribution
 
 This project exists, thanks to the dedication of people who are passionate about liberating communications across the globe. Whether you are an engineer, an author, a community advocate, or just a believer, we would love your help with this project! Here are a few resources to help you with any questions you may have.
-Here are a few resorces.
 
+- Checkout out [CONTRIBUTING](/dev/CONTRIBUTING.md) doc.
 - You can reach out to us on [GitHub](https://github.com/pocketnetteam)
 - We are also just one [an email](mailto:support@pocketnet.app)
 
