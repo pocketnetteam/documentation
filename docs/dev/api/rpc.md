@@ -1,4 +1,4 @@
-# Blockchain RPC
+# Proxy RPC
 
 ## Private
 
