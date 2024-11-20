@@ -32,12 +32,13 @@ export const navbarEn: NavbarOptions = [
         ],
       },
       {
-        text: 'Blockchain',
+        text: 'Blockchain Node',
         children: [
           '/dev/node/get-started.md',
           '/dev/node/requirements.md',
           '/dev/node/environment.md',
           '/dev/node/building.md',
+          '/dev/node/rpc.md',
         ],
       },
       {

@@ -24,12 +24,13 @@ export const sidebarEn: SidebarOptions = {
   ],
   '/dev/node': [
     {
-      text: 'Blockchain',
+      text: 'Blockchain Node',
       children: [
         'get-started.md',
         'requirements.md',
         'environment.md',
         'building.md',
+        'rpc.md',
       ],
     },
   ],
