@@ -10,3197 +10,899 @@ This document provides a detailed description of all available RPC methods in th
 Each method is listed with its parameters, return values, and examples of usage.
 
 
-| Method Name                                           | Description                                                                               |
-| ----------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| **[getapps](#getapps)**                               | Retrieves a list of applications filtered by the given criteria                           |
-| **[getappscores](#getappscores)**                     | Retrieves scores for a list of applications                                               |
-| **[getappcomments](#getappcomments)**                 | Retrieves comments related to a specific application                                      |
-| **[getuserprofile](#getuserprofile)**                 | Retrieves the profile information of a specific user                                      |
-| **[getjuryassigned](#getjuryassigned)**               | Retrieves a list of jury assignments for a specific user                                  |
-| **[getjurymoderators](#getjurymoderators)**           | Retrieves a list of moderators assigned to a specific jury                                |
-| **[getjury](#getjury)**                               | Retrieves information about a specific jury                                               |
-| **[getalljury](#getalljury)**                         | Retrieves a list of all juries available in the network                                   |
-| **[getbans](#getbans)**                               | Retrieves the ban status of a specific user                                               |
-| **[getaddressid](#getaddressid)**                     | Retrieves the unique identifier (ID) associated with a specific address                   |
-| **[getaddressregistration](#getaddressregistration)** | Retrieves the registration status for multiple addresses                                  |
-| **[getuserstate](#getuserstate)**                     | Retrieves the state information of a specific user                                        |
-| **[txunspent](#txunspent)**                           | Retrieves a list of unspent transaction outputs (UTXOs) for specified addresses           |
-| **[getaccountearning](#getaccountearning)**           | Retrieves the earning details of a specific account based on address, height, and depth   |
-| **[getaddressinfo](#getaddressinfo)**                 | Retrieves detailed information about a specific address                                   |
-| **[getbalancehistory](#getbalancehistory)**           | Retrieves the balance history for a list of addresses over a given block range            |
-| **[checkstringtype](#checkstringtype)**               | Checks the type of a given string in the context of the network                           |
-| **[getaddresstransactions](#getaddresstransactions)** | Retrieves a list of transactions for a specific address                                   |
-| **[getblocktransactions](#getblocktransactions)**     | Retrieves a list of transactions included in a specific block                             |
-| **[getcompactblock](#getcompactblock)**               | Retrieves compact block data for a given block hash or block number                       |
-| **[getaddressscores](#getaddressscores)**             | Retrieves scores related to a specific address and its posts                              |
-| **[getpostscores](#getpostscores)**                   | Retrieves scores for a specific post based on its transaction hash                        |
-| **[getpagescores](#getpagescores)**                   | Retrieves scores for multiple posts and comments on a specific page                       |
-| **[getcomments](#getcomments)**                       | Retrieves comments related to a specific post                                             |
-| **[getlastcomments](#getlastcomments)**               | Retrieves the most recent comments from the network                                       |
-| **[getcontent](#getcontent)**                         | Retrieves content based on provided hashes and address                                    |
-| **[getcontents](#getcontents)**                       | Retrieves content posted by a specific address                                            |
-| **[getuseraddress](#getuseraddress)**                 | Retrieves the addresses associated with a specific username                               |
-| **[getusersubscribes](#getusersubscribes)**           | Retrieves a list of users that a specific user is subscribed to                           |
-| **[getusersubscribers](#getusersubscribers)**         | Retrieves a list of subscribers for a specific user                                       |
-| **[getaccountsetting](#getaccountsetting)**           | Retrieves account settings information for a given address                                |
-| **[getuserstatistic](#getuserstatistic)**             | Retrieves statistics for a specific user based on activity and address                    |
-| **[gettime](#gettime)**                               | Retrieves the current network time                                                        |
-| **[getpeerinfo](#getpeerinfo)**                       | Retrieves information about the connected peers in the network                            |
-| **[getnodeinfo](#getnodeinfo)**                       | Retrieves information about the current node                                              |
-| **[getcoininfo](#getcoininfo)**                       | Retrieves general information about the coin, such as total supply and block count        |
-| **[getposdifficulty](#getposdifficulty)**             | Retrieves the Proof-of-Stake difficulty for a specific block height or current difficulty |
-| **[gettags](#gettags)**                               | Retrieves a list of tags used within the network for posts and comments                   |
-| **[addtransaction](#addtransaction)**                 | Adds a new transaction to the network                                                     |
-| **[generatetransaction](#generatetransaction)**       | Generates a new transaction based on provided details                                     |
-| **[getaccountearningstats](#getaccountearningstats)** | Retrieves detailed statistics on account earnings over time                               |
-| **[getaccountblockings](#getaccountblockings)**       | Retrieves information about accounts blocked by a specific user                           |
-| **[getaccountblockers](#getaccountblockers)**         | Retrieves information about accounts that have blocked a specific user                    |
-| **[search](#search)**                                 | Searches for content within the network based on keywords and type                        |
-| **[searchusers](#searchusers)**                       | Searches for users based on a given keyword and ranking criteria                          |
-| **[searchlinks](#searchlinks)**                       | Searches for content based on provided links and content types                            |
-| **[getmissedinfo](#getmissedinfo)**                   | Retrieves information about missed blocks and transactions for a specific address         |
-| **[getjuryvotes](#getjuryvotes)**                     | Retrieves votes related to a specific jury                                                |
-| **[getjurybalance](#getjurybalance)**                 | Retrieves the balance information of a specific jury                                      |
-| **[getjurylist](#getjurylist)**                       | Retrieves a list of all juries in the network                                             |
-| **[getjuryreward](#getjuryreward)**                   | Retrieves the reward information for a specific jury                                      |
-| **[getjuryvotescount](#getjuryvotescount)**           | Retrieves the count of votes for a specific jury                                          |
-| **[getmoderatorstatistics](#getmoderatorstatistics)** | Retrieves statistics for a specific moderator based on their activity                     |
-| **[gettransaction](#gettransaction)**                 | Retrieves detailed information about a specific transaction                               |
-| **[getaccountfollowers](#getaccountfollowers)**       | Retrieves a list of followers for a specific account                                      |
-| **[getaccountfollowings](#getaccountfollowings)**     | Retrieves a list of accounts that a specific user is following                            |
-| **[getaccountcontents](#getaccountcontents)**         | Retrieves contents associated with a specific account                                     |
-| **[getaccountcomments](#getaccountcomments)**         | Retrieves comments associated with a specific account                                     |
-| **[getaccountposts](#getaccountposts)**               | Retrieves posts associated with a specific account                                        |
-| **[getblockreward](#getblockreward)**                 | Retrieves reward information for a specific block                                         |
-| **[getblockcount](#getblockcount)**                   | Retrieves the current block count in the network                                          |
-| **[getnetworkhashrate](#getnetworkhashrate)**         | Retrieves the current network hash rate                                                   |
-| **[getnetworkinfo](#getnetworkinfo)**                 | Retrieves information about the network status and nodes                                  |
-| **[getrawtransaction](#getrawtransaction)**           | Retrieves raw transaction data for a given transaction ID                                 |
-| **[decoderawtransaction](#decoderawtransaction)**     | Decodes raw transaction data and returns detailed information about it                    |
-| **[validateaddress](#validateaddress)**               | Validates a specific address within the network                                           |
-| **[verifychain](#verifychain)**                       | Verifies the integrity of the blockchain                                                  |
-| **[getwalletinfo](#getwalletinfo)**                   | Retrieves general information about the wallet, such as balance and transactions          |
-| **[getblockhash](#getblockhash)**                     | Retrieves the block hash for a given block number                                         |
-| **[getmempoolinfo](#getmempoolinfo)**                 | Retrieves information about the current state of the memory pool                          |
-| **[getrawmempool](#getrawmempool)**                   | Retrieves a list of transactions currently in the memory pool                             |
-| **[getdifficulty](#getdifficulty)**                   | Retrieves the current difficulty of the network                                           |
-| **[getblocktemplate](#getblocktemplate)**             | Retrieves a block template for mining purposes                                            |
-| **[getnetworkstakeweight](#getnetworkstakeweight)**   | Retrieves the current stake weight of the network                                         |
-| **[getstakingstatus](#getstakingstatus)**             | Retrieves the current staking status of the network                                       |
-| **[getmintinginfo](#getmintinginfo)**                 | Retrieves the current minting information for the network                                 |
-| **[getblockchaininfo](#getblockchaininfo)**           | Retrieves detailed information about the state of the blockchain                          |
-| **[getchaintips](#getchaintips)**                     | Retrieves information about the chain tips in the blockchain                              |
-| **[getblocksubsidy](#getblocksubsidy)**               | Retrieves information about the block subsidy for a given block                           |
-| **[getblock](#getblock)**                             | Retrieves detailed information about a specific block                                     |
-| **[getbestblockhash](#getbestblockhash)**             | Retrieves the hash of the most recent (best) block                                        |
-| **[gettxout](#gettxout)**                             | Retrieves information about an unspent transaction output (UTXO)                          |
-| **[gettxoutproof](#gettxoutproof)**                   | Retrieves proof that an unspent transaction output (UTXO) is included in a block          |
-| **[verifytxoutproof](#verifytxoutproof)**             | Verifies the proof that an unspent transaction output (UTXO) is included in a block       |
+# Bastyon Proxy API Reference
 
+## Available Methods
 
-### `getapps`
+| Category | Method | Description |
+|----------|---------|-------------|
+| **Apps** | [GetApps](#getapps) | Retrieves a list of applications filtered by the given criteria |
+| | [GetAppScores](#getappscores) | Retrieves scores for a list of applications |
+| | [GetAppComments](#getappcomments) | Retrieves comments related to a specific application |
+| **User & Account** | [GetUserProfile](#getuserprofile) | Retrieves the profile information of a specific user |
+| | [GetUserState](#getuserstate) | Retrieves the state information of a specific user |
+| | [GetUserAddress](#getuseraddress) | Retrieves the addresses associated with a specific username |
+| | [GetUserStatistic](#getuserstatistic) | Retrieves statistics for a specific user based on activity |
+| | [GetUserSubscribes](#getusersubscribes) | Retrieves a list of users that a specific user is subscribed to |
+| | [GetUserSubscribers](#getusersubscribers) | Retrieves a list of subscribers for a specific user |
+| | [GetAccountSetting](#getaccountsetting) | Retrieves account settings information for a given address |
+| | [GetAddressId](#getaddressid) | Retrieves the unique identifier (ID) associated with a specific address |
+| | [GetAddressInfo](#getaddressinfo) | Retrieves detailed information about a specific address |
+| | [GetAddressRegistration](#getaddressregistration) | Retrieves the registration status for multiple addresses |
+| | [GetBalanceHistory](#getbalancehistory) | Retrieves the balance history for a list of addresses |
+| | [GetAccountEarning](#getaccountearning) | Retrieves the earning details of a specific account |
+| | [GetAccountEarningStats](#getaccountearningstats) | Retrieves detailed statistics on account earnings |
+| **Content & Social** | [GetContent](#getcontent) | Retrieves content based on provided hashes and address |
+| | [GetContents](#getcontents) | Retrieves content posted by a specific address |
+| | [GetComments](#getcomments) | Retrieves comments related to a specific post |
+| | [GetLastComments](#getlastcomments) | Retrieves the most recent comments from the network |
+| | [GetAccountContents](#getaccountcontents) | Retrieves contents associated with a specific account |
+| | [GetAccountComments](#getaccountcomments) | Retrieves comments associated with a specific account |
+| | [GetAccountPosts](#getaccountposts) | Retrieves posts associated with a specific account |
+| | [GetAccountFollowers](#getaccountfollowers) | Retrieves a list of followers for a specific account |
+| | [GetAccountFollowings](#getaccountfollowings) | Retrieves a list of accounts that a specific user is following |
+| | [GetAccountBlockings](#getaccountblockings) | Retrieves information about accounts blocked by a specific user |
+| | [GetAccountBlockers](#getaccountblockers) | Retrieves information about accounts that have blocked a specific user |
+| | [GetBans](#getbans) | Retrieves the ban status of a specific user |
+| | [GetTags](#gettags) | Retrieves a list of tags used within the network |
+| **Scoring** | [GetAddressScores](#getaddressscores) | Retrieves scores related to a specific address and posts |
+| | [GetPostScores](#getpostscores) | Retrieves scores for a specific post |
+| | [GetPageScores](#getpagescores) | Retrieves scores for multiple posts and comments |
+| **Blockchain** | [GetBlock](#getblock) | Retrieves detailed information about a specific block |
+| | [GetBlockCount](#getblockcount) | Retrieves the current block count in the network |
+| | [GetBlockHash](#getblockhash) | Retrieves the block hash for a given block number |
+| | [GetBlockTemplate](#getblocktemplate) | Retrieves a block template for mining purposes |
+| | [GetBlockTransactions](#getblocktransactions) | Retrieves transactions in a specific block |
+| | [GetCompactBlock](#getcompactblock) | Retrieves compact block data |
+| | [GetBlockReward](#getblockreward) | Retrieves reward information for a specific block |
+| | [GetBlockchainInfo](#getblockchaininfo) | Retrieves state of the blockchain |
+| | [GetBlockSubsidy](#getblocksubsidy) | Retrieves block subsidy information |
+| | [GetBestBlockHash](#getbestblockhash) | Retrieves the most recent block hash |
+| | [GetChainTips](#getchaintips) | Retrieves chain tips information |
+| | [VerifyChain](#verifychain) | Verifies the integrity of the blockchain |
+| **Transactions** | [GetTransaction](#gettransaction) | Retrieves transaction information |
+| | [GetRawTransaction](#getrawtransaction) | Retrieves raw transaction data |
+| | [DecodeRawTransaction](#decoderawtransaction) | Decodes raw transaction data |
+| | [GetAddressTransactions](#getaddresstransactions) | Retrieves transactions for an address |
+| | [AddTransaction](#addtransaction) | Adds a new transaction |
+| | [GenerateTransaction](#generatetransaction) | Generates a new transaction |
+| | [TxUnspent](#txunspent) | Retrieves unspent transaction outputs |
+| | [GetTxOut](#gettxout) | Retrieves UTXO information |
+| | [GetTxOutProof](#gettxoutproof) | Retrieves UTXO proof |
+| | [VerifyTxOutProof](#verifytxoutproof) | Verifies UTXO proof |
+| **Network & Node** | [GetNodeInfo](#getnodeinfo) | Retrieves information about the current node |
+| | [GetPeerInfo](#getpeerinfo) | Retrieves information about connected peers |
+| | [GetNetworkInfo](#getnetworkinfo) | Retrieves network status and nodes information |
+| | [GetNetworkHashrate](#getnetworkhashrate) | Retrieves current network hash rate |
+| | [GetTime](#gettime) | Retrieves current network time |
+| | [GetCoinInfo](#getcoininfo) | Retrieves general coin information |
+| | [GetMempoolInfo](#getmempoolinfo) | Retrieves memory pool state |
+| | [GetRawMempool](#getrawmempool) | Retrieves transactions in memory pool |
+| | [GetDifficulty](#getdifficulty) | Retrieves current network difficulty |
+| **Staking & Mining** | [GetPosDifficulty](#getposdifficulty) | Retrieves Proof-of-Stake difficulty |
+| | [GetNetworkStakeWeight](#getnetworkstakeweight) | Retrieves current stake weight |
+| | [GetStakingStatus](#getstakingstatus) | Retrieves staking status |
+| | [GetMintingInfo](#getmintinginfo) | Retrieves minting information |
+| **Jury System** | [GetJury](#getjury) | Retrieves specific jury information |
+| | [GetAllJury](#getalljury) | Retrieves all juries in network |
+| | [GetJuryAssigned](#getjuryassigned) | Retrieves jury assignments |
+| | [GetJuryModerators](#getjurymoderators) | Retrieves jury moderators |
+| | [GetJuryVotes](#getjuryvotes) | Retrieves jury votes |
+| | [GetJuryBalance](#getjurybalance) | Retrieves jury balance |
+| | [GetJuryList](#getjurylist) | Retrieves jury list |
+| | [GetJuryReward](#getjuryreward) | Retrieves jury rewards |
+| | [GetJuryVotesCount](#getjuryvotescount) | Retrieves vote counts |
+| | [GetModeratorStatistics](#getmoderatorstatistics) | Retrieves moderator activity statistics |
+| **Search & Discovery** | [Search](#search) | Searches content by keywords and type |
+| | [SearchUsers](#searchusers) | Searches users by criteria |
+| | [SearchLinks](#searchlinks) | Searches content by links |
+| **Wallet & Validation** | [GetWalletInfo](#getwalletinfo) | Retrieves wallet information |
+| | [ValidateAddress](#validateaddress) | Validates network address |
+| | [CheckStringType](#checkstringtype) | Checks string type in network context |
+| **System Info** | [GetMissedInfo](#getmissedinfo) | Retrieves missed blocks and transactions |
 
-**Description:** Retrieves a list of applications based on the provided parameters.
+## Apps Category
 
-- **Parameters:**
+### GetApps
+Retrieves a list of applications filtered by given criteria.
 
-- `params: GetAppsParams` - Object containing the parameters for the request.
-
-- `params.request: string` - The request string with the required information.
-
-**Returns:** `Promise<any>` - A promise that resolves with the list of applications.
-
-**Example:**
-
+**Parameters**
 ```typescript
-pocketNetProxy.rpc
-  .getapps({ request: 'exampleRequest' })
-
-  .then(response => console.log('Applications:', response))
-
-  .catch(error => console.error('Failed to fetch applications:', error))
+interface GetAppsParams {
+    request: string;  // Request string containing filter criteria for apps
+}
 ```
 
-
-### `getappscores`
-
-**Description:** Retrieves scores for a specific application.
-
-- **Parameters:**
-
-- `params: GetAppScoresParams` - Object containing the parameters for the request.
-
-- `params.request: string` - The request string with the required information.
-
-**Returns:** `Promise<any>` - A promise that resolves with the scores for the application.
-
-**Example:**
-
+**Usage**
 ```typescript
-pocketNetProxy.rpc
-  .getappscores({ request: 'exampleAppScoresRequest' })
-
-  .then(response => console.log('Application Scores:', response))
-
-  .catch(error =>
-    console.error('Failed to fetch application scores:', error),
-  )
+const response = await api.rpc.getapps({
+    request: "featured_apps"
+} satisfies GetAppsParams);
 ```
 
+### GetAppScores
+Retrieves scoring information for applications.
 
-### `getappcomments`
-
-**Description:** Retrieves comments for a specific application.
-
-- **Parameters:**
-
-- `params: GetAppCommentsParams` - Object containing the parameters for the request.
-
-- `params.request: string` - The request string with the required information.
-
-**Returns:** `Promise<any>` - A promise that resolves with the comments for the application.
-
-**Example:**
-
+**Parameters**
 ```typescript
-pocketNetProxy.rpc
-  .getappcomments({ request: 'exampleAppCommentsRequest' })
-
-  .then(response => console.log('Application Comments:', response))
-
-  .catch(error =>
-    console.error('Failed to fetch application comments:', error),
-  )
+interface GetAppScoresParams {
+    request: string;  // Request string specifying which app scores to retrieve
+}
 ```
 
-
-### `getuserprofile`
-
-**Description:** Retrieves profile information for a specific user.
-
-- **Parameters:**
-
-- `params: GetUserProfileParams` - Object containing the parameters for the request.
-
-- `params.address: string` - The address of the user.
-
-- `params.shortForm: string` - Indicates if the short form of the profile should be retrieved.
-
-**Returns:** `Promise<any>` - A promise that resolves with the user's profile information.
-
-**Example:**
-
+**Usage**
 ```typescript
-pocketNetProxy.rpc
-  .getuserprofile({ address: 'userAddress', shortForm: 'yes' })
-
-  .then(response => console.log('User Profile:', response))
-
-  .catch(error => console.error('Failed to fetch user profile:', error))
+const response = await api.rpc.getappscores({
+    request: "app_scores"
+} satisfies GetAppScoresParams);
 ```
 
+### GetAppComments
+Retrieves comments associated with a specific application.
 
-### `getjuryassigned`
-
-**Description:** Gets assigned jury information.
-
-- **Parameters:**
-
-- `params: GetJuryAssignedParams` - Object containing the parameters for the request.
-
-- `params.address: string` - Moderator address.
-
-- `params.verdict: boolean` - Verdict `1` or `0` (Default: `0`).
-
-- `params.topHeight: number` - Start height of pagination.
-
-- `params.pageStart: number` - Start page.
-
-- `params.pageSize: number` - Size of the page.
-
-- `params.orderBy: string` - Field to order by.
-
-- `params.desc: boolean` - Indicates if the order should be descending.
-
-**Returns:** `Promise<any>` - A promise that resolves with information about the assigned jury.
-
-**Example:**
-
+**Parameters**
 ```typescript
-pocketNetProxy.rpc
-  .getjuryassigned({
-    address: 'address',
-
-    verdict: true,
-
-    topHeight: 0,
-
-    pageStart: 0,
-
-    pageSize: 10,
-
-    orderBy: 'Height',
-
-    desc: true,
-  })
-
-  .then(response => console.log('Jury Assigned:', response))
-
-  .catch(error => console.error('Failed to fetch jury assignment:', error))
+interface GetAppCommentsParams {
+    request: string;  // Request string specifying which app comments to retrieve
+}
 ```
 
-
-### `getjurymoderators`
-
-**Description:** Retrieves information about jury moderators.
-
-- **Parameters:**
-
-- `params: GetJuryModeratorsParams` - Object containing the parameters for the request.
-
-- `params.jury: string` - The identifier of the jury.
-
-**Returns:** `Promise<any>` - A promise that resolves with the jury moderator information.
-
-**Example:**
-
+**Usage**
 ```typescript
-pocketNetProxy.rpc
-  .getjurymoderators({ jury: 'juryId' })
-
-  .then(response => console.log('Jury Moderators:', response))
-
-  .catch(error => console.error('Failed to fetch jury moderators:', error))
+const response = await api.rpc.getappcomments({
+    request: "app_comments"
+} satisfies GetAppCommentsParams);
 ```
 
+## User & Account Management
 
-### `getjury`
+### GetUserProfile
+Retrieves detailed profile information for a specific user.
 
-**Description:** Retrieves information about a specific jury.
-
-- **Parameters:**
-
-- `params: GetJuryParams` - Object containing the parameters for the request.
-
-- `params.jury: string` - The identifier of the jury.
-
-**Returns:** `Promise<any>` - A promise that resolves with the jury information.
-
-**Example:**
-
+**Parameters**
 ```typescript
-pocketNetProxy.rpc
-  .getjury({ jury: 'juryId' })
-
-  .then(response => console.log('Jury Information:', response))
-
-  .catch(error => console.error('Failed to fetch jury information:', error))
+interface GetUserProfileParams {
+    address: string;    // Blockchain address of the user
+    shortForm: string;  // Format of the response ("basic" or "detailed")
+}
 ```
 
-
-### `getalljury`
-
-**Description:** Retrieves information about all juries in the system.
-
-- **Parameters:** None
-
-**Returns:** `Promise<any>` - A promise that resolves with information about all juries.
-
-**Example:**
-
+**Usage**
 ```typescript
-pocketNetProxy.rpc
-  .getalljury()
-
-  .then(response => console.log('All Jury Information:', response))
-
-  .catch(error =>
-    console.error('Failed to fetch all jury information:', error),
-  )
+const response = await api.rpc.getuserprofile({
+    address: "user_blockchain_address",
+    shortForm: "basic"
+} satisfies GetUserProfileParams);
 ```
 
+### GetUserState
+Retrieves current state information for a specific user.
 
-### `getbans`
-
-**Description:** Retrieves ban information for a specific address.
-
-- **Parameters:**
-
-- `params: GetBansParams` - Object containing the parameters for the request.
-
-- `params.address: string` - The address to check for bans.
-
-**Returns:** `Promise<any>` - A promise that resolves with the ban information for the given address.
-
-**Example:**
-
+**Parameters**
 ```typescript
-pocketNetProxy.rpc
-  .getbans({ address: 'userAddress' })
-
-  .then(response => console.log('Ban Information:', response))
-
-  .catch(error => console.error('Failed to fetch ban information:', error))
+interface GetUserStateParams {
+    address: string;  // Blockchain address of the user
+}
 ```
 
-
-### `getaddressid`
-
-**Description:** Retrieves the unique identifier (ID) associated with a specific address. This method provides a way to map an address to its corresponding ID within the network.
-
-- **Parameters:**
-
-- `params: GetAddressIdParams` - Object containing the parameters for the request.
-
-- `params.address: string` - Address to retrieve the ID for.
-
-- `params.id: number` - Optional unique ID to include in the request.
-
-**Returns:** `Promise<any>` - A promise that resolves with the unique identifier for the specified address.
-
-**Example:**
-
+**Usage**
 ```typescript
-pocketNetProxy.rpc
-  .getaddressid({ address: 'userAddress', id: 12345 })
-
-  .then(response => console.log('Address ID:', response))
-
-  .catch(error => console.error('Failed to fetch address ID:', error))
+const response = await api.rpc.getuserstate({
+    address: "user_blockchain_address"
+} satisfies GetUserStateParams);
 ```
 
+### GetUserAddress
+Retrieves blockchain addresses associated with a username.
 
-### `getaddressregistration`
-
-**Description:** Retrieves the registration status of multiple addresses. This method checks if the provided addresses are registered within the network and returns their registration details.
-
-- **Parameters:**
-
-- `params: GetAddressRegistrationParams` - Object containing the parameters for the request.
-
-- `params.addresses: string[]` - Array of addresses to check registration status for.
-
-**Returns:** `Promise<any>` - A promise that resolves with the registration status for each of the specified addresses.
-
-**Example:**
-
+**Parameters**
 ```typescript
-pocketNetProxy.rpc
-  .getaddressregistration({ addresses: ['address1', 'address2'] })
-
-  .then(response => console.log('Address Registration Status:', response))
-
-  .catch(error =>
-    console.error('Failed to fetch address registration status:', error),
-  )
+interface GetUserAddressParams {
+    user_name: string;  // Username to look up
+    count: number;      // Number of addresses to return
+}
 ```
 
-
-### `getuserstate`
-
-**Description:** Retrieves the state of a specific user based on their address. This method provides information about the user's current state within the network, such as account balance, registration status, and other details.
-
-- **Parameters:**
-
-- `params: GetUserStateParams` - Object containing the parameters for the request.
-
-- `params.address: string` - Address of the user to retrieve the state for.
-
-**Returns:** `Promise<any>` - A promise that resolves with the user's state information.
-
-**Example:**
-
+**Usage**
 ```typescript
-pocketNetProxy.rpc
-  .getuserstate({ address: 'userAddress' })
-
-  .then(response => console.log('User State:', response))
-
-  .catch(error => console.error('Failed to fetch user state:', error))
+const response = await api.rpc.getuseraddress({
+    user_name: "username",
+    count: 1
+} satisfies GetUserAddressParams);
 ```
 
+### GetUserStatistic
+Retrieves statistical information about user activity.
 
-### `txunspent`
-
-**Description:** Retrieves a list of unspent transaction outputs (UTXOs) for the specified addresses. This method allows for filtering UTXOs based on the minimum and maximum number of confirmations.
-
-- **Parameters:**
-  - `params: TxUnspentParams` - Object containing the parameters for the request.
-  - **`params.addresses: string[]`** - Array of addresses to retrieve UTXOs for.
-  - **`params.minconf: number`** - Minimum number of confirmations required for UTXOs to be included in the response.
-  - **`params.maxconf: number`** - Maximum number of confirmations allowed for UTXOs to be included in the response.
-
-**Returns:** `Promise<any>` - A promise that resolves with a list of UTXOs for the specified addresses and confirmation range.
-
-**Example:**
-
+**Parameters**
 ```typescript
-pocketNetProxy.rpc
-  .txunspent({
-    addresses: ['address1', 'address2'],
-    minconf: 1,
-    maxconf: 100,
-  })
-  .then(response => console.log('Unspent Transaction Outputs:', response))
-  .catch(error => console.error('Failed to fetch UTXOs:', error))
+interface GetUserStatisticParams {
+    addresses: string[];  // Array of blockchain addresses
+    height: number;       // Block height for statistics
+    depthR: number;      // Rating depth to include
+    depthC: number;      // Comments depth to include
+    cntC: number;        // Number of comments to include
+}
 ```
 
-
-### `getaccountearning`
-
-**Description:** Retrieves the earning details of a specific account based on the provided address, block height, and depth. This method provides information about the rewards or earnings that the account has received within the specified block range.
-
-- **Parameters:**
-  - `params: GetAccountEarningParams` - Object containing the parameters for the request.
-  - **`params.address: string`** - Address of the account to get earning information for.
-  - **`params.height: number`** - Block height to start the search from.
-  - **`params.depth: number`** - The number of blocks to search for the earnings information. A higher depth means looking further back in the chain.
-
-**Returns:** `Promise<any>` - A promise that resolves with the earning details for the specified account and block range.
-
-**Example:**
-
+**Usage**
 ```typescript
-pocketNetProxy.rpc
-  .getaccountearning({
-    address: 'userAddress',
-    height: 150,
-    depth: 10,
-  })
-  .then(response => console.log('Account Earnings:', response))
-  .catch(error => console.error('Failed to fetch account earnings:', error))
+const response = await api.rpc.getuserstatistic({
+    addresses: ["address1", "address2"],
+    height: 1000,
+    depthR: 10,
+    depthC: 10,
+    cntC: 5
+} satisfies GetUserStatisticParams);
 ```
 
+### GetAddressId
+Retrieves the unique identifier associated with an address.
 
-### `getaddressinfo`
-
-**Description:** Retrieves detailed information about a specific address.
-
-- **Parameters:**
-
-- `params: GetAddressInfoParams` - Object containing the parameters for the request.
-
-- `params.address: string` - The address to get information for.
-
-**Returns:** `Promise<any>` - A promise that resolves with the address information.
-
-**Example:**
-
+**Parameters**
 ```typescript
-pocketNetProxy.rpc
-  .getaddressinfo({ address: 'userAddress' })
-
-  .then(response => console.log('Address Information:', response))
-
-  .catch(error =>
-    console.error('Failed to fetch address information:', error),
-  )
+interface GetAddressIdParams {
+    address: string;  // Blockchain address
+    id: number;      // Unique identifier
+}
 ```
 
-
-### `getbalancehistory`
-
-**Description:** Retrieves the balance history for a given set of addresses.
-
-- **Parameters:**
-
-- `params: GetBalanceHistoryParams` - Object containing the parameters for the request.
-
-- `params.addresses: string[]` - Array of user addresses.
-
-- `params.topHeight: number` - Top block height.
-
-- `params.count: number` - Number of history entries to retrieve.
-
-**Returns:** `Promise<any>` - A promise that resolves with the balance history information.
-
-**Example:**
-
+**Usage**
 ```typescript
-pocketNetProxy.rpc
-  .getbalancehistory({
-    addresses: ['address1', 'address2'],
-
-    topHeight: 100,
-
-    count: 5,
-  })
-
-  .then(response => console.log('Balance History:', response))
-
-  .catch(error => console.error('Failed to fetch balance history:', error))
+const response = await api.rpc.getaddressid({
+    address: "blockchain_address",
+    id: 12345
+} satisfies GetAddressIdParams);
 ```
 
+## Content & Social Features
 
-### `checkstringtype`
+### GetContent
 
-**Description:** Checks the type of a given string.
+Retrieves specific content using provided hashes.
 
-- **Parameters:**
-
-- `params: CheckStringTypeParams` - Object containing the parameters for the request.
-
-- `params.string: string` - The string to check.
-
-**Returns:** `Promise<any>` - A promise that resolves with the type information of the string.
-
-**Example:**
-
+**Parameters**
 ```typescript
-pocketNetProxy.rpc
-  .checkstringtype({ string: 'exampleString' })
-
-  .then(response => console.log('String Type:', response))
-
-  .catch(error => console.error('Failed to check string type:', error))
+interface GetContentParams {
+    hashes: string[];    // Array of content hashes to retrieve
+    address: string;     // User's blockchain address
+    last: boolean;       // Whether to get only the latest content
+}
 ```
 
-
-### `getaddresstransactions`
-
-**Description:** Retrieves transactions associated with a given address.
-
-- **Parameters:**
-
-- `params: GetAddressTransactionsParams` - Object containing the parameters for the request.
-
-- `params.address: string` - The address to get transactions for.
-
-- `params.pageInitBlock: number` - Page initial block number.
-
-- `params.pageStart: number` - Page start index.
-
-- `params.pageSize: number` - Page size.
-
-- `params.direction: number` - Direction of the search.
-
-- `params.txTypes: number[]` - Array of transaction types to filter by.
-
-**Returns:** `Promise<any>` - A promise that resolves with the address transactions.
-
-**Example:**
-
+**Usage**
 ```typescript
-pocketNetProxy.rpc
-  .getaddresstransactions({
-    address: 'userAddress',
-
-    pageInitBlock: 0,
-
-    pageStart: 0,
-
-    pageSize: 10,
-
-    direction: 1,
-
-    txTypes: [1, 2],
-  })
-
-  .then(response => console.log('Address Transactions:', response))
-
-  .catch(error =>
-    console.error('Failed to fetch address transactions:', error),
-  )
+const response = await api.rpc.getcontent({
+    hashes: ["hash1", "hash2"],
+    address: "user_address",
+    last: true
+} satisfies GetContentParams);
 ```
 
+### GetContents
+Retrieves all content for a specific address.
 
-### `getblocktransactions`
-
-**Description:** Retrieves transactions associated with a specific block.
-
-- **Parameters:**
-
-- `params: GetBlockTransactionsParams` - Object containing the parameters for the request.
-
-- `params.blockHash: string` - The hash of the block to get transactions for.
-
-- `params.pageStart: number` - Page start index.
-
-- `params.pageSize: number` - Page size.
-
-**Returns:** `Promise<any>` - A promise that resolves with the block transactions.
-
-**Example:**
-
+**Parameters**
 ```typescript
-pocketNetProxy.rpc
-  .getblocktransactions({
-    blockHash: 'blockHash',
-
-    pageStart: 0,
-
-    pageSize: 10,
-  })
-
-  .then(response => console.log('Block Transactions:', response))
-
-  .catch(error =>
-    console.error('Failed to fetch block transactions:', error),
-  )
+interface GetContentsParams {
+    address: string;    // User's blockchain address
+}
 ```
 
-
-### `getcompactblock`
-
-**Description:** Retrieves compact information about a specific block.
-
-- **Parameters:**
-
-- `params: GetCompactBlockParams` - Object containing the parameters for the request.
-
-- `params.blockhash: string` - The hash of the block to get information for.
-
-- `params.blocknumber: number` - The number of the block to get information for.
-
-**Returns:** `Promise<any>` - A promise that resolves with the compact block information.
-
-**Example:**
-
+**Usage**
 ```typescript
-pocketNetProxy.rpc
-  .getcompactblock({ blockhash: 'blockHash', blocknumber: 100 })
-
-  .then(response => console.log('Compact Block Information:', response))
-
-  .catch(error =>
-    console.error('Failed to fetch compact block information:', error),
-  )
+const response = await api.rpc.getcontents({
+    address: "user_address"
+} satisfies GetContentsParams);
 ```
 
+### GetComments
+Retrieves comments for a specific post.
 
-### `getaddressscores`
-
-**Description:** Retrieves scores for posts associated with a given address.
-
-- **Parameters:**
-
-- `params: GetAddressScoresParams` - Object containing the parameters for the request.
-
-- `params.address: string` - The address to get scores for.
-
-- `params.postHashes: string[]` - Array of post hashes.
-
-**Returns:** `Promise<any>` - A promise that resolves with the scores for the posts.
-
-**Example:**
-
+**Parameters**
 ```typescript
-pocketNetProxy.rpc
-  .getaddressscores({
-    address: 'userAddress',
-
-    postHashes: ['postHash1', 'postHash2'],
-  })
-
-  .then(response => console.log('Address Scores:', response))
-
-  .catch(error => console.error('Failed to fetch address scores:', error))
+interface GetCommentsParams {
+    postid: number;           // ID of the post
+    parentid?: number;        // Optional parent comment ID for threaded comments
+    address?: string;         // Optional: filter by commenter address
+    commend_ids?: string[];   // Optional: specific comment IDs to retrieve
+}
 ```
 
-
-### `getpostscores`
-
-**Description:** Retrieves scores for a specific post.
-
-- **Parameters:**
-
-- `params: GetPostScoresParams` - Object containing the parameters for the request.
-
-- `params.postTxHash: string` - The transaction hash of the post to get scores for.
-
-**Returns:** `Promise<any>` - A promise that resolves with the post scores.
-
-**Example:**
-
+**Usage**
 ```typescript
-pocketNetProxy.rpc
-  .getpostscores({ postTxHash: 'postTxHash' })
-
-  .then(response => console.log('Post Scores:', response))
-
-  .catch(error => console.error('Failed to fetch post scores:', error))
-```
-
-
-### `getpagescores`
-
-**Description:** Retrieves scores for pages associated with a given address.
-
-- **Parameters:**
-
-- `params: GetPageScoresParams` - Object containing the parameters for the request.
-
-- `params.postHashes: string[]` - Array of post hashes.
-
-- `params.address: string` - The address to get scores for.
-
-- `params.commentHashes: string[]` - Array of comment hashes.
-
-**Returns:** `Promise<any>` - A promise that resolves with the page scores.
-
-**Example:**
-
-```typescript
-pocketNetProxy.rpc
-  .getpagescores({
-    postHashes: ['postHash1', 'postHash2'],
-
-    address: 'userAddress',
-
-    commentHashes: ['commentHash1', 'commentHash2'],
-  })
-
-  .then(response => console.log('Page Scores:', response))
-
-  .catch(error => console.error('Failed to fetch page scores:', error))
-```
-
-
-### `getcomments`
-
-**Description:** Retrieves comments for a specific post.
-
-- **Parameters:**
-
-- `params: GetCommentsParams` - Object containing the parameters for the request.
-
-- `params.postid: number` - The ID of the post to get comments for.
-
-- `params.parentid?: number` - Optional parent comment ID.
-
-- `params.address?: string` - Optional address to filter by.
-
-- `params.commend_ids?: string[]` - Optional array of comment IDs to filter by.
-
-**Returns:** `Promise<any>` - A promise that resolves with the comments for the post.
-
-**Example:**
-
-```typescript
-pocketNetProxy.rpc
-  .getcomments({
-    postid: 123,
-
+const response = await api.rpc.getcomments({
+    postid: 12345,
     parentid: 0,
-
-    address: 'userAddress',
-
-    commend_ids: ['comment1', 'comment2'],
-  })
-
-  .then(response => console.log('Comments:', response))
-
-  .catch(error => console.error('Failed to fetch comments:', error))
+    address: "commenter_address"
+} satisfies GetCommentsParams);
 ```
 
+### GetLastComments
+Retrieves the most recent comments from the network.
 
-### `getlastcomments`
-
-**Description:** Retrieves the last comments in the system.
-
-- **Parameters:**
-
-- `params: GetLastCommentsParams` - Object containing the parameters for the request.
-
-- `params.count: number` - Number of comments to retrieve.
-
-**Returns:** `Promise<any>` - A promise that resolves with the last comments.
-
-**Example:**
-
+**Parameters**
 ```typescript
-pocketNetProxy.rpc
-  .getlastcomments({ count: 10 })
-
-  .then(response => console.log('Last Comments:', response))
-
-  .catch(error => console.error('Failed to fetch last comments:', error))
+interface GetLastCommentsParams {
+    count: number;    // Number of recent comments to retrieve
+}
 ```
 
-
-_(Note: Continue formatting the remaining methods in the same way, ensuring each method includes the description, parameters, returns, and example usage in proper Markdown format.)_
-
-
-### `getcontent`
-
-**Description:** Retrieves content for a specific post.
-
-- **Parameters:**
-
-- `params: GetContentParams` - Object containing the parameters for the request.
-
-- `params.postTxHash: string` - The transaction hash of the post.
-
-**Returns:** `Promise<any>` - A promise that resolves with the post content.
-
-**Example:**
-
+**Usage**
 ```typescript
-pocketNetProxy.rpc
-  .getcontent({ postTxHash: 'postTxHash' })
-
-  .then(response => console.log('Post Content:', response))
-
-  .catch(error => console.error('Failed to fetch post content:', error))
+const response = await api.rpc.getlastcomments({
+    count: 10
+} satisfies GetLastCommentsParams);
 ```
 
+### GetAccountContents
 
-### `getcontents`
+Retrieves all content associated with an account.
 
-**Description:** Retrieves contents for multiple posts.
-
-- **Parameters:**
-
-- `params: GetContentsParams` - Object containing the parameters for the request.
-
-- `params.postTxHashes: string[]` - Array of post transaction hashes.
-
-**Returns:** `Promise<any>` - A promise that resolves with the posts' contents.
-
-**Example:**
-
+**Parameters**
 ```typescript
-pocketNetProxy.rpc
-  .getcontents({ postTxHashes: ['postTxHash1', 'postTxHash2'] })
-
-  .then(response => console.log('Posts Content:', response))
-
-  .catch(error => console.error('Failed to fetch posts content:', error))
+interface GetAccountContentsParams {
+    address: string;     // Account's blockchain address
+    orderby: string;     // Field to order results by
+    orderdesc: boolean;  // Order direction
+    offset: number;      // Pagination offset
+    limit: number;       // Results per page
+}
 ```
 
-
-### `getuseraddress`
-
-**Description:** Retrieves the address associated with a specific username.
-
-- **Parameters:**
-
-- `params: GetUserAddressParams` - Object containing the parameters for the request.
-
-- `params.username: string` - The username to get the address for.
-
-**Returns:** `Promise<any>` - A promise that resolves with the user's address.
-
-**Example:**
-
+**Usage**
 ```typescript
-pocketNetProxy.rpc
-  .getuseraddress({ username: 'userName' })
-
-  .then(response => console.log('User Address:', response))
-
-  .catch(error => console.error('Failed to fetch user address:', error))
-```
-
-
-### `getusersubscribes`
-
-**Description:** Retrieves the list of users that a specific user is subscribed to.
-
-- **Parameters:**
-
-- `params: GetUserSubscribesParams` - Object containing the parameters for the request.
-
-- `params.address: string` - The address of the user.
-
-**Returns:** `Promise<any>` - A promise that resolves with the list of subscriptions.
-
-**Example:**
-
-```typescript
-pocketNetProxy.rpc
-  .getusersubscribes({ address: 'userAddress' })
-
-  .then(response => console.log('User Subscriptions:', response))
-
-  .catch(error =>
-    console.error('Failed to fetch user subscriptions:', error),
-  )
-```
-
-
-### `getusersubscribers`
-
-**Description:** Retrieves the list of users that are subscribed to a specific user.
-
-- **Parameters:**
-
-- `params: GetUserSubscribersParams` - Object containing the parameters for the request.
-
-- `params.address: string` - The address of the user.
-
-**Returns:** `Promise<any>` - A promise that resolves with the list of subscribers.
-
-**Example:**
-
-```typescript
-pocketNetProxy.rpc
-  .getusersubscribers({ address: 'userAddress' })
-
-  .then(response => console.log('User Subscribers:', response))
-
-  .catch(error => console.error('Failed to fetch user subscribers:', error))
-```
-
-
-### `getaccountsetting`
-
-**Description:** Retrieves the account settings for a specific user.
-
-- **Parameters:**
-
-- `params: GetAccountSettingParams` - Object containing the parameters for the request.
-
-- `params.address: string` - The address of the user.
-
-**Returns:** `Promise<any>` - A promise that resolves with the account settings.
-
-**Example:**
-
-```typescript
-pocketNetProxy.rpc
-  .getaccountsetting({ address: 'userAddress' })
-
-  .then(response => console.log('Account Settings:', response))
-
-  .catch(error => console.error('Failed to fetch account settings:', error))
-```
-
-
-### `getuserstatistic`
-
-**Description:** Retrieves statistics for a specific user.
-
-- **Parameters:**
-
-- `params: GetUserStatisticParams` - Object containing the parameters for the request.
-
-- `params.address: string` - The address of the user.
-
-**Returns:** `Promise<any>` - A promise that resolves with the user's statistics.
-
-**Example:**
-
-```typescript
-pocketNetProxy.rpc
-  .getuserstatistic({ address: 'userAddress' })
-
-  .then(response => console.log('User Statistics:', response))
-
-  .catch(error => console.error('Failed to fetch user statistics:', error))
-```
-
-
-### `gettime`
-
-**Description:** Retrieves the current server time.
-
-- **Parameters:** None
-
-**Returns:** `Promise<any>` - A promise that resolves with the current server time.
-
-**Example:**
-
-```typescript
-pocketNetProxy.rpc
-  .gettime()
-
-  .then(response => console.log('Server Time:', response))
-
-  .catch(error => console.error('Failed to fetch server time:', error))
-```
-
-
-### `getcontent`
-
-**Description:** Retrieves content based on the given hashes and address.
-
-- **Parameters:**
-
-- `params: GetContentParams` - Object containing the parameters for the request.
-
-- `params.hashes: string[]` - Array of hashes representing the content to be retrieved.
-
-- `params.address: string` - Address to use for additional filtering or validation.
-
-- `params.last: boolean` - Flag indicating if only the latest content should be retrieved.
-
-**Returns:** `Promise<any>` - A promise that resolves with the content information based on the provided hashes.
-
-**Example:**
-
-```typescript
-pocketNetProxy.rpc
-  .getcontent({
-    hashes: ['hash1', 'hash2'],
-
-    address: 'userAddress',
-
-    last: true,
-  })
-
-  .then(response => console.log('Content:', response))
-
-  .catch(error => console.error('Failed to fetch content:', error))
-```
-
-
-### `getcontents`
-
-**Description:** Retrieves contents related to a specific address.
-
-- **Parameters:**
-
-- `params: GetContentsParams` - Object containing the parameters for the request.
-
-- `params.address: string` - Address to filter the contents by.
-
-**Returns:** `Promise<any>` - A promise that resolves with the list of contents related to the provided address.
-
-**Example:**
-
-```typescript
-pocketNetProxy.rpc
-  .getcontents({ address: 'userAddress' })
-
-  .then(response => console.log('Contents:', response))
-
-  .catch(error => console.error('Failed to fetch contents:', error))
-```
-
-
-### `getuseraddress`
-
-**Description:** Retrieves the address associated with a given user name.
-
-- **Parameters:**
-
-- `params: GetUserAddressParams` - Object containing the parameters for the request.
-
-- `params.user_name: string` - The user name to get the address for.
-
-- `params.count: number` - Number of addresses to retrieve.
-
-**Returns:** `Promise<any>` - A promise that resolves with the address information.
-
-**Example:**
-
-```typescript
-pocketNetProxy.rpc
-  .getuseraddress({
-    user_name: 'username',
-
-    count: 1,
-  })
-
-  .then(response => console.log('User Address:', response))
-
-  .catch(error => console.error('Failed to fetch user address:', error))
-```
-
-
-### `getusersubscribes`
-
-**Description:** Retrieves the list of subscriptions for a specific user.
-
-- **Parameters:**
-
-- `params: GetUserSubscribesParams` - Object containing the parameters for the request.
-
-- `params.address: string` - Address of the user to retrieve subscriptions for.
-
-- `params.orderby: string` - Field to order the results by.
-
-- `params.orderdesc: boolean` - Flag indicating whether to order results in descending order.
-
-- `params.offset: number` - Offset for pagination.
-
-- `params.limit: number` - Limit of results per page.
-
-**Returns:** `Promise<any>` - A promise that resolves with the list of user subscriptions.
-
-**Example:**
-
-```typescript
-pocketNetProxy.rpc
-  .getusersubscribes({
-    address: 'userAddress',
-
-    orderby: 'created',
-
+const response = await api.rpc.getaccountcontents({
+    address: "user_address",
+    orderby: "date",
     orderdesc: true,
-
     offset: 0,
-
-    limit: 10,
-  })
-
-  .then(response => console.log('User Subscriptions:', response))
-
-  .catch(error =>
-    console.error('Failed to fetch user subscriptions:', error),
-  )
+    limit: 20
+} satisfies GetAccountContentsParams);
 ```
 
+### GetAccountComments
+Retrieves all comments made by an account.
 
-### `getusersubscribers`
-
-**Description:** Retrieves the list of subscribers for a specific user.
-
-- **Parameters:**
-
-- `params: GetUserSubscribersParams` - Object containing the parameters for the request.
-
-- `params.address: string` - Address of the user to retrieve subscribers for.
-
-- `params.orderby: string` - Field to order the results by.
-
-- `params.orderdesc: boolean` - Flag indicating whether to order results in descending order.
-
-- `params.offset: number` - Offset for pagination.
-
-- `params.limit: number` - Limit of results per page.
-
-**Returns:** `Promise<any>` - A promise that resolves with the list of user subscribers.
-
-**Example:**
-
+**Parameters**
 ```typescript
-pocketNetProxy.rpc
-  .getusersubscribers({
-    address: 'userAddress',
+interface GetAccountCommentsParams {
+    address: string;     // Account's blockchain address
+    orderby: string;     // Field to order results by
+    orderdesc: boolean;  // Order direction
+    offset: number;      // Pagination offset
+    limit: number;       // Results per page
+}
+```
 
-    orderby: 'created',
-
+**Usage**
+```typescript
+const response = await api.rpc.getaccountcomments({
+    address: "user_address",
+    orderby: "date",
     orderdesc: true,
-
     offset: 0,
-
-    limit: 10,
-  })
-
-  .then(response => console.log('User Subscribers:', response))
-
-  .catch(error => console.error('Failed to fetch user subscribers:', error))
+    limit: 20
+} satisfies GetAccountCommentsParams);
 ```
 
+### GetAccountFollowers
+Retrieves list of account followers.
 
-### `getaccountsetting`
-
-**Description:** Retrieves account settings for a specific address.
-
-- **Parameters:**
-
-- `params: GetAccountSettingParams` - Object containing the parameters for the request.
-
-- `params.address: string` - Address of the account to retrieve settings for.
-
-**Returns:** `Promise<any>` - A promise that resolves with the account settings.
-
-**Example:**
-
+**Parameters**
 ```typescript
-pocketNetProxy.rpc
-  .getaccountsetting({ address: 'userAddress' })
-
-  .then(response => console.log('Account Settings:', response))
-
-  .catch(error => console.error('Failed to fetch account settings:', error))
+interface GetUserSubscribesParams {
+    address: string;     // Account's blockchain address
+    orderby: string;     // Field to order results by
+    orderdesc: boolean;  // Order direction
+    offset: number;      // Pagination offset
+    limit: number;       // Results per page
+}
 ```
 
-
-### `getuserstatistic`
-
-**Description:** Retrieves user statistics based on the provided parameters.
-
-- **Parameters:**
-
-- `params: GetUserStatisticParams` - Object containing the parameters for the request.
-
-- `params.addresses: string[]` - Array of addresses to retrieve statistics for.
-
-- `params.height: number` - The block height to consider.
-
-- `params.depthR: number` - Depth of ratings to include.
-
-- `params.depthC: number` - Depth of comments to include.
-
-- `params.cntC: number` - Number of comments to include.
-
-**Returns:** `Promise<any>` - A promise that resolves with the user statistics.
-
-**Example:**
-
+**Usage**
 ```typescript
-pocketNetProxy.rpc
-  .getuserstatistic({
-    addresses: ['address1', 'address2'],
-
-    height: 100,
-
-    depthR: 10,
-
-    depthC: 5,
-
-    cntC: 20,
-  })
-
-  .then(response => console.log('User Statistics:', response))
-
-  .catch(error => console.error('Failed to fetch user statistics:', error))
-```
-
-
-### `gettime`
-
-**Description:** Retrieves the current time of the network.
-
-- **Parameters:** None.
-
-**Returns:** `Promise<any>` - A promise that resolves with the current network time.
-
-**Example:**
-
-```typescript
-pocketNetProxy.rpc
-  .gettime()
-
-  .then(response => console.log('Network Time:', response))
-
-  .catch(error => console.error('Failed to fetch network time:', error))
-```
-
-
-### `getpeerinfo`
-
-**Description:** Retrieves information about connected peers.
-
-- **Parameters:** None.
-
-**Returns:** `Promise<any>` - A promise that resolves with the peer information.
-
-**Example:**
-
-```typescript
-pocketNetProxy.rpc
-  .getpeerinfo()
-
-  .then(response => console.log('Peer Information:', response))
-
-  .catch(error => console.error('Failed to fetch peer information:', error))
-```
-
-
-### `getnodeinfo`
-
-**Description:** Retrieves information about the node.
-
-- **Parameters:** None.
-
-**Returns:** `Promise<any>` - A promise that resolves with the node information.
-
-**Example:**
-
-```typescript
-pocketNetProxy.rpc
-  .getnodeinfo()
-
-  .then(response => console.log('Node Information:', response))
-
-  .catch(error => console.error('Failed to fetch node information:', error))
-```
-
-
-### `getcoininfo`
-
-**Description:** Retrieves information about the coin.
-
-- **Parameters:**
-
-- `params: GetCoinInfoParams` - Object containing the parameters for the request.
-
-- `params.height?: number` - Optional block height to retrieve the coin information for.
-
-**Returns:** `Promise<any>` - A promise that resolves with the coin information.
-
-**Example:**
-
-```typescript
-pocketNetProxy.rpc
-  .getcoininfo({ height: 100 })
-
-  .then(response => console.log('Coin Information:', response))
-
-  .catch(error => console.error('Failed to fetch coin information:', error))
-```
-
-
-### `getcontent`
-
-**Description:** Retrieves content based on the given hashes and address.
-
-- **Parameters:**
-
-- `params: GetContentParams` - Object containing the parameters for the request.
-
-- `params.hashes: string[]` - Array of hashes representing the content to be retrieved.
-
-- `params.address: string` - Address to use for additional filtering or validation.
-
-- `params.last: boolean` - Flag indicating if only the latest content should be retrieved.
-
-**Returns:** `Promise<any>` - A promise that resolves with the content information based on the provided hashes.
-
-**Example:**
-
-```typescript
-pocketNetProxy.rpc
-  .getcontent({
-    hashes: ['hash1', 'hash2'],
-
-    address: 'userAddress',
-
-    last: true,
-  })
-
-  .then(response => console.log('Content:', response))
-
-  .catch(error => console.error('Failed to fetch content:', error))
-```
-
-
-### `getcontents`
-
-**Description:** Retrieves contents related to a specific address.
-
-- **Parameters:**
-
-- `params: GetContentsParams` - Object containing the parameters for the request.
-
-- `params.address: string` - Address to filter the contents by.
-
-**Returns:** `Promise<any>` - A promise that resolves with the list of contents related to the provided address.
-
-**Example:**
-
-```typescript
-pocketNetProxy.rpc
-  .getcontents({ address: 'userAddress' })
-
-  .then(response => console.log('Contents:', response))
-
-  .catch(error => console.error('Failed to fetch contents:', error))
-```
-
-
-### `getuseraddress`
-
-**Description:** Retrieves the address associated with a given user name.
-
-- **Parameters:**
-
-- `params: GetUserAddressParams` - Object containing the parameters for the request.
-
-- `params.user_name: string` - The user name to get the address for.
-
-- `params.count: number` - Number of addresses to retrieve.
-
-**Returns:** `Promise<any>` - A promise that resolves with the address information.
-
-**Example:**
-
-```typescript
-pocketNetProxy.rpc
-  .getuseraddress({
-    user_name: 'username',
-
-    count: 1,
-  })
-
-  .then(response => console.log('User Address:', response))
-
-  .catch(error => console.error('Failed to fetch user address:', error))
-```
-
-
-### `getusersubscribes`
-
-**Description:** Retrieves the list of subscriptions for a specific user.
-
-- **Parameters:**
-
-- `params: GetUserSubscribesParams` - Object containing the parameters for the request.
-
-- `params.address: string` - Address of the user to retrieve subscriptions for.
-
-- `params.orderby: string` - Field to order the results by.
-
-- `params.orderdesc: boolean` - Flag indicating whether to order results in descending order.
-
-- `params.offset: number` - Offset for pagination.
-
-- `params.limit: number` - Limit of results per page.
-
-**Returns:** `Promise<any>` - A promise that resolves with the list of user subscriptions.
-
-**Example:**
-
-```typescript
-pocketNetProxy.rpc
-  .getusersubscribes({
-    address: 'userAddress',
-
-    orderby: 'created',
-
+const response = await api.rpc.getaccountfollowers({
+    address: "user_address",
+    orderby: "date",
     orderdesc: true,
-
     offset: 0,
-
-    limit: 10,
-  })
-
-  .then(response => console.log('User Subscriptions:', response))
-
-  .catch(error =>
-    console.error('Failed to fetch user subscriptions:', error),
-  )
+    limit: 20
+} satisfies GetUserSubscribesParams);
 ```
 
+### GetAccountFollowings
+Retrieves list of accounts being followed.
 
-### `getusersubscribers`
-
-**Description:** Retrieves the list of subscribers for a specific user.
-
-- **Parameters:**
-
-- `params: GetUserSubscribersParams` - Object containing the parameters for the request.
-
-- `params.address: string` - Address of the user to retrieve subscribers for.
-
-- `params.orderby: string` - Field to order the results by.
-
-- `params.orderdesc: boolean` - Flag indicating whether to order results in descending order.
-
-- `params.offset: number` - Offset for pagination.
-
-- `params.limit: number` - Limit of results per page.
-
-**Returns:** `Promise<any>` - A promise that resolves with the list of user subscribers.
-
-**Example:**
-
+**Parameters**
 ```typescript
-pocketNetProxy.rpc
-  .getusersubscribers({
-    address: 'userAddress',
+interface GetUserSubscribesParams {
+    address: string;     // Account's blockchain address
+    orderby: string;     // Field to order results by
+    orderdesc: boolean;  // Order direction
+    offset: number;      // Pagination offset
+    limit: number;       // Results per page
+}
+```
 
-    orderby: 'created',
-
+**Usage**
+```typescript
+const response = await api.rpc.getaccountfollowings({
+    address: "user_address",
+    orderby: "date",
     orderdesc: true,
-
     offset: 0,
-
-    limit: 10,
-  })
-
-  .then(response => console.log('User Subscribers:', response))
-
-  .catch(error => console.error('Failed to fetch user subscribers:', error))
+    limit: 20
+} satisfies GetUserSubscribesParams);
 ```
 
+## Scoring Features
 
-### `getaccountsetting`
+### GetAddressScores
+Retrieves scores associated with an address.
 
-**Description:** Retrieves account settings for a specific address.
-
-- **Parameters:**
-
-- `params: GetAccountSettingParams` - Object containing the parameters for the request.
-
-- `params.address: string` - Address of the account to retrieve settings for.
-
-**Returns:** `Promise<any>` - A promise that resolves with the account settings.
-
-**Example:**
-
+**Parameters**
 ```typescript
-pocketNetProxy.rpc
-  .getaccountsetting({ address: 'userAddress' })
-
-  .then(response => console.log('Account Settings:', response))
-
-  .catch(error => console.error('Failed to fetch account settings:', error))
+interface GetAddressScoresParams {
+    address: string;      // User's blockchain address
+    postHashes: string[]; // Array of post hashes to get scores for
+}
 ```
 
-
-### `getuserstatistic`
-
-**Description:** Retrieves user statistics based on the provided parameters.
-
-- **Parameters:**
-
-- `params: GetUserStatisticParams` - Object containing the parameters for the request.
-
-- `params.addresses: string[]` - Array of addresses to retrieve statistics for.
-
-- `params.height: number` - The block height to consider.
-
-- `params.depthR: number` - Depth of ratings to include.
-
-- `params.depthC: number` - Depth of comments to include.
-
-- `params.cntC: number` - Number of comments to include.
-
-**Returns:** `Promise<any>` - A promise that resolves with the user statistics.
-
-**Example:**
-
+**Usage**
 ```typescript
-pocketNetProxy.rpc
-  .getuserstatistic({
-    addresses: ['address1', 'address2'],
-
-    height: 100,
-
-    depthR: 10,
-
-    depthC: 5,
-
-    cntC: 20,
-  })
-
-  .then(response => console.log('User Statistics:', response))
-
-  .catch(error => console.error('Failed to fetch user statistics:', error))
+const response = await api.rpc.getaddressscores({
+    address: "user_address",
+    postHashes: ["hash1", "hash2"]
+} satisfies GetAddressScoresParams);
 ```
 
+## Blockchain Operations
 
-### `gettime`
+### GetBlock
+Retrieves detailed information about a specific block.
 
-**Description:** Retrieves the current time of the network.
-
-- **Parameters:** None.
-
-**Returns:** `Promise<any>` - A promise that resolves with the current network time.
-
-**Example:**
-
+**Parameters**
 ```typescript
-pocketNetProxy.rpc
-  .gettime()
-
-  .then(response => console.log('Network Time:', response))
-
-  .catch(error => console.error('Failed to fetch network time:', error))
+interface GetCompactBlockParams {
+    blockhash: string;    // Hash of the block to retrieve
+    blocknumber: number;  // Block number to retrieve
+}
 ```
 
-
-### `getpeerinfo`
-
-**Description:** Retrieves information about connected peers.
-
-- **Parameters:** None.
-
-**Returns:** `Promise<any>` - A promise that resolves with the peer information.
-
-**Example:**
-
+**Usage**
 ```typescript
-pocketNetProxy.rpc
-  .getpeerinfo()
-
-  .then(response => console.log('Peer Information:', response))
-
-  .catch(error => console.error('Failed to fetch peer information:', error))
+const response = await api.rpc.getblock({
+    blockhash: "block_hash_string",
+    blocknumber: 12345
+} satisfies GetCompactBlockParams);
 ```
 
+### GetBlockCount
+Retrieves the current block count in the network.
 
-### `getnodeinfo`
-
-**Description:** Retrieves information about the node.
-
-- **Parameters:** None.
-
-**Returns:** `Promise<any>` - A promise that resolves with the node information.
-
-**Example:**
-
+**Parameters**
 ```typescript
-pocketNetProxy.rpc
-  .getnodeinfo()
-
-  .then(response => console.log('Node Information:', response))
-
-  .catch(error => console.error('Failed to fetch node information:', error))
+interface GetUserSubscribesParams {
+    address: string;     // Required for authentication
+    orderby: string;     // Ordering field
+    orderdesc: boolean;  // Order direction
+    offset: number;      // Pagination offset
+    limit: number;       // Results per page
+}
 ```
 
-
-### `getcoininfo`
-
-**Description:** Retrieves information about the coin.
-
-- **Parameters:**
-
-- `params: GetCoinInfoParams` - Object containing th### `getposdifficulty`
-
-**Description:** Retrieves the Proof-of-Stake (PoS) difficulty information for the network.
-
-- **Parameters:**
-
-- `params: GetPosDifficultyParams` - Object containing the parameters for the request.
-
-- `params.height?: number` - Optional block height to retrieve the PoS difficulty for.
-
-**Returns:** `Promise<any>` - A promise that resolves with the PoS difficulty information.
-
-**Example:**
-
+**Usage**
 ```typescript
-pocketNetProxy.rpc
-  .getposdifficulty({ height: 100 })
-
-  .then(response => console.log('PoS Difficulty Information:', response))
-
-  .catch(error =>
-    console.error('Failed to fetch PoS difficulty information:', error),
-  )
+const response = await api.rpc.getblockcount({
+    address: "user_address",
+    orderby: "height",
+    orderdesc: true,
+    offset: 0,
+    limit: 1
+} satisfies GetUserSubscribesParams);
 ```
 
+### GetBlockHash
+Retrieves the block hash for a given block number.
 
-### `getposdifficulty`
-
-**Description:** Retrieves the Proof-of-Stake (PoS) difficulty information for the network at a specific block height, or for the current block if no height is provided.
-
-- **Parameters:**
-  - `params: GetPosDifficultyParams` - Object containing the parameters for the request.
-  - **`params.height?: number`** - Optional block height to retrieve the PoS difficulty for. If omitted, the current PoS difficulty is retrieved.
-
-**Returns:** `Promise<any>` - A promise that resolves with the PoS difficulty information for the specified height or the current difficulty if no height is provided.
-
-**Example:**
-
+**Parameters**
 ```typescript
-pocketNetProxy.rpc
-  .getposdifficulty({ height: 200 })
-  .then(response => console.log('PoS Difficulty Information:', response))
-  .catch(error =>
-    console.error('Failed to fetch PoS difficulty information:', error),
-  )
-
-// Example without specifying height (retrieves current PoS difficulty)
-pocketNetProxy.rpc
-  .getposdifficulty()
-  .then(response => console.log('Current PoS Difficulty:', response))
-  .catch(error =>
-    console.error('Failed to fetch current PoS difficulty:', error),
-  )
+interface GetCompactBlockParams {
+    blockhash: string;    // Previous block hash
+    blocknumber: number;  // Block number to get hash for
+}
 ```
 
-
-### `gettags`
-
-**Description:** Retrieves a list of tags used in the network.
-
-- **Parameters:**
-
-- `params: GetTagsParams` - Object containing the parameters for the request.
-
-- `params.pageStart: number` - Start index for pagination.
-
-- `params.pageSize: number` - Number of items per page.
-
-- `params.lang: string` - Language to filter the tags by.
-
-**Returns:** `Promise<any>` - A promise that resolves with the list of tags.
-
-**Example:**
-
+**Usage**
 ```typescript
-pocketNetProxy.rpc
-  .gettags({ pageStart: 0, pageSize: 10, lang: 'en' })
-
-  .then(response => console.log('Tags:', response))
-
-  .catch(error => console.error('Failed to fetch tags:', error))
+const response = await api.rpc.getblockhash({
+    blockhash: "previous_block_hash",
+    blocknumber: 12345
+} satisfies GetCompactBlockParams);
 ```
 
+### GetBlockTemplate
+Retrieves a block template for mining purposes.
 
-### `addtransaction`
-
-**Description:** Adds a new transaction to the network.
-
-- **Parameters:**
-
-- `params: AddTransactionParams` - Object containing the parameters for the request.
-
-- `params.param1: string` - First parameter required for the transaction.
-
-- `params.param2: Record<string, any>` - Additional transaction details.
-
-**Returns:** `Promise<any>` - A promise that resolves with the result of the transaction addition.
-
-**Example:**
-
+**Parameters**
 ```typescript
-pocketNetProxy.rpc
-  .addtransaction({
-    param1: 'value1',
-
-    param2: { key: 'value' },
-  })
-
-  .then(response => console.log('Transaction Added:', response))
-
-  .catch(error => console.error('Failed to add transaction:', error))
+interface GetCompactBlockParams {
+    blockhash: string;    // Previous block hash
+    blocknumber: number;  // Block number for template
+}
 ```
 
-
-### `generatetransaction`
-
-**Description:** Generates a new transaction based on the given parameters.
-
-- **Parameters:**
-
-- `params: GenerateTransactionParams` - Object containing the parameters for the request.
-
-- `params.address: string` - Address for the transaction.
-
-- `params.privkeys: string[]` - Private keys to sign the transaction.
-
-- `params.outcount: number` - Output count for the transaction.
-
-- `params.type: string` - Type of transaction.
-
-- `params.payload: Record<string, any>` - Payload data for the transaction.
-
-- `params.fee: number` - Fee for the transaction.
-
-- `params.contentaddress: number` - Content address to use.
-
-- `params.confirmations: number` - Number of confirmations required.
-
-- `params.locktime: number` - Locktime for the transaction.
-
-**Returns:** `Promise<any>` - A promise that resolves with the generated transaction.
-
-**Example:**
-
+**Usage**
 ```typescript
-pocketNetProxy.rpc
-  .generatetransaction({
-    address: 'userAddress',
+const response = await api.rpc.getblocktemplate({
+    blockhash: "previous_block_hash",
+    blocknumber: 12345
+} satisfies GetCompactBlockParams);
+```
 
-    privkeys: ['key1', 'key2'],
+### GetBlockchainInfo
+Retrieves detailed information about the state of the blockchain.
 
+**Parameters**
+```typescript
+interface GetPosDifficultyParams {
+    height?: number;  // Optional: specific block height to query
+}
+```
+
+**Usage**
+```typescript
+const response = await api.rpc.getblockchaininfo({
+    height: 12345
+} satisfies GetPosDifficultyParams);
+```
+
+## Transaction Operations
+
+### GetTransaction
+Retrieves detailed information about a specific transaction.
+
+**Parameters**
+```typescript
+interface GetCompactBlockParams {
+    blockhash: string;    // Block hash containing the transaction
+    blocknumber: number;  // Block number containing the transaction
+}
+```
+
+**Usage**
+```typescript
+const response = await api.rpc.gettransaction({
+    blockhash: "block_hash",
+    blocknumber: 12345
+} satisfies GetCompactBlockParams);
+```
+
+### GetRawTransaction
+
+Retrieves raw transaction data.
+
+**Parameters**
+```typescript
+interface GetCompactBlockParams {
+    blockhash: string;    // Block hash containing the transaction
+    blocknumber: number;  // Block number containing the transaction
+}
+```
+
+**Usage**
+```typescript
+const response = await api.rpc.getrawtransaction({
+    blockhash: "block_hash",
+    blocknumber: 12345
+} satisfies GetCompactBlockParams);
+```
+
+### AddTransaction
+Adds a new transaction to the network.
+
+**Parameters**
+```typescript
+interface AddTransactionParams {
+    param1: string;           // Transaction parameter
+    param2: Record<string, any>;  // Additional transaction details
+}
+```
+
+**Usage**
+```typescript
+const response = await api.rpc.addtransaction({
+    param1: "transaction_data",
+    param2: {
+        // Transaction details
+        type: "transfer",
+        amount: 100
+    }
+} satisfies AddTransactionParams);
+```
+
+### GenerateTransaction
+Generates a new transaction based on provided details.
+
+**Parameters**
+```typescript
+interface GenerateTransactionParams {
+    address: string;          // Sender's address
+    privkeys: string[];      // Array of private keys
+    outcount: number;        // Number of outputs
+    type: string;            // Transaction type
+    payload: Record<string, any>;  // Transaction payload
+    fee: number;             // Transaction fee
+    contentaddress: number;  // Content address
+    confirmations: number;   // Required confirmations
+    locktime: number;        // Transaction locktime
+}
+```
+
+**Usage**
+```typescript
+const response = await api.rpc.generatetransaction({
+    address: "sender_address",
+    privkeys: ["key1", "key2"],
     outcount: 1,
-
-    type: 'transactionType',
-
-    payload: { data: 'payloadData' },
-
-    fee: 10,
-
+    type: "transfer",
+    payload: { /* transaction details */ },
+    fee: 0.001,
     contentaddress: 0,
-
     confirmations: 6,
-
-    locktime: 0,
-  })
-
-  .then(response => console.log('Transaction Generated:', response))
-
-  .catch(error => console.error('Failed to generate transaction:', error))
+    locktime: 0
+} satisfies GenerateTransactionParams);
 ```
 
+## Network Operations
 
-### `getaccountearningstats`
+### GetNodeInfo
+Retrieves information about the current node.
 
-**Description:** Retrieves statistics about the earnings of an account.
-
-- **Parameters:**
-
-- `params: GetAccountEarningParams` - Object containing the parameters for the request.
-
-- `params.address: string` - Address of the user to get statistics for.
-
-- `params.height: number` - Block height to consider.
-
-- `params.depth: number` - Depth of the search.
-
-**Returns:** `Promise<any>` - A promise that resolves with the account earning statistics.
-
-**Example:**
-
+**Parameters**
 ```typescript
-pocketNetProxy.rpc
-  .getaccountearningstats({
-    address: 'userAddress',
-
-    height: 100,
-
-    depth: 10,
-  })
-
-  .then(response => console.log('Account Earning Statistics:', response))
-
-  .catch(error =>
-    console.error('Failed to fetch account earning statistics:', error),
-  )
+interface GetNodeInfoParams {
+    // No parameters required
+}
 ```
 
-
-### `getaccountblockings`
-
-**Description:** Retrieves the list of accounts blocked by a specific address.
-
-- **Parameters:**
-
-- `params: GetAccountBlockingsParams` - Object containing the parameters for the request.
-
-- `params.address: string` - The address to get blockings for.
-
-- `params.topHeight: number` - Top block height.
-
-- `params.pageStart: number` - Start index for pagination.
-
-- `params.pageSize: number` - Number of items per page.
-
-**Returns:** `Promise<any>` - A promise that resolves with the list of blocked accounts.
-
-**Example:**
-
+**Usage**
 ```typescript
-pocketNetProxy.rpc
-  .getaccountblockings({
-    address: 'userAddress',
+const response = await api.rpc.getnodeinfo();
+```
 
-    topHeight: 100,
+### GetPeerInfo
+Retrieves information about connected peers in the network.
 
+**Parameters**
+```typescript
+interface GetPeerInfoParams {
+    // No parameters required
+}
+```
+
+**Usage**
+```typescript
+const response = await api.rpc.getpeerinfo();
+```
+
+### GetNetworkInfo
+Retrieves network status and node information.
+
+**Parameters**
+```typescript
+interface GetUserSubscribesParams {
+    address: string;     // Required for authentication
+    orderby: string;     // Ordering field
+    orderdesc: boolean;  // Order direction
+    offset: number;      // Pagination offset
+    limit: number;       // Results per page
+}
+```
+
+**Usage**
+```typescript
+const response = await api.rpc.getnetworkinfo({
+    address: "user_address",
+    orderby: "status",
+    orderdesc: true,
+    offset: 0,
+    limit: 20
+} satisfies GetUserSubscribesParams);
+```
+
+### GetNetworkHashrate
+Retrieves the current network hash rate.
+
+**Parameters**
+```typescript
+interface GetUserSubscribesParams {
+    address: string;     // Required for authentication
+    orderby: string;     // Ordering field
+    orderdesc: boolean;  // Order direction
+    offset: number;      // Pagination offset
+    limit: number;       // Results per page
+}
+```
+
+**Usage**
+```typescript
+const response = await api.rpc.getnetworkhashrate({
+    address: "user_address",
+    orderby: "hashrate",
+    orderdesc: true,
+    offset: 0,
+    limit: 1
+} satisfies GetUserSubscribesParams);
+```
+
+## Jury System
+
+### GetJury
+Retrieves information about a specific jury.
+
+**Parameters**
+```typescript
+interface GetJuryParams {
+    jury: string;  // Jury identifier
+}
+```
+
+**Usage**
+```typescript
+const response = await api.rpc.getjury({
+    jury: "jury_id"
+} satisfies GetJuryParams);
+```
+
+### GetAllJury
+Retrieves information about all juries in the network.
+
+**Parameters**
+```typescript
+interface GetAllJuryParams {
+    // No parameters required
+}
+```
+
+**Usage**
+```typescript
+const response = await api.rpc.getalljury();
+```
+
+### GetJuryAssigned
+Retrieves jury assignments for a specific user.
+
+**Parameters**
+```typescript
+interface GetJuryAssignedParams {
+    address: string;     // Moderator's address
+    verdict: boolean;    // Verdict filter
+    topHeight: number;   // Maximum block height
+    pageStart: number;   // Pagination start
+    pageSize: number;    // Items per page
+    orderBy: string;     // Sort field
+    desc: boolean;       // Sort direction
+}
+```
+
+**Usage**
+```typescript
+const response = await api.rpc.getjuryassigned({
+    address: "moderator_address",
+    verdict: true,
+    topHeight: 12345,
     pageStart: 0,
-
     pageSize: 10,
-  })
-
-  .then(response => console.log('Account Blockings:', response))
-
-  .catch(error => console.error('Failed to fetch account blockings:', error))
+    orderBy: "date",
+    desc: true
+} satisfies GetJuryAssignedParams);
 ```
 
+### GetJuryModerators
+Retrieves list of moderators for a specific jury.
 
-### `getaccountblockers`
-
-**Description:** Retrieves the list of accounts that have blocked a specific address.
-
-- **Parameters:**
-
-- `params: GetAccountBlockersParams` - Object containing the parameters for the request.
-
-- `params.address: string` - The address to get blockers for.
-
-- `params.topHeight: number` - Top block height.
-
-- `params.pageStart: number` - Start index for pagination.
-
-- `params.pageSize: number` - Number of items per page.
-
-**Returns:** `Promise<any>` - A promise that resolves with the list of accounts that have blocked the given address.
-
-**Example:**
-
+**Parameters**
 ```typescript
-pocketNetProxy.rpc
-  .getaccountblockers({
-    address: 'userAddress',
-
-    topHeight: 100,
-
-    pageStart: 0,
-
-    pageSize: 10,
-  })
-
-  .then(response => console.log('Account Blockers:', response))
-
-  .catch(error => console.error('Failed to fetch account blockers:', error))
+interface GetJuryModeratorsParams {
+    jury: string;  // Jury identifier
+}
 ```
 
-
-### `search`
-
-**Description:** Searches for content based on the provided parameters.
-
-- **Parameters:**
-
-- `params: SearchParams` - Object containing the parameters for the request.
-
-- `params.keyword: string` - The keyword to search for.
-
-- `params.type: string` - The type of content to search for.
-
-- `params.topBlock?: number` - Optional top block height to filter results.
-
-- `params.pageStart?: number` - Optional start index for pagination.
-
-- `params.pageSize?: number` - Optional number of items per page.
-
-- `params.address?: string` - Optional address to filter results by.
-
-**Returns:** `Promise<any>` - A promise that resolves with the search results.
-
-**Example:**
-
+**Usage**
 ```typescript
-pocketNetProxy.rpc
-  .search({
-    keyword: 'exampleKeyword',
-
-    type: 'post',
-
-    topBlock: 100,
-
-    pageStart: 0,
-
-    pageSize: 10,
-
-    address: 'userAddress',
-  })
-
-  .then(response => console.log('Search Results:', response))
-
-  .catch(error => console.error('Failed to search content:', error))
+const response = await api.rpc.getjurymoderators({
+    jury: "jury_id"
+} satisfies GetJuryModeratorsParams);
 ```
 
+### GetJuryVotes
+Retrieves voting information for a specific jury.
 
-### `searchusers`
-
-**Description:** Searches for users based on the provided parameters.
-
-- **Parameters:**
-
-- `params: SearchUsersParams` - Object containing the parameters for the request.
-
-- `params.keyword: string` - The keyword to search for.
-
-- `params.fieldtype: string` - The field type to search by.
-
-- `params.orderbyrank: number` - Flag indicating if the results should be ordered by rank.
-
-**Returns:** `Promise<any>` - A promise that resolves with the user search results.
-
-**Example:**
-
+**Parameters**
 ```typescript
-pocketNetProxy.rpc
-  .searchusers({
-    keyword: 'username',
-
-    fieldtype: 'name',
-
-    orderbyrank: 1,
-  })
-
-  .then(response => console.log('User Search Results:', response))
-
-  .catch(error => console.error('Failed to search users:', error))
+interface GetJuryParams {
+    jury: string;  // Jury identifier
+}
 ```
 
-
-### `searchlinks`
-
-**Description:** Searches for links based on the provided parameters.
-
-- **Parameters:**
-
-- `params: SearchLinksParams` - Object containing the parameters for the request.
-
-- `params.links: string` - The links to search for.
-
-- `params.contenttypes: string[]` - Array of content types to filter by.
-
-- `params.height: number` - The block height to consider.
-
-- `params.count: number` - Number of items to retrieve.
-
-**Returns:** `Promise<any>` - A promise that resolves with the link search results.
-
-**Example:**
-
+**Usage**
 ```typescript
-pocketNetProxy.rpc
-  .searchlinks({
-    links: 'exampleLink',
-
-    contenttypes: ['type1', 'type2'],
-
-    height: 100,
-
-    count: 10,
-  })
-
-  .then(response => console.log('Link Search Results:', response))
-
-  .catch(error => console.error('Failed to search links:', error))
+const response = await api.rpc.getjuryvotes({
+    jury: "jury_id"
+} satisfies GetJuryParams);
 ```
 
+## Search & Discovery
 
-*(Note: If there are any additional methods you would like to include, please provide them, and they will be formatted accordingly.)*e parameters for the request.
+### Search
 
-- `params.height?: number` - Optional block height to retrieve the coin information for.
+Searches for content within the network.
 
-**Returns:** `Promise<any>` - A promise that resolves with the coin information.
-
-**Example:**
-
+**Parameters**
 ```typescript
-pocketNetProxy.rpc
-  .getcoininfo({ height: 100 })
-
-  .then(response => console.log('Coin Information:', response))
-
-  .catch(error => console.error('Failed to fetch coin information:', error))
+interface SearchParams {
+    keyword: string;      // Search keyword
+    type: string;        // Content type to search
+    topBlock?: number;   // Optional: maximum block height
+    pageStart?: number;  // Optional: pagination start
+    pageSize?: number;   // Optional: items per page
+    address?: string;    // Optional: address filter
+}
 ```
 
-
-### `searchlinks`
-
-**Description:** Searches for links based on the provided parameters.
-
-- **Parameters:**
-  - `params: SearchLinksParams` - Object containing the parameters for the request.
-  - **`params.links: string`** - The links to search for.
-  - **`params.contenttypes: string[]`** - Array of content types to filter by.
-  - **`params.height: number`** - The block height to consider.
-  - **`params.count: number`** - Number of items to retrieve.
-
-**Returns:** `Promise<any>` - A promise that resolves with the link search results.
-
-**Example:**
-
+**Usage**
 ```typescript
-pocketNetProxy.rpc
-  .searchlinks({
-    links: 'exampleLink',
-    contenttypes: ['type1', 'type2'],
-    height: 100,
-    count: 10,
-  })
-  .then(response => console.log('Link Search Results:', response))
-  .catch(error => console.error('Failed to search links:', error))
+const response = await api.rpc.search({
+    keyword: "search_term",
+    type: "content",
+    pageSize: 20,
+    pageStart: 0
+} satisfies SearchParams);
 ```
 
+### SearchUsers
 
-### `getaccountcomments`
+Searches for users based on criteria.
 
-**Description:** Retrieves comments associated with a specific account.
-
-- **Parameters:**
-  - `params: GetUserSubscribesParams` - Object containing the parameters for the request.
-  - **`params.address: string`** - Address of the account to get comments for.
-  - **`params.orderby: string`** - Field to order the results by.
-  - **`params.orderdesc: boolean`** - Flag indicating whether to order results in descending order.
-  - **`params.offset: number`** - Offset for pagination.
-  - **`params.limit: number`** - Limit of results per page.
-
-**Returns:** `Promise<any>` - A promise that resolves with the list of account comments.
-
-**Example:**
-
+**Parameters**
 ```typescript
-pocketNetProxy.rpc
-  .getaccountcomments({
-    address: 'userAddress',
-    orderby: 'created',
-    orderdesc: true,
-    offset: 0,
-    limit: 10,
-  })
-  .then(response => console.log('Account Comments:', response))
-  .catch(error => console.error('Failed to fetch account comments:', error))
+interface SearchUsersParams {
+    keyword: string;      // Search keyword
+    fieldtype: string;    // Field to search in
+    orderbyrank: number;  // Ranking order
+}
 ```
 
-
-### `getmissedinfo`
-
-**Description:** Retrieves missed information for a given address and block number.
-
-- **Parameters:**
-
-- `params: GetMissedInfoParams` - Object containing the parameters for the request.
-
-- `params.address: string` - Address to get missed information for.
-
-- `params.block_number: number` - Block number to consider.
-
-**Returns:** `Promise<any>` - A promise that resolves with the missed information.
-
-**Example:**
-
+**Usage**
 ```typescript
-pocketNetProxy.rpc
-  .getmissedinfo({
-    address: 'userAddress',
-
-    block_number: 100,
-  })
-
-  .then(response => console.log('Missed Information:', response))
-
-  .catch(error =>
-    console.error('Failed to fetch missed information:', error),
-  )
+const response = await api.rpc.searchusers({
+    keyword: "username",
+    fieldtype: "name",
+    orderbyrank: 1
+} satisfies SearchUsersParams);
 ```
 
+### SearchLinks
+Searches for content based on links.
 
-### `getjuryvotes`
-
-**Description:** Retrieves votes information for a specific jury.
-
-- **Parameters:**
-
-- `params: GetJuryParams` - Object containing the parameters for the request.
-
-- `params.jury: string` - Identifier of the jury.
-
-**Returns:** `Promise<any>` - A promise that resolves with the votes information for the jury.
-
-**Example:**
-
+**Parameters**
 ```typescript
-pocketNetProxy.rpc
-  .getjuryvotes({ jury: 'juryId' })
-
-  .then(response => console.log('Jury Votes:', response))
-
-  .catch(error => console.error('Failed to fetch jury votes:', error))
+interface SearchLinksParams {
+    links: string;         // Links to search for
+    contenttypes: string[];  // Content types to include
+    height: number;        // Block height limit
+    count: number;         // Number of results
+}
 ```
 
-
-### `getjurybalance`
-
-**Description:** Retrieves the balance of a specific jury.
-
-- **Parameters:**
-
-- `params: GetJuryParams` - Object containing the parameters for the request.
-
-- `params.jury: string` - Identifier of the jury.
-
-**Returns:** `Promise<any>` - A promise that resolves with the jury balance information.
-
-**Example:**
-
+**Usage**
 ```typescript
-pocketNetProxy.rpc
-  .getjurybalance({ jury: 'juryId' })
-
-  .then(response => console.log('Jury Balance:', response))
-
-  .catch(error => console.error('Failed to fetch jury balance:', error))
-```
-
-
-### `getjurylist`
-
-**Description:** Retrieves a list of all juries.
-
-- **Parameters:** None.
-
-**Returns:** `Promise<any>` - A promise that resolves with the list of juries.
-
-**Example:**
-
-```typescript
-pocketNetProxy.rpc
-  .getjurylist()
-
-  .then(response => console.log('Jury List:', response))
-
-  .catch(error => console.error('Failed to fetch jury list:', error))
-```
-
-
-### `getjuryreward`
-
-**Description:** Retrieves the reward information for a specific jury.
-
-- **Parameters:**
-
-- `params: GetJuryParams` - Object containing the parameters for the request.
-
-- `params.jury: string` - Identifier of the jury.
-
-**Returns:** `Promise<any>` - A promise that resolves with the reward information for the jury.
-
-**Example:**
-
-```typescript
-pocketNetProxy.rpc
-  .getjuryreward({ jury: 'juryId' })
-
-  .then(response => console.log('Jury Reward:', response))
-
-  .catch(error =>
-    console.error('Failed to fetch jury reward information:', error),
-  )
-```
-
-
-### `getjuryvotescount`
-
-**Description:** Retrieves the number of votes for a specific jury.
-
-- **Parameters:**
-
-- `params: GetJuryParams` - Object containing the parameters for the request.
-
-- `params.jury: string` - Identifier of the jury.
-
-**Returns:** `Promise<any>` - A promise that resolves with the number of votes for the jury.
-
-**Example:**
-
-```typescript
-pocketNetProxy.rpc
-  .getjuryvotescount({ jury: 'juryId' })
-
-  .then(response => console.log('Jury Votes Count:', response))
-
-  .catch(error => console.error('Failed to fetch jury votes count:', error))
-```
-
-
-### `getmoderatorstatistics`
-
-**Description:** Retrieves moderator statistics based on the given parameters.
-
-- **Parameters:**
-
-- `params: GetJuryParams` - Object containing the parameters for the request.
-
-- `params.jury: string` - Identifier of the jury.
-
-**Returns:** `Promise<any>` - A promise that resolves with the moderator statistics.
-
-**Example:**
-
-```typescript
-pocketNetProxy.rpc
-  .getmoderatorstatistics({ jury: 'juryId' })
-
-  .then(response => console.log('Moderator Statistics:', response))
-
-  .catch(error =>
-    console.error('Failed to fetch moderator statistics:', error),
-  )
-```
-
-
-### `gettransaction`
-
-**Description:** Retrieves detailed information about a specific transaction.
-
-- **Parameters:**
-
-- `params: GetTransactionParams` - Object containing the parameters for the request.
-
-- `params.txid: string` - The transaction ID to retrieve information for.
-
-**Returns:** `Promise<any>` - A promise that resolves with the transaction information.
-
-**Example:**
-
-```typescript
-pocketNetProxy.rpc
-  .gettransaction({ txid: 'transactionId' })
-
-  .then(response => console.log('Transaction Information:', response))
-
-  .catch(error =>
-    console.error('Failed to fetch transaction information:', error),
-  )
-```
-
-
-### `getaccountfollowers`
-
-**Description:** Retrieves the list of followers for a specific account.
-
-- **Parameters:**
-
-- `params: GetUserFollowersParams` - Object containing the parameters for the request.
-
-- `params.address: string` - Address of the account to get followers for.
-
-- `params.orderby: string` - Field to order the results by.
-
-- `params.orderdesc: boolean` - Flag indicating whether to order results in descending order.
-
-- `params.offset: number` - Offset for pagination.
-
-- `params.limit: number` - Limit of results per page.
-
-**Returns:** `Promise<any>` - A promise that resolves with the list of account followers.
-
-**Example:**
-
-```typescript
-pocketNetProxy.rpc
-  .getaccountfollowers({
-    address: 'userAddress',
-
-    orderby: 'created',
-
-    orderdesc: true,
-
-    offset: 0,
-
-    limit: 10,
-  })
-
-  .then(response => console.log('Account Followers:', response))
-
-  .catch(error => console.error('Failed to fetch account followers:', error))
-```
-
-
-### `getaccountfollowings`
-
-**Description:** Retrieves the list of accounts that a specific user is following.
-
-- **Parameters:**
-
-- `params: GetUserFollowingsParams` - Object containing the parameters for the request.
-
-- `params.address: string` - Address of the account to get followings for.
-
-- `params.orderby: string` - Field to order the results by.
-
-- `params.orderdesc: boolean` - Flag indicating whether to order results in descending order.
-
-- `params.offset: number` - Offset for pagination.
-
-- `params.limit: number` - Limit of results per page.
-
-**Returns:** `Promise<any>` - A promise that resolves with the list of accounts being followed.
-
-**Example:**
-
-```typescript
-pocketNetProxy.rpc
-  .getaccountfollowings({
-    address: 'userAddress',
-
-    orderby: 'created',
-
-    orderdesc: true,
-
-    offset: 0,
-
-    limit: 10,
-  })
-
-  .then(response => console.log('Account Followings:', response))
-
-  .catch(error =>
-    console.error('Failed to fetch account followings:', error),
-  )
-```
-
-
-### `getaccountcontents`
-
-**Description:** Retrieves contents associated with a specific account.
-
-- **Parameters:**
-
-- `params: GetAccountContentsParams` - Object containing the parameters for the request.
-
-- `params.address: string` - Address of the account to get contents for.
-
-- `params.orderby: string` - Field to order the results by.
-
-- `params.orderdesc: boolean` - Flag indicating whether to order results in descending order.
-
-- `params.offset: number` - Offset for pagination.
-
-- `params.limit: number` - Limit of results per page.
-
-**Returns:** `Promise<any>` - A promise that resolves with the list of account contents.
-
-**Example:**
-
-```typescript
-pocketNetProxy.rpc
-  .getaccountcontents({
-    address: 'userAddress',
-
-    orderby: 'created',
-
-    orderdesc: true,
-
-    offset: 0,
-
-    limit: 10,
-  })
-
-  .then(response => console.log('Account Contents:', response))
-
-  .catch(error => console.error('Failed to fetch account contents:', error))
-```
-
-
-### `getaccountcomments`
-
-**Description:** Retrieves comments made by a specific account.
-
-- **Parameters:**
-
-- `params: GetAccountCommentsParams` - Object containing the parameters for the request.
-
-- `params.address: string` - Address of the account to get comments for.
-
-- `params.orderby: string` - Field to order the results by.
-
-- `params.orderdesc: boolean` - Flag indicating whether to order results in descending order.
-
-- `params.offset: number` - Offset for pagination.
-
-- `params.limit: number` - Limit of results per page.
-
-**Returns:** `Promise<any>` - A promise that resolves with the list of comments made by the account.
-
-**Example:**
-
-```typescript
-pocketNetProxy.rpc
-  .getaccountcomments({
-    address: 'userAddress',
-
-    orderby: 'created',
-
-    orderdesc: true,
-
-    offset: 0,
-
-    limit: 10,
-  })
-
-  .then(response => console.log('Account Comments:', response))
-
-  .catch(error => console.error('Failed to fetch account comments:', error))
-```
-
-### `getaccountposts`
-
-**Description:** Retrieves posts associated with a specific account.
-
-- **Parameters:**
-
-- `params: GetUserSubscribesParams` - Object containing the parameters for the request.
-
-- `params.address: string` - Address of the account to get posts for.
-
-- `params.orderby: string` - Field to order the results by.
-
-- `params.orderdesc: boolean` - Flag indicating whether to order results in descending order.
-
-- `params.offset: number` - Offset for pagination.
-
-- `params.limit: number` - Limit of results per page.
-
-**Returns:** `Promise<any>` - A promise that resolves with the list of account posts.
-
-**Example:**
-
-```typescript
-pocketNetProxy.rpc
-  .getaccountposts({
-    address: 'userAddress',
-
-    orderby: 'created',
-
-    orderdesc: true,
-
-    offset: 0,
-
-    limit: 10,
-  })
-
-  .then(response => console.log('Account Posts:', response))
-
-  .catch(error => console.error('Failed to fetch account posts:', error))
-```
-
-
-### `getblockreward`
-
-**Description:** Retrieves the reward for a specific block.
-
-- **Parameters:**
-
-- `params: GetUserSubscribesParams` - Object containing the parameters for the request.
-
-- `params.address: string` - Address of the block.
-
-- `params.orderby: string` - Field to order the results by.
-
-- `params.orderdesc: boolean` - Flag indicating whether to order results in descending order.
-
-- `params.offset: number` - Offset for pagination.
-
-- `params.limit: number` - Limit of results per page.
-
-**Returns:** `Promise<any>` - A promise that resolves with the block reward information.
-
-**Example:**
-
-```typescript
-pocketNetProxy.rpc
-  .getblockreward({
-    address: 'blockAddress',
-
-    orderby: 'height',
-
-    orderdesc: true,
-
-    offset: 0,
-
-    limit: 10,
-  })
-
-  .then(response => console.log('Block Reward:', response))
-
-  .catch(error => console.error('Failed to fetch block reward:', error))
-```
-
-
-### `getblockcount`
-
-**Description:** Retrieves the current block count in the blockchain.
-
-- **Parameters:** None.
-
-**Returns:** `Promise<any>` - A promise that resolves with the current block count.
-
-**Example:**
-
-```typescript
-pocketNetProxy.rpc
-  .getblockcount()
-
-  .then(response => console.log('Block Count:', response))
-
-  .catch(error => console.error('Failed to fetch block count:', error))
-```
-
-
-### `getnetworkhashrate`
-
-**Description:** Retrieves the current network hash rate.
-
-- **Parameters:**
-
-- `params: GetUserSubscribesParams` - Object containing the parameters for the request.
-
-- `params.address: string` - Address for the request.
-
-- `params.orderby: string` - Field to order the results by.
-
-- `params.orderdesc: boolean` - Flag indicating whether to order results in descending order.
-
-- `params.offset: number` - Offset for pagination.
-
-- `params.limit: number` - Limit of results per page.
-
-**Returns:** `Promise<any>` - A promise that resolves with the network hash rate information.
-
-**Example:**
-
-```typescript
-pocketNetProxy.rpc
-  .getnetworkhashrate({
-    address: 'networkAddress',
-
-    orderby: 'hashrate',
-
-    orderdesc: true,
-
-    offset: 0,
-
-    limit: 10,
-  })
-
-  .then(response => console.log('Network Hashrate:', response))
-
-  .catch(error => console.error('Failed to fetch network hashrate:', error))
-```
-
-
-### `getnetworkinfo`
-
-**Description:** Retrieves information about the current state of the network.
-
-- **Parameters:**
-
-- `params: GetUserSubscribesParams` - Object containing the parameters for the request.
-
-- `params.address: string` - Address for the request.
-
-- `params.orderby: string` - Field to order the results by.
-
-- `params.orderdesc: boolean` - Flag indicating whether to order results in descending order.
-
-- `params.offset: number` - Offset for pagination.
-
-- `params.limit: number` - Limit of results per page.
-
-**Returns:** `Promise<any>` - A promise that resolves with the network information.
-
-**Example:**
-
-```typescript
-pocketNetProxy.rpc
-  .getnetworkinfo({
-    address: 'networkAddress',
-
-    orderby: 'nodes',
-
-    orderdesc: true,
-
-    offset: 0,
-
-    limit: 10,
-  })
-
-  .then(response => console.log('Network Info:', response))
-
-  .catch(error =>
-    console.error('Failed to fetch network information:', error),
-  )
-```
-
-
-### `getrawtransaction`
-
-**Description:** Retrieves the raw transaction data for a given transaction ID.
-
-- **Parameters:**
-
-- `params: GetCompactBlockParams` - Object containing the parameters for the request.
-
-- `params.blockhash: string` - Hash of the block containing the transaction.
-
-- `params.blocknumber: number` - Block number of the transaction.
-
-**Returns:** `Promise<any>` - A promise that resolves with the raw transaction data.
-
-**Example:**
-
-```typescript
-pocketNetProxy.rpc
-  .getrawtransaction({
-    blockhash: 'blockHash',
-
-    blocknumber: 100,
-  })
-
-  .then(response => console.log('Raw Transaction Data:', response))
-
-  .catch(error =>
-    console.error('Failed to fetch raw transaction data:', error),
-  )
-```
-
-
-### `decoderawtransaction`
-
-**Description:** Decodes a raw transaction and returns detailed information about it.
-
-- **Parameters:**
-
-- `params: GetCompactBlockParams` - Object containing the parameters for the request.
-
-- `params.blockhash: string` - Hash of the block containing the transaction.
-
-- `params.blocknumber: number` - Block number of the transaction.
-
-**Returns:** `Promise<any>` - A promise that resolves with the decoded transaction information.
-
-**Example:**
-
-```typescript
-pocketNetProxy.rpc
-  .decoderawtransaction({
-    blockhash: 'blockHash',
-
-    blocknumber: 100,
-  })
-
-  .then(response => console.log('Decoded Transaction:', response))
-
-  .catch(error => console.error('Failed to decode transaction:', error))
-```
-
-
-### `validateaddress`
-
-**Description:** Validates a specific address in the network.
-
-- **Parameters:**
-
-- `params: GetAddressInfoParams` - Object containing the parameters for the request.
-
-- `params.address: string` - Address to be validated.
-
-**Returns:** `Promise<any>` - A promise that resolves with the validation result.
-
-**Example:**
-
-```typescript
-pocketNetProxy.rpc
-  .validateaddress({ address: 'userAddress' })
-
-  .then(response => console.log('Address Validation:', response))
-
-  .catch(error => console.error('Failed to validate address:', error))
-```
-
-
-### `verifychain`
-
-**Description:** Verifies the integrity of the blockchain.
-
-- **Parameters:** None.
-
-**Returns:** `Promise<any>` - A promise that resolves with the verification result.
-
-**Example:**
-
-```typescript
-pocketNetProxy.rpc
-  .verifychain()
-
-  .then(response => console.log('Blockchain Verification:', response))
-
-  .catch(error => console.error('Failed to verify blockchain:', error))
-```
-
-
-### `getwalletinfo`
-
-**Description:** Retrieves wallet information.
-
-- **Parameters:** None.
-
-**Returns:** `Promise<any>` - A promise that resolves with the wallet information.
-
-**Example:**
-
-```typescript
-pocketNetProxy.rpc
-  .getwalletinfo()
-
-  .then(response => console.log('Wallet Information:', response))
-
-  .catch(error =>
-    console.error('Failed to fetch wallet information:', error),
-  )
-```
-
-
-### `getblockhash`
-
-**Description:** Retrieves the block hash for a given block number.
-
-- **Parameters:**
-  - `params: GetCompactBlockParams` - Object containing the parameters for the request.
-  - **`params.blockhash: string`** - Hash of the block.
-  - **`params.blocknumber: number`** - Block number to get the hash for.
-
-**Returns:** `Promise<any>` - A promise that resolves with the block hash.
-
-**Example:**
-
-```typescript
-pocketNetProxy.rpc
-  .getblockhash({
-    blockhash: 'blockHash',
-    blocknumber: 100,
-  })
-  .then(response => console.log('Block Hash:', response))
-  .catch(error => console.error('Failed to fetch block hash:', error))
-```
-
-
-### `getmempoolinfo`
-
-**Description:** Retrieves information about the current state of the memory pool.
-
-- **Parameters:** None.
-
-**Returns:** `Promise<any>` - A promise that resolves with the memory pool information.
-
-**Example:**
-
-```typescript
-pocketNetProxy.rpc
-  .getmempoolinfo()
-
-  .then(response => console.log('Memory Pool Information:', response))
-
-  .catch(error =>
-    console.error('Failed to fetch memory pool information:', error),
-  )
-```
-
-
-### `getrawmempool`
-
-**Description:** Retrieves the list of transactions currently in the memory pool.
-
-- **Parameters:** None.
-
-**Returns:** `Promise<any>` - A promise that resolves with the list of transactions in the memory pool.
-
-**Example:**
-
-```typescript
-pocketNetProxy.rpc
-  .getrawmempool()
-
-  .then(response => console.log('Raw Memory Pool Transactions:', response))
-
-  .catch(error =>
-    console.error('Failed to fetch raw memory pool transactions:', error),
-  )
-```
-
-
-### `getdifficulty`
-
-**Description:** Retrieves the current difficulty of the network.
-
-- **Parameters:**
-
-- `params: GetPosDifficultyParams` - Object containing the parameters for the request.
-
-- `params.height?: number` - Optional block height to retrieve the difficulty for.
-
-**Returns:** `Promise<any>` - A promise that resolves with the current difficulty information.
-
-**Example:**
-
-```typescript
-pocketNetProxy.rpc
-  .getdifficulty({ height: 100 })
-
-  .then(response => console.log('Network Difficulty:', response))
-
-  .catch(error =>
-    console.error('Failed to fetch network difficulty:', error),
-  )
-```
-
-
-### `getblocktemplate`
-
-**Description:** Retrieves a block template for mining purposes.
-
-- **Parameters:**
-
-- `params: GetBlockTemplateParams` - Object containing the parameters for the request.
-
-- `params.mode?: string` - The mining mode.
-
-- `params.capabilities?: string[]` - The mining capabilities.
-
-**Returns:** `Promise<any>` - A promise that resolves with the block template.
-
-**Example:**
-
-```typescript
-pocketNetProxy.rpc
-  .getblocktemplate({
-    mode: 'template',
-
-    capabilities: ['coinbasetxn', 'workid'],
-  })
-
-  .then(response => console.log('Block Template:', response))
-
-  .catch(error => console.error('Failed to fetch block template:', error))
-```
-
-
-### `getnetworkstakeweight`
-
-**Description:** Retrieves the current network stake weight.
-
-- **Parameters:**
-
-- `params: GetNetworkStakeWeightParams` - Object containing the parameters for the request.
-
-- `params.height?: number` - Optional block height to retrieve the stake weight for.
-
-**Returns:** `Promise<any>` - A promise that resolves with the network stake weight information.
-
-**Example:**
-
-```typescript
-pocketNetProxy.rpc
-  .getnetworkstakeweight({ height: 100 })
-
-  .then(response => console.log('Network Stake Weight:', response))
-
-  .catch(error =>
-    console.error('Failed to fetch network stake weight:', error),
-  )
-```
-
-
-### `getstakingstatus`
-
-**Description:** Retrieves the current staking status of the network.
-
-- **Parameters:** None.
-
-**Returns:** `Promise<any>` - A promise that resolves with the staking status information.
-
-**Example:**
-
-```typescript
-pocketNetProxy.rpc
-  .getstakingstatus()
-
-  .then(response => console.log('Staking Status:', response))
-
-  .catch(error => console.error('Failed to fetch staking status:', error))
-```
-
-
-### `getmintinginfo`
-
-**Description:** Retrieves the current minting information for the network.
-
-- **Parameters:** None.
-
-**Returns:** `Promise<any>` - A promise that resolves with the minting information.
-
-**Example:**
-
-```typescript
-pocketNetProxy.rpc
-  .getmintinginfo()
-
-  .then(response => console.log('Minting Information:', response))
-
-  .catch(error =>
-    console.error('Failed to fetch minting information:', error),
-  )
-```
-
-
-### `getblockchaininfo`
-
-**Description:** Retrieves detailed information about the current state of the blockchain.
-
-- **Parameters:** None.
-
-**Returns:** `Promise<any>` - A promise that resolves with the blockchain information.
-
-**Example:**
-
-```typescript
-pocketNetProxy.rpc
-  .getblockchaininfo()
-
-  .then(response => console.log('Blockchain Information:', response))
-
-  .catch(error =>
-    console.error('Failed to fetch blockchain information:', error),
-  )
-```
-
-
-### `getchaintips`
-
-**Description:** Retrieves information about all known blockchain tips.
-
-- **Parameters:** None.
-
-**Returns:** `Promise<any>` - A promise that resolves with the chain tips information.
-
-**Example:**
-
-```typescript
-pocketNetProxy.rpc
-  .getchaintips()
-
-  .then(response => console.log('Chain Tips:', response))
-
-  .catch(error => console.error('Failed to fetch chain tips:', error))
-```
-
-
-### `getblocksubsidy`
-
-**Description:** Retrieves information about the block subsidy for a given block height.
-
-- **Parameters:**
-
-- `params: GetBlockSubsidyParams` - Object containing the parameters for the request.
-
-- `params.height?: number` - Optional block height to retrieve the subsidy for.
-
-**Returns:** `Promise<any>` - A promise that resolves with the block subsidy information.
-
-**Example:**
-
-```typescript
-pocketNetProxy.rpc
-  .getblocksubsidy({ height: 100 })
-
-  .then(response => console.log('Block Subsidy:', response))
-
-  .catch(error => console.error('Failed to fetch block subsidy:', error))
-```
-
-
-### `getblock`
-
-**Description:** Retrieves detailed information about a specific block.
-
-- **Parameters:**
-
-- `params: GetBlockParams` - Object containing the parameters for the request.
-
-- `params.blockhash: string` - Hash of the block to get information for.
-
-- `params.verbosity?: number` - Level of detail to return.
-
-**Returns:** `Promise<any>` - A promise that resolves with the block information.
-
-**Example:**
-
-```typescript
-pocketNetProxy.rpc
-  .getblock({
-    blockhash: 'blockHash',
-
-    verbosity: 2,
-  })
-
-  .then(response => console.log('Block Information:', response))
-
-  .catch(error => console.error('Failed to fetch block information:', error))
-```
-
-
-### `getbestblockhash`
-
-**Description:** Retrieves the hash of the best (most recent) block.
-
-- **Parameters:** None.
-
-**Returns:** `Promise<any>` - A promise that resolves with the best block hash.
-
-**Example:**
-
-```typescript
-pocketNetProxy.rpc
-  .getbestblockhash()
-
-  .then(response => console.log('Best Block Hash:', response))
-
-  .catch(error => console.error('Failed to fetch best block hash:', error))
-```
-
-
-### `gettxout`
-
-**Description:** Retrieves information about an unspent transaction output (UTXO).
-
-- **Parameters:**
-
-- `params: GetTxOutParams` - Object containing the parameters for the request.
-
-- `params.txid: string` - The transaction ID.
-
-- `params.n: number` - The output index.
-
-- `params.include_mempool?: boolean` - Whether to include the mempool.
-
-**Returns:** `Promise<any>` - A promise that resolves with the UTXO information.
-
-**Example:**
-
-```typescript
-pocketNetProxy.rpc
-  .gettxout({
-    txid: 'transactionId',
-
-    n: 0,
-
-    include_mempool: true,
-  })
-
-  .then(response => console.log('UTXO Information:', response))
-
-  .catch(error => console.error('Failed to fetch UTXO information:', error))
-```
-
-
-### `gettxoutproof`
-
-**Description:** Retrieves a proof that a transaction is included in a block.
-
-- **Parameters:**
-
-- `params: GetTxOutProofParams` - Object containing the parameters for the request.
-
-- `params.txids: string[]` - An array of transaction IDs to include in the proof.
-
-- `params.blockhash?: string` - The block hash to search in.
-
-**Returns:** `Promise<any>` - A promise that resolves with the transaction proof.
-
-**Example:**
-
-```typescript
-pocketNetProxy.rpc
-  .gettxoutproof({
-    txids: ['transactionId1', 'transactionId2'],
-
-    blockhash: 'blockHash',
-  })
-
-  .then(response => console.log('Transaction Proof:', response))
-
-  .catch(error => console.error('Failed to fetch transaction proof:', error))
-```
-
-
-### `verifytxoutproof`
-
-**Description:** Verifies that a transaction proof points to a transaction in a block.
-
-- **Parameters:**
-
-- `params: VerifyTxOutProofParams` - Object containing the parameters for the request.
-
-- `params.proof: string` - The transaction proof.
-
-**Returns:** `Promise<any>` - A promise that resolves with the verification result.
-
-**Example:**
-
-```typescript
-pocketNetProxy.rpc
-  .verifytxoutproof({ proof: 'transactionProof' })
-
-  .then(response => console.log('Verification Result:', response))
-
-  .catch(error =>
-    console.error('Failed to verify transaction proof:', error),
-  )
+const response = await api.rpc.searchlinks({
+    links: "link_pattern",
+    contenttypes: ["post", "comment"],
+    height: 12345,
+    count: 20
+} satisfies SearchLinksParams);
 ```
