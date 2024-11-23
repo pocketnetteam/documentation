@@ -17,6 +17,10 @@ Bastyon utilizes its native cryptocurrency, [PKOIN](https://www.coingecko.com/en
 
 The application flow architecture largerly depends on the content, users are interacting with. From a high-level, the architecture of Bastyon looks like the following:
 
+![bastyon-architecture-overview](/dev/assets/images/bastyon-architecture-overview.png)
+
+<!-- bastyon-architecture-overview diagram mermaid code 
+
 ```mermaid
 %%{init: { 'theme': 'default', 'fontSize': 10, 'flowchart': { 'nodeSpacing': 30, 'rankSpacing': 50, 'padding': 5 } }}%%
 flowchart TB
@@ -57,7 +61,7 @@ flowchart TB
     BA --- PT1
     BA --- M
 ```
-
+-->
 <!-- Add more architectural detail as needed -->
 
 <!-- todo

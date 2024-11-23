@@ -147,9 +147,3 @@ To get staking status:
 ## Conclusion
 
 By participating in Bastyon's ecosystem through advertising, content creation, or running a node, users can earn PKOIN while contributing to a decentralized platform.
-
-## Appendix
-
-### [Full Node Setup Guide](../full-node-setup/)
-
-### [Easy Node Setup Guide](../easy-node-setup/)
