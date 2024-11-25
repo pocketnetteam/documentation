@@ -1,31 +1,30 @@
-# Начало работы
+# Getting Started
 
-Добро пожаловать в документацию по проекту Pocketnet Core. Этот документ предназначен для ознакомления с работой над кодом узла блокчейна для сети Pocketnet. Pocketnet Core в основном написан на C++ и является форком Bitcoin, что определяет наличие множества параллелей с ним.
+Welcome to the documentation for the Pocketnet Core project. This document is intended to familiarize you with the blockchain node code for the Pocketnet network. Pocketnet Core is primarily written in C++ and is a fork of Bitcoin, which means there are many parallels with it.
 
-## Что такое наша сеть?
+## What is the Pocketnet Network?
 
-Pocketnet представляет собой одноранговую сеть, которая поддерживает работу блокчейна с возможностью хранения открытых данных внутри блокчейна для создания отказоустойчивого хранилища. Узлы в сети Pocketnet называются Pocketnet Core и являются своего рода точками входа в сеть. Каждый узел хранит полную копию данных и выполняет функции базы данных, валидатора и веб-сервера. Основное назначение такой сети — хранение данных, защищенных стандартными механизмами шифрования, применяемыми в блокчейне Биткоин для защиты транзакций. Данные в сети не шифруются на уровне узла, но подписаны ключом автора и защищены от подделки.
+Pocketnet is a peer-to-peer network that supports blockchain operations with the ability to store open data within the blockchain to create a fault-tolerant storage. Nodes in the Pocketnet network are called Pocketnet Core and serve as entry points to the network. Each node stores a full copy of the data and functions as a database, validator, and web server. The main purpose of such a network is to store data protected by standard encryption mechanisms used in the Bitcoin blockchain to secure transactions. Data in the network is not encrypted at the node level but is signed with the author's key and protected from tampering.
 
-В качестве альтернатив, решающих аналогичные задачи, можно привести следующие проекты:
+Alternative projects that solve similar tasks include:
 - [BitTorrent](https://www.bittorrent.com/)
 - [IPFS](https://ipfs.tech/)
 - [FileCoin](https://filecoin.io/)
 
-Каждый из этих проектов имеет свои преимущества и недостатки, Pocketnet отличается следующими особенностями:
-- Сеть Pocketnet обладает механизмами хранения небольших объемов данных, защищенных шифрованием, что гарантирует пользователю их подлинность.
-- Узлы Pocketnet оснащены встроенным RPC веб-сервером, который позволяет работать с данными так, как если бы они хранились на классическом веб-сервере.
-- Узлы Pocketnet не требуют авторизации для доступа к данным, необходим только приватный ключ — привет интернету web3.
-- Транзакции в сети делятся на "денежные", плата за которые определяется динамически в зависимости от размера, и "социальные", плата за которые фиксирована и составляет 1 минимальную единицу койна (1 сатоши), что позволяет строить разнообразные приложения, не требуя существенной платы за использование.
+Each of these projects has its advantages and disadvantages, and Pocketnet is distinguished by the following features:
+- The Pocketnet network has mechanisms for storing small amounts of data protected by encryption, ensuring their authenticity for the user.
+- Pocketnet nodes are equipped with a built-in RPC web server, allowing data to be accessed as if it were stored on a classic web server.
+- Pocketnet nodes do not require authorization to access data; only a private key is needed — welcome to the web3 internet.
+- Transactions in the network are divided into "monetary," for which the fee is determined dynamically based on size, and "social," for which the fee is fixed at 1 minimum coin unit (1 satoshi), allowing for the creation of various applications without requiring significant usage fees.
 
+## Source Code
 
-## Исходный код
+Pocketnet is based on the [Bitcoin](https://github.com/bitcoin/bitcoin) code, so most of the mechanisms and logic of Bitcoin are applied in Pocketnet. More details about the project structure and source code are described in the [Source Code](source.md) section.
 
-Pocketnet базируется на коде [Bitcoin](https://github.com/bitcoin/bitcoin), поэтому большая часть механизмов и логики Биткоин применяется и в Pocketnet. Более подробно о структуре проекта и исходном коде описано в разделе [Исходный Код](/dev/node/source.md)
+## Building and Environment Setup
 
-## Сборка и настройка окружение
+Various compilation options, release processes, and IDE setup instructions are described in the [Building](building.md) section.
 
-Разнообразные варианты компиляции, процессы выпуска релизов, а также инструкции по настройке IDE, описаны в разделе [Building](/dev/node/building.md).
+## Usage
 
-## Использование
-
-Загрузка, запуск и работа с узлами PocketnetCore подробно описаны в разделе [Usage](/dev/node/usage.md).
+Loading, launching, and working with PocketnetCore nodes are detailed in the [Usage](usage.md) section.

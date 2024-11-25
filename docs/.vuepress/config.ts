@@ -78,30 +78,30 @@ export default defineUserConfig({
         // navbar
         navbar: navbarRu,
         selectLanguageName: 'Русский',
-        selectLanguageText: '选择语言',
-        selectLanguageAriaLabel: '选择语言',
+        selectLanguageText: 'Выбрать язык',
+        selectLanguageAriaLabel: 'Выбрать язык',
         // sidebar
         sidebar: sidebarRu,
         // page meta
-        editLinkText: '在 GitHub 上编辑此页',
-        lastUpdatedText: '上次更新',
-        contributorsText: '贡献者',
+        editLinkText: 'Редактировать эту страницу на GitHub',
+        lastUpdatedText: 'Последнее обновление',
+        contributorsText: 'Участники',
         // custom containers
-        tip: '提示',
-        warning: '注意',
-        danger: '警告',
+        tip: 'Совет',
+        warning: 'Предупреждение',
+        danger: 'Опасность',
         // 404 page
         notFound: [
-          '这里什么都没有',
-          '我们怎么到这来了？',
-          '这是一个 404 页面',
-          '看起来我们进入了错误的链接',
+          'Здесь ничего нет',
+          'Как мы сюда попали?',
+          'Это страница 404',
+          'Похоже, мы перешли по неправильной ссылке',
         ],
-        backToHome: '返回首页',
+        backToHome: 'Вернуться на главную',
         // a11y
-        openInNewWindow: '在新窗口打开',
-        toggleColorMode: '切换颜色模式',
-        toggleSidebar: '切换侧边栏',
+        openInNewWindow: 'Открыть в новом окне',
+        toggleColorMode: 'Переключить цветовой режим',
+        toggleSidebar: 'Переключить боковую панель',
       },
     },
 
