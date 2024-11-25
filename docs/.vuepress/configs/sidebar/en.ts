@@ -27,9 +27,9 @@ export const sidebarEn: SidebarOptions = {
       text: 'Blockchain Node',
       children: [
         'get-started.md',
-        'requirements.md',
-        'environment.md',
+        'source.md',
         'building.md',
+        'usage.md',
         'rpc.md',
       ],
     },

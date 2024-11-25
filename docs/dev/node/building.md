@@ -1,9 +1,8 @@
 # Building
 
 ## Introduction
-Welcome to the documentation for the Pocketnet Core project. This document is intended for familiarization with the work on the blockchain node code for the Bastion network. Pocketnet Core is primarily written in C++ and is a fork of Bitcoin, which determines the presence of many parallels with it.
 
-By following the instructions in this document, you can obtain the following binary files and installation packages:
+This guide describes various ways to compile the PocketnetCore node or its individual components. By following the instructions in this document, you can obtain the following binary files and installation packages:
 
 - `pocketcoind` - the node daemon, which:
   - Runs the node in headless mode
@@ -23,9 +22,9 @@ By following the instructions in this document, you can obtain the following bin
   - Configuring logging
 
 The build can be performed for individual components or as a complete package. Installation packages are supported:
-- NSIS for Windows
-- DEB for Debian/Ubuntu
-- DMG for macOS
+- `NSIS` for Windows
+- `DEB` for Debian/Ubuntu
+- `DMG` for macOS
 
 This guide describes two main approaches to building:
 1. For development (using CMake)
