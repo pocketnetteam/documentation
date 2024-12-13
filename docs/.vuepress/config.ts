@@ -16,6 +16,7 @@ import {
   sidebarEn,
   sidebarRu,
 } from './configs/index.js'
+import * as fs from 'fs';
 
 const __dirname = getDirname(import.meta.url)
 const require = createRequire(import.meta.url)
@@ -24,6 +25,9 @@ const isProd = process.env.NODE_ENV === 'production'
 export default defineUserConfig({
   // set site base to default value
   base: '/',
+
+
+  
 
   // extra tags in `<head>`
   head,
@@ -44,7 +48,19 @@ export default defineUserConfig({
 
   // specify bundler via environment variable
   bundler:
-    process.env.DOCS_BUNDLER === 'webpack' ? webpackBundler() : viteBundler(),
+    process.env.DOCS_BUNDLER === 'webpack' ? webpackBundler() : viteBundler(
+      {
+        viteOptions : {
+          server : {
+            https : {
+                key: fs.readFileSync('cert/key.pem'),
+                cert: fs.readFileSync('cert/cert.pem'),
+			          passphrase: 'password'
+            }
+          }
+        }
+      }
+    ),
 
   // configure default theme
   theme: defaultTheme({

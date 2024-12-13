@@ -1,0 +1,15 @@
+{
+    "id": "app.pocketnet.docs",
+    "name": "Bastyon documentation",
+    "version": "0.0.1",
+    "description": "Bastyon documentation",
+    "descriptions" : {
+        "en" : "Bastyon documentation",
+        "ru" : "Документация Bastyon"
+    },
+    "author": "PUGBtfmivvcg1afnEt9vqVi3yZ7v6S9BcC",
+    "develop": true,
+    "scope" : "localhost:8080",
+    "start_url" : "index.html",
+    "permissions" : []
+}
