@@ -12,3 +12,57 @@
 div[class*='language-'] pre code {
   color: var(--code-c-text);
 }
+
+html[bastyon]{
+
+    
+  overflow-y: overlay;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  scroll-behavior: smooth;
+
+  &::-webkit-scrollbar {
+      width: 7px;
+  }
+
+  &::-webkit-scrollbar-track {
+      background:rgba(10, 12, 23, .05);
+  }
+
+  &::-webkit-scrollbar-thumb {
+      background-color: rgba(10, 12, 23, .25);
+      border: 0 solid rgba(10, 12, 23, 0.05);
+      background-image: linear-gradient(
+        180deg,
+        rgba(10, 12, 23, .25) 0%,
+        rgba(10, 12, 23, 0) 90%
+      );
+  }
+
+  @media (min-width: 768px) {
+    .vp-back-to-top-button{
+      inset-inline-end: 60px;
+      bottom : 0.5em;
+    }
+  }
+  
+
+  .vp-navbar{
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+  
+  .vp-navbar-items-wrapper{
+    right: 60px;
+  }
+  
+  @media (max-width: 768px) {
+    .vp-navbar{
+      padding-left: 120px;
+    }
+  
+    .vp-toggle-sidebar-button{
+      left : 60px;
+    }
+  }
+}

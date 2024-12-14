@@ -38,4 +38,15 @@ export const head: HeadConfig[] = [
   ],
   ['meta', { name: 'msapplication-TileColor', content: '#3eaf7c' }],
   ['meta', { name: 'theme-color', content: '#3eaf7c' }],
+  ['script', {}, `
+    (function() { 
+    var script = document.createElement("script"); 
+    script.src = "https://bastyon.com/js/lib/apps/sdk.js";
+    script.onload = function() {
+      var sdk = new window.BastyonSdk();
+        sdk.init().then();
+        sdk.emit('loaded');
+    };
+    setTimeout(() => document.body.append(script))})(); 
+  `],
 ]
