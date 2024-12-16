@@ -2,6 +2,31 @@
 
 ## Mini Applications
 
+### TX Specification
+
+**OP_RETURN code**
+```
+6d696e69617070 ()
+```
+
+**Required payload elements:**
+```json
+{
+  "s1": "address",
+  "s2": "root tx hash",
+  "p": {
+    "s1": {
+      "n": "App Name", // Indexed for fulltext search
+      "d": "App Description", // Indexed for fulltext search
+      "s": "app.com", // Indexed for fulltext search
+      "t": [ "tag1", "tag2", "tag3" ], // Indexed for filtering
+      ...
+    },
+    "s2": "id"
+  }
+}
+```
+
 ### `getapps`
 
 Retrieving the list of mini applications.
@@ -120,9 +145,7 @@ TODO
 
 ## Barteron
 
-### Transactions Specification
-
-#### Barteron Account
+### TX Specification (Account)
 
 **OP_RETURN code**
 ```
@@ -147,7 +170,7 @@ TODO
 }
 ```
 
-#### Barteron Offer Transaction Specification
+### TX Specification (Offer)
 
 **OP_RETURN code**
 ```
@@ -183,9 +206,10 @@ TODO
 }
 ```
 
-### Barteron APIs
+### getbarteronaccounts
 
-#### Get accounts transactions
+Get accounts transactions
+
 ```json
 > /rpc/getbarteronaccounts [ <address1>, <address2>, ... ]
 {
@@ -213,8 +237,11 @@ TODO
 > **Примечание**: `rating` это целое число, которое представляет float * 10, поэтому 35 означает, что рейтинг пользователя 3.5
 
 
-#### Get address offers information
-````json
+### getbarteronoffersbyaddress
+
+Get address offers information
+
+```json
 > /rpc/getbarteronoffersbyaddress <address>
 {
   "result": "success",
@@ -233,10 +260,13 @@ TODO
       }
     ]
 }
-````
+```
 
-#### Get offers information
-````json
+### getbarteronoffersbyroottxhashes
+
+Get offers information
+
+```json
 > /rpc/getbarteronoffersbyroottxhashes [ <txhash1>, <txhash2>, ... ]
 {
   "result": "success",
@@ -255,10 +285,13 @@ TODO
       }
     ]
 }
-````
+```
 
-#### Get offers feed
-````json
+### getbarteronfeed
+
+Get offers feed
+
+```json
 > /rpc/getbarteronfeed <REQUEST_JSON>
 
 // REQUEST_JSON
@@ -286,10 +319,13 @@ TODO
       ...
     ]
 }
-````
+```
 
-#### Get offers groups
-````json
+### getbarterongroups
+
+Get offers groups
+
+```json
 > /rpc/getbarterongroups <REQUEST_JSON>
 
 // REQUEST_JSON
@@ -320,10 +356,12 @@ TODO
       ...
     ]
 }
-````
+```
 
-#### Get potencial offer deals
-`````json
+### getbarterondeals
+
+Get potencial offer deals
+```json
 > /rpc/getbarterondeals <REQUEST_JSON>
 
 // REQUEST_JSON
@@ -353,12 +391,15 @@ TODO
       ...
     ]
 }
-`````
+```
 
 > **Примечание**: `location` и `search` являются регулярными выражениями в следующем формате: Символ процента ("%") соответствует любой последовательности из нуля или более символов в строке. Подчеркивание ("_") соответствует любому одиночному символу в строке. Любой другой символ соответствует самому себе или его эквиваленту в нижнем/верхнем регистре (сопоставление без учета регистра)
 
-#### Get potencial complex deals (3-side search)
-`````json
+### getbarteroncomplexdeals
+
+Get potencial complex deals (3-side search)
+
+```json
 > /rpc/getbarteroncomplexdeals <REQUEST_JSON>
 
 // REQUEST_JSON
@@ -387,12 +428,15 @@ TODO
     ...
   ]
 }
-`````
+```
 
 > **Примечание**: `location` и `excludeAddresses` используются для фильтрации как целевых, так и промежуточных предложений
 
-#### Get offer details
-``````json
+### getbarteronoffersdetails
+
+Get offer details
+
+```json
 > /rpc/getbarteronoffersdetails <REQUEST_JSON>
 
 // REQUEST_JSON
@@ -430,7 +474,7 @@ TODO
       ]
     }
 }
-``````
+```
 
 > **Примечание**: `account_tx_with_additional_info` имеет тот же формат, что и в запросе getbarteronaccounts
 
