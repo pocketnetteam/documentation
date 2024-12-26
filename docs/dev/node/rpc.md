@@ -780,3 +780,57 @@ Get specific version of content
   "reason": "1"
 }
 ```
+
+## Account
+
+### `getaccountversions`
+
+Получение истории версий аккаунта.
+
+**Параметры запроса**
+```json
+{
+    "address": string,     // адрес аккаунта (обязательный)
+    "topHeight": number,   // максимальная высота блока (опционально, по умолчанию текущая высота цепи)
+    "pageStart": number,   // начало страницы (опционально, по умолчанию 0)
+    "pageSize": number     // размер страницы (опционально, по умолчанию 10)
+}
+```
+
+**Пример вызова**
+```sh
+curl --location 'http://127.0.0.1:38081/rpc/public/' \
+    --header 'Content-Type: application/json' \
+    --data '{
+        "method": "getaccountversions",
+        "params": {
+            "address": "PKxgE9KkPLMHHtqGbh5kPWkgKA5UoXQ6Zx",
+            "topHeight": 1000000,
+            "pageStart": 0,
+            "pageSize": 5
+        }
+    }'
+```
+
+**Результат**
+```json
+[
+    {
+        "first": 1,           // флаг первой версии
+        "last": 1,           // флаг последней версии
+        "deleted": 0,        // флаг удаления
+        "height": 123456,    // высота блока
+        "txHash": "abc123...", // хеш транзакции
+        "p": {               // параметры профиля
+            "s1": "string1", // строковый параметр 1
+            "s2": "string2", // строковый параметр 2
+            "s3": "string3", // строковый параметр 3
+            "s4": "string4", // строковый параметр 4
+            "s5": "string5", // строковый параметр 5
+            "s6": "string6", // строковый параметр 6
+            "s7": "string7", // строковый параметр 7
+            "i1": 123        // числовой параметр 1
+        }
+    }
+]
+```
