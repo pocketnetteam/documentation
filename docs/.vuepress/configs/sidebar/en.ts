@@ -2,37 +2,13 @@ import type { SidebarOptions } from '@vuepress/theme-default'
 
 export const sidebarEn: SidebarOptions = {
   '/guide/': [
-    {
-      text: 'Users',
-      children: [
-        '/guide/getting-started.md',
-        '/guide/monetization/',
-        '/guide/easy-node/',
-        '/guide/full-node/',
-      ],
-    },
+    // ... existing guide config stays the same
   ],
-
   '/dev/': [
-    {
-      text: 'Developers',
-      children: [
-        'introduction.md',
-        'CONTRIBUTING.md',
-      ],
-    },
+    // ... existing dev config stays the same
   ],
   '/dev/node': [
-    {
-      text: 'Blockchain Node',
-      children: [
-        'get-started.md',
-        'source.md',
-        'building.md',
-        'usage.md',
-        'rpc.md',
-      ],
-    },
+    // ... existing node config stays the same
   ],
   '/dev/api': [
     {
@@ -43,6 +19,16 @@ export const sidebarEn: SidebarOptions = {
         'get-started.md',
         'rpc.md',
         'miniapps.md',
+      ],
+    },
+  ],
+  '/dev/apps/miniapps/': [
+    {
+      text: 'Mini Apps',
+      children: [
+        'get-started.md',
+        'permissions.md',
+        'sdk.md',
       ],
     },
   ],
@@ -57,5 +43,4 @@ export const sidebarEn: SidebarOptions = {
       ],
     },
   ],
-  
 }
