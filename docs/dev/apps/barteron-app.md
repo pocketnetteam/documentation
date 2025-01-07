@@ -1,5 +1,3 @@
-I'll translate it to English and convert it to Markdown format. Here's how you would save it as a `.md` file:
-
 # Bastyon Barter App (Barteron)
 
 ## Pocketnet Transaction v2
