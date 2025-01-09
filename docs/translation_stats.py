@@ -47,21 +47,26 @@ def get_file_creation_time(file_path):
     """Get file creation timestamp"""
     return os.path.getctime(file_path)
 
-def get_base_filename(filename):
-    """Extract base filename without language suffix and extension"""
+def get_base_filename(filename, filepath):
+    """Extract base filename without language suffix and extension, including path from 'dev'"""
+    # Get the path starting from 'dev'
+    path_parts = filepath.split(os.sep)
+    try:
+        dev_index = path_parts.index('dev')
+        path_from_dev = os.sep.join(path_parts[dev_index:])
+    except ValueError:
+        path_from_dev = filepath
+
+    # Extract name without extension
     name = os.path.splitext(filename)[0]
+    
+    # Remove language suffix if present
     for lang_code in LANGUAGES.keys():
         if name.endswith(f'_{lang_code}'):
-            return name[:-3]  # Remove language suffix
-    return name
-
-def get_language_from_path(path):
-    """Determine language from path"""
-    parts = path.split(os.sep)
-    for part in parts:
-        if part in LANGUAGES.keys():
-            return part
-    return 'en'  # Default to English if no language code found
+            name = name[:-3]  # Remove language suffix
+    
+    # Combine path (from dev) and processed filename
+    return os.path.join(path_from_dev, name)
 
 def scan_translations(start_path='.'):
     """Scan directory for translations and collect statistics"""
@@ -75,11 +80,11 @@ def scan_translations(start_path='.'):
                 continue
                 
             full_path = os.path.join(root, file)
-            base_name = get_base_filename(file)
             rel_path = os.path.relpath(full_path, start_path)
+            base_name = get_base_filename(file, rel_path)  # Pass both filename and relative path
             lang = get_language_from_path(root)
             
-            # Group files by their base name
+            # Group files by their base name (which now includes path from dev)
             file_groups[base_name]['files'][lang] = rel_path
             
             # Determine source language based on creation time
@@ -91,6 +96,14 @@ def scan_translations(start_path='.'):
                     file_groups[base_name]['source_lang'] = lang
 
     return file_groups
+
+def get_language_from_path(path):
+    """Determine language from path"""
+    parts = path.split(os.sep)
+    for part in parts:
+        if part in LANGUAGES.keys():
+            return part
+    return 'en'  # Default to English if no language code found
 
 def generate_language_matrix(file_groups):
     """Generate statistics matrix for languages"""

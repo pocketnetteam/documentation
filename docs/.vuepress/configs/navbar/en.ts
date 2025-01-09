@@ -8,18 +8,30 @@ export const navbarEn: NavbarOptions = [
       {
         text: 'Get Started',
         children: [
-          'guide/getting-started.md',
-          'guide/easy-node/',
-          'guide/full-node/',
-        ],
+          {
+            text: 'Getting Started',
+            link: '/guide/getting-started.md',
+          },
+          {
+            text: 'Easy Node Setup Guide',
+            link: '/guide/easy-node/',
+          },
+          {
+            text: 'Full Node Setup Guide',
+            link: '/guide/full-node/',
+          }
+        ]
       },
       {
         text: 'Monetization',
         children: [
-          'guide/monetization/',
-        ],
-      },
-    ],
+          {
+            text: 'Bastyon Monetization Guide',
+            link: '/guide/monetization/',
+          }
+        ]
+      }
+    ]
   },
   {
     text: 'Developer Docs',
@@ -27,38 +39,67 @@ export const navbarEn: NavbarOptions = [
       {
         text: 'Platform Overview',
         children: [
-          'dev/introduction.md',
-          'dev/CONTRIBUTING.md',
-        ],
+          {
+            text: 'Platform Overview',
+            link: '/dev/introduction.md',
+          },
+          {
+            text: 'Contributing to Bastyon',
+            link: '/dev/CONTRIBUTING.md',
+          }
+        ]
       },
       {
         text: 'Blockchain Node',
         children: [
-          'dev/node/get-started.md',
-          'dev/node/source.md',
-          'dev/node/building.md',
-          'dev/node/usage.md',
-          'dev/node/rpc.md',
-        ],
+          {
+            text: 'Getting Started',
+            link: '/dev/node/get-started.md',
+          },
+          {
+            text: 'Source Code',
+            link: '/dev/node/source.md',
+          },
+          {
+            text: 'Building',
+            link: '/dev/node/building.md',
+          },
+          {
+            text: 'Usage',
+            link: '/dev/node/usage.md',
+          },
+          {
+            text: 'RPC',
+            link: '/dev/node/rpc.md',
+          }
+        ]
       },
       {
-        text: 'Proxy & API',
+        text: 'Mini Apps',
         children: [
-          'dev/api/introduction.md',
-          'dev/api/get-started.md',
-          'dev/api/rpc.md',
-          'dev/api/miniapps.md',
-        ],
+          {
+            text: 'Getting Started',
+            link: '/dev/apps/miniapps/get-started.md',
+          },
+          {
+            text: 'Permissions',
+            link: '/dev/apps/miniapps/permissions.md',
+          },
+          {
+            text: 'SDK',
+            link: '/dev/apps/miniapps/sdk.md',
+          },
+        ]
       },
       {
-        text: 'Applications',
+        text: 'Barteron',
         children: [
-          'dev/apps/introduction.md',
-          'dev/apps/get-started.md',
-          'dev/apps/mini-apps.md',
-          'dev/apps/barteron-app.md',
-        ],
-      },
-    ],
-  },
+          {
+            text: 'Barteron APIs',
+            link: '/dev/apps/barteron-app.md',
+          }
+        ]
+      }
+    ]
+  }
 ] as NavbarOptions

@@ -17,45 +17,54 @@ export const sidebarEn: SidebarOptions = {
     {
       text: 'Developers',
       children: [
-        'introduction.md',
-        'CONTRIBUTING.md',
+        '/dev/introduction.md',
+        '/dev/CONTRIBUTING.md',
       ],
     },
   ],
-  '/dev/node': [
+  '/dev/node/': [
     {
       text: 'Blockchain Node',
       children: [
-        'get-started.md',
-        'source.md',
-        'building.md',
-        'usage.md',
-        'rpc.md',
+        '/dev/node/get-started.md',
+        '/dev/node/source.md',
+        '/dev/node/building.md',
+        '/dev/node/usage.md',
+        '/dev/node/rpc.md',
       ],
     },
   ],
-  '/dev/api': [
+  '/dev/api/': [
     {
       text: 'Proxy & API',
       children: [
-        'todo.md',
-        'introduction.md',
-        'get-started.md',
-        'rpc.md',
-        'miniapps.md',
+        '/dev/api/todo.md',
+        '/dev/api/introduction.md',
+        '/dev/api/get-started.md',
+        '/dev/api/rpc.md',
+        '/dev/api/miniapps.md',
       ],
     },
   ],
-  '/dev/apps': [
+  '/dev/apps/miniapps/': [
+    {
+      text: 'Mini Apps',
+      children: [
+        '/dev/apps/miniapps/get-started.md',
+        '/dev/apps/miniapps/permissions.md',
+        '/dev/apps/miniapps/sdk.md',
+      ],
+    },
+  ],
+  '/dev/apps/': [
     {
       text: 'Applications',
       children: [
-        'introduction.md',
-        'get-started.md',
-        'mini-apps.md',
-        'barteron-app.md',
+        '/dev/apps/introduction.md',
+        '/dev/apps/get-started.md',
+        '/dev/apps/mini-apps.md',
+        '/dev/apps/barteron-app.md',
       ],
     },
   ],
-  
 }
