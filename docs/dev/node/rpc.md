@@ -834,3 +834,44 @@ curl --location 'http://127.0.0.1:38081/rpc/public/' \
     }
 ]
 ```
+
+## Transactions
+
+### `getfromtotransactions`
+
+Получение транзакций между двумя адресами.
+
+**Параметры запроса**
+```json
+{
+    "from": string,    // адрес отправителя (обязательный)
+    "to": string,      // адрес получателя (обязательный) 
+    "depth": number    // глубина поиска в блоках (опционально, по умолчанию 43200 - один месяц)
+}
+```
+
+**Пример вызова**
+```sh
+curl --location 'http://127.0.0.1:38081/rpc/public/' \
+    --header 'Content-Type: application/json' \
+    --data '{
+        "method": "getfromtotransactions",
+        "params": {
+            "from": "PKxgE9KkPLMHHtqGbh5kPWkgKA5UoXQ6Zx",
+            "to": "PKxhF8NkQLNJKtqHbh7kPWkgKA5UoXQ7Zy",
+            "depth": 10000
+        }
+    }'
+```
+
+**Результат**
+```json
+[
+    {
+        "hash": "abc123...",     // хеш транзакции
+        "type": 1,      // тип транзакции
+        "height": 123456,        // высота блока
+        "amount": 1000000        // сумма перевода в сатоши
+    }
+]
+```

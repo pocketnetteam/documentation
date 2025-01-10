@@ -27,16 +27,20 @@ jobs:
           path: ./docs/.vuepress/dist/
           retention-days: 1
 
-  # deploy_docs_bastyon_com:
-  #   runs-on: docs.bastyon.com
-  #   needs: build_vue
-  #   steps:
-  #     - name: Download artifacts
-  #       uses: actions/download-artifact@v4
-  #     - name: Copy artifacts
-  #       run: |
-  #         rm -rf /data/docs/*
-  #         cp -r ./dist/* /data/docs/
+  deploy_docs_bastyon_com:
+    runs-on: docs.bastyon.com
+    needs: build_vue
+    steps:
+      - name: Download artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: ./dist
+      - name: Copy artifacts
+        run: |
+          rm -rf /data/docs/*
+          cp -r ./dist/* /data/docs/
+          rm -rf *
 
   deploy_docs_pocketnet_app:
     runs-on: docs.bastyon.com
