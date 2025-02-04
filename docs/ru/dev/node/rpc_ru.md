@@ -31,19 +31,19 @@
 
 Retrieving the list of mini applications.
 
-**Request Parameters**
+**Параметры запроса**
 ```json
 {
-    "page": number,     // page number (optional)
-    "limit": number,    // number of records per page (optional)
-    "tags": string[],   // array of tags for filtering (optional)
-    "search": string,   // search string (optional)
-    "address": string,  // owner's address (optional)
-    "id": string       // application identifier (optional)
+    "page": number,     // номер страницы (опционально)
+    "limit": number,    // количество записей на странице (опционально)
+    "tags": string[],   // массив тегов для фильтрации (опционально)
+    "search": string,   // строка поиска (опционально)
+    "address": string,  // адрес владельца (опционально)
+    "id": string       // идентификатор приложения (опционально)
 }
 ```
 
-**Example Call**
+**Пример вызова**
 ```sh
 curl --location 'http://127.0.0.1:38081/rpc/public/' \
     --header 'Content-Type: application/json' \
@@ -57,7 +57,7 @@ curl --location 'http://127.0.0.1:38081/rpc/public/' \
     }'
 ```
 
-**Result**
+**Результат**
 ```json
 [
     {
@@ -78,18 +78,18 @@ curl --location 'http://127.0.0.1:38081/rpc/public/' \
 
 ### `/getappscores`
 
-Getting the list of scores for a specific application.
+Получение списка оценок для конкретного приложения.
 
-**Request Parameters**
+**Параметры запроса**
 ```json
 {
-    "app": string,     // application transaction hash (required)
-    "page": number,    // page number (optional)
-    "limit": number    // number of records per page (optional)
+    "app": string,     // хеш транзакции приложения (обязательно)
+    "page": number,    // номер страницы (опционально)
+    "limit": number    // количество записей на странице (опционально)
 }
 ```
 
-**Example Call**
+**Пример вызова**
 ```sh
 curl --location 'http://127.0.0.1:38081/rpc/public/' \
     --header 'Content-Type: application/json' \
@@ -103,26 +103,25 @@ curl --location 'http://127.0.0.1:38081/rpc/public/' \
     }'
 ```
 
-
-**Result**
+**Результат**
 ```json
 TODO
 ```
 
 ### `/getappcomments`
 
-Getting a list of comments for a specific application.
+Получение списка комментариев для конкретного приложения.
 
-**Request Parameters**
+**Параметры запроса**
 ```json
 {
-    "app": string,     // application transaction hash (required)
-    "page": number,    // page number (optional)
-    "limit": number    // number of records per page (optional)
+    "app": string,     // хеш транзакции приложения (обязательно)
+    "page": number,    // номер страницы (опционально)
+    "limit": number    // количество записей на странице (опционально)
 }
 ```
 
-**Call Example**
+**Пример вызова**
 ```sh
 curl --location 'http://127.0.0.1:38081/rpc/public/' \
     --header 'Content-Type: application/json' \
@@ -136,10 +135,13 @@ curl --location 'http://127.0.0.1:38081/rpc/public/' \
     }'
 ```
 
-**Result**
+**Результат**
 ```json
 TODO
 ```
+
+
+Вот преобразованный текст с разметкой Markdown после заголовка Barteron:
 
 ## Barteron
 
@@ -232,7 +234,7 @@ Get accounts transactions
 }
 ```
 
-> **Note**: `rating` is an integer representing float * 10, so 35 means the user's rating is 3.5
+> **Примечание**: `rating` это целое число, которое представляет float * 10, поэтому 35 означает, что рейтинг пользователя 3.5
 
 
 ### `/getbarteronoffersbyaddress`
@@ -337,7 +339,7 @@ Get offers groups
     "search": "String for fulltext search in Caption and Description",
 }
 
-// Result for request:
+// Result for resuest:
 // location: [ "ucfv" ]
 // locationGroup: 7
 {
@@ -358,20 +360,20 @@ Get offers groups
 
 ### `/getbarterondeals` 
 
-Get potential offer deals
+Get potencial offer deals
 ```json
 > /rpc/getbarterondeals <REQUEST_JSON>
 
 // REQUEST_JSON
 {
-    "addresses": ["ADDRESS1", "ADDRESS2"], // Filter potential offers with these account addresses
-    "excludeAddresses": ["ADDRESS3", "ADDRESS4"], // Filter potential offers by excluding offers with these addresses
+    "addresses": ["ADDRESS1", "ADDRESS2"], // Filter potencial offers with these account addresses
+    "excludeAddresses": ["ADDRESS3", "ADDRESS4"], // Filter potencial offers by excluding offers with these addresses
     "location": "v3g9s%", // An SQLite3 language expression to be used with `LIKE` operator when comparing locations
     "priceMax": 1000, // Maximal offer price
     "priceMin": 10, // Minimal offer price
     "search": "%some text%", // Fulltext search in offer's title and description
-    "mytags": [1,3,4], // Filter potential offers by the tags they are exchangeable for
-    "theirTags": [5,6,7], // Filter potential offers by their tags
+    "mytags": [1,3,4], // Filter potencial offers by the tags they are exchangable for
+    "theirTags": [5,6,7], // Filter potencial offers by their tags
     // Pagination
     "topHeight": 100, // Top height for start pagination
     "pageStart": 0, // Number of first page
@@ -391,11 +393,11 @@ Get potential offer deals
 }
 ```
 
-> **Note**: `location` and `search` are regular expressions in the following format: The percent sign ("%") matches any sequence of zero or more characters in the string. The underscore ("_") matches any single character in the string. Any other character matches itself or its equivalent in lower/upper case (case-insensitive matching)
+> **Примечание**: `location` и `search` являются регулярными выражениями в следующем формате: Символ процента ("%") соответствует любой последовательности из нуля или более символов в строке. Подчеркивание ("_") соответствует любому одиночному символу в строке. Любой другой символ соответствует самому себе или его эквиваленту в нижнем/верхнем регистре (сопоставление без учета регистра)
 
 ### `/getbarteroncomplexdeals`
 
-Get potential complex deals (3-side search)
+Get potencial complex deals (3-side search)
 
 ```json
 > /rpc/getbarteroncomplexdeals <REQUEST_JSON>
@@ -428,11 +430,8 @@ Get potential complex deals (3-side search)
 }
 ```
 
-> **Note**: `location` and `excludeAddresses` are used to filter both target and intermediate offers
+> **Примечание**: `location` и `excludeAddresses` используются для фильтрации как целевых, так и промежуточных предложений
 
-Here's the complete Markdown snippet:
-
-```markdown
 ### `/getbarteronoffersdetails`
 
 Get offer details
@@ -477,11 +476,12 @@ Get offer details
 }
 ```
 
-> **Note**: `account_tx_with_additional_info` has the same format as in the getbarteronaccounts request
+> **Примечание**: `account_tx_with_additional_info` имеет тот же формат, что и в запросе getbarteronaccounts
 
-> **Note**: If `includeSmth` is not specified in the request, then `smth` will not be in the json response at all.
+> **Примечание**: Если `includeSmth` не указан в запросе, то `smth` вообще не будет в ответе json.
 
-> **Note**: `score_tx`, `comment_tx`, `comment_score_tx`, and `account_tx_with_additional_info` are just raw transactions, and the relationships between them and offers should be built on the client side.
+> **Примечание**: `score_tx`, `comment_tx`, `comment_score_tx` и `account_tx_with_additional_info` - это просто необработанные транзакции, и связи между ними и предложениями должны быть построены на стороне клиента.
+
 
 
 ## Moderation System
@@ -558,10 +558,10 @@ Any flag can initiate the creation of a "jury". If the jury is initiated, all su
 
 - The account in question is not in an active ban
 - Number of flags with the same `REASON`, `CONTENT_TX_HASH` and `ADDRESS_HASH` must be:
-  a. First category (`<3 likers`) - `5 flags`
-  b. Second category (`<20 likers`) - `10 flags`
-  c. Third category (`<40 liker`) - `15 flags`
-  d. Fourth category (`40+ liker`) - `20 flags`
+  a. First cetgory (`<3 likers`) - `5 flags`
+  b. Second cetgory (`<20 likers`) - `10 flags`
+  c. Third cetgory (`<40 liker`) - `15 flags`
+  d. Fourth cetgory (`40+ liker`) - `20 flags`
 - Search depth for similar flags `FLAG_HEIGHT > (CURRENT_HEIGHT - 43200)`
 
 Number of moderator votes required to close the jury:
@@ -572,6 +572,7 @@ Number of moderator votes required to close the jury:
   c. Third category (`<40 liker`) - `4 votes`
   d. Fourth category (`40+ liker`) - `8 votes`
 - For a negative verdict, 1 vote against from any moderator is sufficient
+
 
 ### Ban Account
 
@@ -632,6 +633,7 @@ List of all jury
 ```
 
 
+
 ### `/getjuryassigned`
 
 List of assigned jury for the moderator
@@ -665,7 +667,7 @@ List of assigned jury for the moderator
 }
 ```
 
-Here `versions` is a list of transaction hashes of the edited versions of the content.
+Here `versions` this is a list of transaction hashes of the edited versions of the content.
 
 ### `/getjurymoderators`
 
@@ -783,19 +785,19 @@ Get specific version of content
 
 ### `getaccountversions`
 
-Getting account version history.
+Получение истории версий аккаунта.
 
-**Request Parameters**
+**Параметры запроса**
 ```json
 {
-    "address": string,     // account address (required)
-    "topHeight": number,   // maximum block height (optional, defaults to current chain height)
-    "pageStart": number,   // page start (optional, defaults to 0)
-    "pageSize": number     // page size (optional, defaults to 10)
+    "address": string,     // адрес аккаунта (обязательный)
+    "topHeight": number,   // максимальная высота блока (опционально, по умолчанию текущая высота цепи)
+    "pageStart": number,   // начало страницы (опционально, по умолчанию 0)
+    "pageSize": number     // размер страницы (опционально, по умолчанию 10)
 }
 ```
 
-**Example Call**
+**Пример вызова**
 ```sh
 curl --location 'http://127.0.0.1:38081/rpc/public/' \
     --header 'Content-Type: application/json' \
@@ -810,24 +812,24 @@ curl --location 'http://127.0.0.1:38081/rpc/public/' \
     }'
 ```
 
-**Result**
+**Результат**
 ```json
 [
     {
-        "first": 1,           // first version flag
-        "last": 1,           // last version flag
-        "deleted": 0,        // deletion flag
-        "height": 123456,    // block height
-        "txHash": "abc123...", // transaction hash
-        "p": {               // profile parameters
-            "s1": "string1", // string parameter 1
-            "s2": "string2", // string parameter 2
-            "s3": "string3", // string parameter 3
-            "s4": "string4", // string parameter 4
-            "s5": "string5", // string parameter 5
-            "s6": "string6", // string parameter 6
-            "s7": "string7", // string parameter 7
-            "i1": 123        // numeric parameter 1
+        "first": 1,           // флаг первой версии
+        "last": 1,           // флаг последней версии
+        "deleted": 0,        // флаг удаления
+        "height": 123456,    // высота блока
+        "txHash": "abc123...", // хеш транзакции
+        "p": {               // параметры профиля
+            "s1": "string1", // строковый параметр 1
+            "s2": "string2", // строковый параметр 2
+            "s3": "string3", // строковый параметр 3
+            "s4": "string4", // строковый параметр 4
+            "s5": "string5", // строковый параметр 5
+            "s6": "string6", // строковый параметр 6
+            "s7": "string7", // строковый параметр 7
+            "i1": 123        // числовой параметр 1
         }
     }
 ]
@@ -837,18 +839,18 @@ curl --location 'http://127.0.0.1:38081/rpc/public/' \
 
 ### `getfromtotransactions`
 
-Getting transactions between two addresses.
+Получение транзакций между двумя адресами.
 
-**Request Parameters**
+**Параметры запроса**
 ```json
 {
-    "from": string,    // sender address (required)
-    "to": string,      // recipient address (required) 
-    "depth": number    // search depth in blocks (optional, defaults to 43200 - one month)
+    "from": string,    // адрес отправителя (обязательный)
+    "to": string,      // адрес получателя (обязательный) 
+    "depth": number    // глубина поиска в блоках (опционально, по умолчанию 43200 - один месяц)
 }
 ```
 
-**Example Call**
+**Пример вызова**
 ```sh
 curl --location 'http://127.0.0.1:38081/rpc/public/' \
     --header 'Content-Type: application/json' \
@@ -862,14 +864,14 @@ curl --location 'http://127.0.0.1:38081/rpc/public/' \
     }'
 ```
 
-**Result**
+**Результат**
 ```json
 [
     {
-        "hash": "abc123...",     // transaction hash
-        "type": 1,      // transaction type
-        "height": 123456,        // block height
-        "amount": 1000000,        // transfer amount in satoshi
+        "hash": "abc123...",     // хеш транзакции
+        "type": 1,      // тип транзакции
+        "height": 123456,        // высота блока
+        "amount": 1000000,        // сумма перевода в сатоши
         "time": 1234567890        // UNIX timestamp
     }
 ]
