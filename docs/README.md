@@ -4,11 +4,11 @@ title: Home
 heroImage: /images/bastyon-logo-256x256.png
 actions:
   - text: Get Started
-    link: /ru/dev/get-started.md
+    link: /guide/getting-started.md
     type: primary
 
-  - text: Public API
-    link: /ru/dev/api/introduction.md
+  - text: Mini-Apps API
+    link: /dev/api/introduction.md
     type: secondary
 
 features:

@@ -4,11 +4,11 @@ title: Главная
 heroImage: /images/bastyon-logo-256x256.png
 actions:
   - text: Начать
-    link: /ru/dev/get-started.md
+    link: /ru/dev/get-started_ru.md
     type: primary
 
   - text: Публичный API
-    link: /ru/dev/api/introduction.md
+    link: /ru/dev/api/introduction_ru.md
     type: secondary
 
 features:

@@ -38,7 +38,6 @@ export const sidebarEn: SidebarOptions = {
     {
       text: 'Proxy & API',
       children: [
-        '/dev/api/todo.md',
         '/dev/api/introduction.md',
         '/dev/api/get-started.md',
         '/dev/api/rpc.md',

@@ -1,102 +1,102 @@
-# Building
+# Сборка
 
-## Introduction
+## Введение
 
-This guide describes various ways to compile the PocketnetCore node or its individual components. By following the instructions in this document, you can obtain the following binary files and installation packages:
+Это руководство описывает различные способы компиляции узла PocketnetCore или его отдельных компонентов. Следуя инструкциям в этом документе, вы можете получить следующие бинарные файлы и установочные пакеты:
 
-- `pocketcoind` - the node daemon, which:
-  - Runs the node in headless mode
-  - Is managed through the `pocketcoin.conf` configuration file
-  - Provides an RPC API for external interaction
+- `pocketcoind` - демон узла, который:
+  - Запускает узел в режиме без графического интерфейса
+  - Управляется через конфигурационный файл `pocketcoin.conf`
+  - Предоставляет RPC API для внешнего взаимодействия
 
-- `pocketcoin-qt` - the GUI client, which:
-  - Includes the full functionality of the daemon
-  - Provides a wallet interface
-  - Contains developer tools (RPC console, peer management)
-  - Allows configuring node parameters through a graphical interface
+- `pocketcoin-qt` - GUI клиент, который:
+  - Включает полную функциональность демона
+  - Предоставляет интерфейс кошелька
+  - Содержит инструменты разработчика (RPC консоль, управление пирами)
+  - Позволяет настраивать параметры узла через графический интерфейс
 
-- `pocketcoin-cli` - a console utility for:
-  - Interacting with the node via RPC
-  - Managing the wallet
-  - Retrieving statistics
-  - Configuring logging
+- `pocketcoin-cli` - консольная утилита для:
+  - Взаимодействия с узлом через RPC
+  - Управления кошельком
+  - Получения статистики
+  - Настройки логирования
 
-The build can be performed for individual components or as a complete package. Installation packages are supported:
-- `NSIS` for Windows
-- `DEB` for Debian/Ubuntu
-- `DMG` for macOS
+Сборка может выполняться для отдельных компонентов или как полный пакет. Поддерживаются установочные пакеты:
+- `NSIS` для Windows
+- `DEB` для Debian/Ubuntu
+- `DMG` для macOS
 
-This guide describes two main approaches to building:
-1. For development (using CMake)
-2. For release versions (using GNU Make)
+Это руководство описывает два основных подхода к сборке:
+1. Для разработки (с использованием CMake)
+2. Для релизных версий (с использованием GNU Make)
 
-## Getting Started
+## Начало работы
 
-### System Requirements
+### Системные требования
 
-- Minimum 4 GB RAM (8 GB recommended)
-- 50 GB free disk space
-- Processor with 64-bit instruction support
-- Operating system:
-  - Linux (Ubuntu 22.04 or newer)
+- Минимум 4 ГБ ОЗУ (рекомендуется 8 ГБ)
+- 50 ГБ свободного места на диске
+- Процессор с поддержкой 64-битных инструкций
+- Операционная система:
+  - Linux (Ubuntu 22.04 или новее)
   - Windows 10/11
-  - macOS 11 or newer
+  - macOS 11 или новее
 
-### Prerequisites
+### Предварительные требования
 
-Before starting the build, make sure you have installed:
+Перед началом сборки убедитесь, что у вас установлены:
 
 - Git
-- C++ compiler (GCC 9+ for Linux, MSVC for Windows, Clang for macOS)
-- CMake 3.20 or newer (for building with CMake)
-- Python 3.8 or newer
-- Administrator rights in the system to install dependencies
+- Компилятор C++ (GCC 9+ для Linux, MSVC для Windows, Clang для macOS)
+- CMake 3.20 или новее (для сборки с CMake)
+- Python 3.8 или новее
+- Права администратора в системе для установки зависимостей
 
-### Development Recommendations
+### Рекомендации по разработке
 
-- It is recommended to use Docker for development environment isolation
-- Use version control system (git) to track changes
-- For development, it is preferable to use CMake and modern IDEs (VSCode, CLion)
-- When encountering dependency issues, check library versions in `depends/`
+- Рекомендуется использовать Docker для изоляции среды разработки
+- Используйте систему контроля версий (git) для отслеживания изменений
+- Для разработки предпочтительно использовать CMake и современные IDE (VSCode, CLion)
+- При возникновении проблем с зависимостями проверяйте версии библиотек в `depends/`
 
-### Important Notes
+### Важные замечания
 
-- Build can take significant time (30-60 minutes depending on the system)
-- When building for release, use tags from the main repository
-- It is recommended to start with a debug build for development
-- Document all code changes and update tests when necessary
+- Сборка может занять значительное время (30-60 минут в зависимости от системы)
+- При сборке для релиза используйте теги из основного репозитория
+- Для разработки рекомендуется начинать с отладочной сборки
+- Документируйте все изменения кода и обновляйте тесты при необходимости
 
-## Usage Docker Container
+## Использование Docker контейнера
 
-[Docker](https://www.docker.com/) provides powerful tools for application development and deployment, offering the following advantages:
+[Docker](https://www.docker.com/) предоставляет мощные инструменты для разработки и развертывания приложений, предлагая следующие преимущества:
 
-- Isolation of development environment from the host operating system
-- Guaranteed environment reproducibility across different machines  
-- Easy dependency management and configuration
-- Quick switching between different environment versions
-- Resource efficiency compared to virtual machines
-- Convenient scaling and deployment
+- Изоляция среды разработки от хостовой операционной системы
+- Гарантированная воспроизводимость среды на разных машинах
+- Простое управление зависимостями и конфигурацией
+- Быстрое переключение между разными версиями среды
+- Эффективность использования ресурсов по сравнению с виртуальными машинами
+- Удобное масштабирование и развертывание
 
-While using Docker is not mandatory for building the project, it helps avoid dependency issues during operation. Due to the minimum version requirement of `cmake v3.20+`, the Linux version in the Docker container must be at least `ubuntu:22.04`. This restriction does not apply when building with `make`.
+Хотя использование Docker не является обязательным для сборки проекта, оно помогает избежать проблем с зависимостями во время работы. Из-за требования к минимальной версии `cmake v3.20+`, версия Linux в Docker контейнере должна быть не ниже `ubuntu:22.04`. Это ограничение не применяется при сборке с помощью `make`.
 
-## Clone Repository
+## Клонирование репозитория
 
-Download the project from the official repository (git installation required). The main branch is valid for working in the Main network but may include commits that belong to the BETA stage. It is recommended to switch the repository to the latest tag.
+Загрузите проект из официального репозитория (требуется установка git). Главная ветка подходит для работы в Main сети, но может включать коммиты, относящиеся к стадии BETA. Рекомендуется переключить репозиторий на последний тег.
 
 ```sh
 apt-get update
 apt-get install git
 git clone https://github.com/pocketnetteam/pocketnet.core
 cd pocketnet.core/
-# Checkout latest stable tag
+# Переключиться на последний стабильный тег
 git checkout $(git describe --tags "$(git rev-list --tags --max-count=1)")
 ```
 
-## Preparing Dependency Packages
+## Подготовка пакетов зависимостей
 
-The next stage involves preparing the environment and installing the minimum set of packages needed to start project compilation. Depending on the target OS, the set of additional packages and process varies slightly.
+Следующий этап включает подготовку среды и установку минимального набора пакетов, необходимых для начала компиляции проекта. В зависимости от целевой ОС набор дополнительных пакетов и процесс немного различаются.
 
-### Installing System Requirements
+### Установка системных требований
 
 #### Linux x64
 
@@ -130,9 +130,9 @@ apt-get install make automake cmake curl bzip2 g++-multilib pkg-config \
 # TODO : implement
 ```
 
-### Building Dependencies
+### Сборка зависимостей
 
-The `depends/` directory contains all necessary packages for building, which allow compiling code for different platforms.
+Директория `depends/` содержит все необходимые пакеты для сборки, которые позволяют компилировать код для разных платформ.
 
 ```sh
 cd depends/
@@ -140,26 +140,25 @@ make
 cd ..
 ```
 
-To build dependencies for another platform (cross-compilling), you need to pass the `HOST` argument to the `make` compiler specifying the target platform.
+Для сборки зависимостей для другой платформы (кросс-компиляция) необходимо передать компилятору `make` аргумент `HOST`, указывающий целевую платформу.
 
 ```sh
 host_platform="x86_64-pc-linux-gnu"
 make HOST=$host_platform
 ```
 
-Common tested `host_platform` for cross compilation are:
-- `x86_64-pc-linux-gnu` for Linux (64-bit)
-- `x86_64-w64-mingw32` for Windows (64-bit)
-- `x86_64-apple-darwin16` for macOS (64-bit)
-- `arm64-apple-darwin` for ARM macOS (64-bit)
+Общие протестированные `host_platform` для кросс-компиляции:
+- `x86_64-pc-linux-gnu` для Linux (64-bit)
+- `x86_64-w64-mingw32` для Windows (64-bit)
+- `x86_64-apple-darwin16` для macOS (64-bit)
+- `arm64-apple-darwin` для ARM macOS (64-bit)
 
-
-## Configuration and Compilation
+## Конфигурация и компиляция
 
 ### `cmake`
 
 :::tip
-This type of build is in testing phase and not intended for production use.
+Этот тип сборки находится в стадии тестирования и не предназначен для использования в продакшене.
 :::
 
 ```sh
@@ -168,7 +167,7 @@ cmake -DCMAKE_PREFIX_PATH=$PWD/../depends/$host_platform ..
 cmake --build . --config Debug -j 8
 ```
 
-The following files will be compiled as a result:
+В результате будут скомпилированы следующие файлы:
 ```
 └─ build/
    └─ src/
@@ -180,7 +179,7 @@ The following files will be compiled as a result:
 
 ### `make`
 
-The main method for building executables and installation packages.
+Основной метод для сборки исполняемых файлов и установочных пакетов.
 
 ```sh
 ./autogen.sh
@@ -188,7 +187,7 @@ CONFIG_SITE=$PWD/depends/$host_platform/share/config.site ./configure --prefix=/
 make
 ```
 
-The following files will be compiled as a result:
+В результате будут скомпилированы следующие файлы:
 ```
 └─ src/
    └─ qt/
@@ -199,13 +198,13 @@ The following files will be compiled as a result:
 
 ### `make deploy`
 
-Final versions (Releases) are compiled using `make`, installation packages are built using `make deploy`:
+Финальные версии (Релизы) компилируются с помощью `make`, установочные пакеты собираются с помощью `make deploy`:
 
 ```sh
 make deploy
 ```
 
-The following files will be compiled as a result:
+В результате будут скомпилированы следующие файлы:
 ```
 └─ src/
    ├─ pocketnetcore_X.Y.Z_linux_x64_setup.deb
@@ -213,19 +212,19 @@ The following files will be compiled as a result:
 ```
 
 :::tip
-The version of the final files is determined by the `./share/version.sh` script and depends on the current GIT commit. For releases, tags in the format `X.Y.Z` are used.
+Версия финальных файлов определяется скриптом `./share/version.sh` и зависит от текущего GIT коммита. Для релизов используются теги в формате `X.Y.Z`.
 :::
 
-## Usage VSCode
+## Использование VSCode
 
-When using the `CMake` extension, you can manage project configuration and compilation using VSCode tools. To do this, you need to create a configuration file `.vscode/settings.json` and specify the full path to the dependencies directory:
+При использовании расширения `CMake` вы можете управлять конфигурацией и компиляцией проекта с помощью инструментов VSCode. Для этого необходимо создать файл конфигурации `.vscode/settings.json` и указать полный путь к директории зависимостей:
 
 ```sh
 mkdir .vscode
 touch .vscode/settings.json
 ```
 
-CMake control parameters in `.vscode/settings.json` file:
+Параметры управления CMake в файле `.vscode/settings.json`:
 
 ```json
 {
@@ -238,6 +237,6 @@ CMake control parameters in `.vscode/settings.json` file:
 }
 ```
 
-## Usage JetBrains CLion
+## Использование JetBrains CLion
 
 TODO : implement
