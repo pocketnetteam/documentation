@@ -612,11 +612,21 @@ The `getuserstate` method returns, among other things, a `badges` object with a 
 
 ### `/getalljury`
 
-List of all jury
+List of all juries
 
 ```json
-> /rpc/getalljury
+> /rpc/getalljury <REQUEST_JSON>
 
+// REQUEST_JSON
+{
+    "topHeight": number,  // Starting height for pagination
+    "pageStart": number,  // Starting page number
+    "pageSize": number,   // Page size
+    "orderBy": string,    // Sort field (Height)
+    "desc": boolean      // Sort direction (true for descending)
+}
+
+// Result
 {
     "result": "success",
     "data": [
@@ -873,4 +883,31 @@ curl --location 'http://127.0.0.1:38081/rpc/public/' \
         "time": 1234567890        // UNIX timestamp
     }
 ]
+```
+
+### `getlastblocks`
+
+Получение информации о последних блоках сети.
+
+**Параметры запроса**
+```json
+{
+    "count": number,      // количество блоков (опционально, по умолчанию 10, максимум 100)
+    "last_height": number, // высота последнего блока (опционально, по умолчанию текущая высота цепи)
+    "verbosity": boolean  // подробный вывод с информацией о типах транзакций (опционально, по умолчанию false)
+}
+```
+
+**Пример вызова**
+```sh
+curl --location 'http://127.0.0.1:38081/rpc/public/' \
+    --header 'Content-Type: application/json' \
+    --data '{
+        "method": "getlastblocks",
+        "params": {
+            "count": 5,
+            "last_height": 123456,
+            "verbosity": true
+        }
+    }'
 ```
