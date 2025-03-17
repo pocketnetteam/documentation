@@ -60,7 +60,13 @@ For optimal performance as a public node, ensure:
    $ ulimit -n 10000
    ```
 
-4. After installation, start the GUI pocketcoin client from the command line:
+4. In case the node run via systemd, add the following directive to the `[Service]` section to prevent too many open files errors:
+
+   ```
+   LimitNOFILE=65536
+   ```
+
+5. After installation, start the GUI pocketcoin client from the command line:
 
    ```bash
    $ pocketcoin-qt
