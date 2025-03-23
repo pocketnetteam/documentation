@@ -2,7 +2,7 @@
 Functionality:
 -This python script collects statistics of source .md files in Bastyon documentation and their respective translations 
 (Russian, Deutsch, French, Korean, Spanish, Italiano, Chinese, English)
--There will be a firt table with stats, where each all languages starting from english will be in rows and columns, and the statistics
+-There will be a first table with stats, where each all languages starting from english will be in rows and columns, and the statistics
 will be collected for each source language which is being stored in the first column, against translation languages. For 
 example, in the first row and first column will be english, then russian will be in the first row but in second column, and it will show
 the total translation coverage for all files that have been source files in english. The second row first, column will contain russian as a source
@@ -20,6 +20,7 @@ filename.md
 - We don't have any knowledge of the folder structure
 - We can't definitively say what is source language that was used to write the original file. Therefore, date created is being used 
 to determine the "true" source.
+- Other languages have their suffix (_ru, _de, etc.)
 Usage:
 Run translation_track.py file in /docs directory
 Wait for it to complete
@@ -43,20 +44,8 @@ LANGUAGES = {
     'zh': 'Chinese'
 }
 
-def get_file_creation_time(file_path):
-    """Get file creation timestamp"""
-    return os.path.getctime(file_path)
-
 def get_base_filename(filename, filepath):
-    """Extract base filename without language suffix and extension, including path from 'dev'"""
-    # Get the path starting from 'dev'
-    path_parts = filepath.split(os.sep)
-    try:
-        dev_index = path_parts.index('dev')
-        path_from_dev = os.sep.join(path_parts[dev_index:])
-    except ValueError:
-        path_from_dev = filepath
-
+    """Extract base filename without language suffix and extension"""
     # Extract name without extension
     name = os.path.splitext(filename)[0]
     
@@ -65,8 +54,7 @@ def get_base_filename(filename, filepath):
         if name.endswith(f'_{lang_code}'):
             name = name[:-3]  # Remove language suffix
     
-    # Combine path (from dev) and processed filename
-    return os.path.join(path_from_dev, name)
+    return name
 
 def scan_translations(start_path='.'):
     """Scan directory for translations and collect statistics"""
@@ -81,29 +69,35 @@ def scan_translations(start_path='.'):
                 
             full_path = os.path.join(root, file)
             rel_path = os.path.relpath(full_path, start_path)
-            base_name = get_base_filename(file, rel_path)  # Pass both filename and relative path
-            lang = get_language_from_path(root)
+            base_name = get_base_filename(file, rel_path)
             
-            # Group files by their base name (which now includes path from dev)
+            # Determine language from filename and path
+            lang = 'en'  # Default to English
+            path_parts = rel_path.split(os.sep)
+            
+            # Check for language in path first
+            for lang_code in LANGUAGES.keys():
+                if lang_code in path_parts:
+                    lang = lang_code
+                    break
+            
+            # Then check filename suffix
+            for lang_code in LANGUAGES.keys():
+                if file.endswith(f'_{lang_code}.md'):
+                    lang = lang_code
+                    break
+            
+            # Group files by their base name
             file_groups[base_name]['files'][lang] = rel_path
             
-            # Determine source language based on creation time
+            # Set source language based on naming convention
             if not file_groups[base_name]['source_lang']:
                 file_groups[base_name]['source_lang'] = lang
-            else:
-                current_source = file_groups[base_name]['source_lang']
-                if get_file_creation_time(full_path) < get_file_creation_time(file_groups[base_name]['files'][current_source]):
-                    file_groups[base_name]['source_lang'] = lang
+            elif lang == 'en' and file_groups[base_name]['source_lang'] != 'en':
+                # English files are always considered source
+                file_groups[base_name]['source_lang'] = 'en'
 
     return file_groups
-
-def get_language_from_path(path):
-    """Determine language from path"""
-    parts = path.split(os.sep)
-    for part in parts:
-        if part in LANGUAGES.keys():
-            return part
-    return 'en'  # Default to English if no language code found
 
 def generate_language_matrix(file_groups):
     """Generate statistics matrix for languages"""
@@ -132,7 +126,7 @@ def write_stats_file(file_groups, output_file='translation_stats.md'):
         f.write(f"# Translation Statistics\n\n")
         f.write(f"Generated on: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n")
         
-        # Write language matrix
+        # Write language matrix first
         f.write("## Translation Coverage Matrix\n\n")
         f.write("| Source Language | " + " | ".join(LANGUAGES.values()) + " | Total Files |\n")
         f.write("|----------------|" + "|".join(["-" * len(lang) for lang in LANGUAGES.values()]) + "|--------------|\n")
@@ -150,19 +144,40 @@ def write_stats_file(file_groups, output_file='translation_stats.md'):
             row.append(str(translations['total']))
             f.write("| " + " | ".join(row) + " |\n")
         
-        # Write per-file statistics
+        # Write per-file statistics second
         f.write("\n## Per-File Translation Status\n\n")
         f.write("| Source File | " + " | ".join(LANGUAGES.values()) + " |\n")
         f.write("|-------------|" + "|".join(["-" * len(lang) for lang in LANGUAGES.values()]) + "|\n")
         
         for base_name, group in sorted(file_groups.items()):
-            row = [f"{base_name} ({LANGUAGES[group['source_lang']]})" if group['source_lang'] else base_name]
+            row = [f"{base_name} ({LANGUAGES[group['source_lang']]})"]
             for lang in LANGUAGES.keys():
                 if lang == group['source_lang']:
                     row.append("SOURCE")
                 else:
                     row.append("✓" if lang in group['files'] else "❌")
             f.write("| " + " | ".join(row) + " |\n")
+        
+        # Write missing translations section last
+        f.write("\n## Missing Translations\n\n")
+        for lang_code, lang_name in LANGUAGES.items():
+            if lang_code == 'en':  # Skip English as it's the source
+                continue
+                
+            missing_files = []
+            for base_name, group in sorted(file_groups.items()):
+                if group['source_lang'] == 'en' and lang_code not in group['files']:
+                    # Get the source file path
+                    source_path = group['files']['en']
+                    missing_files.append(source_path)
+            
+            if missing_files:
+                f.write(f"\n### Missing {lang_name} Translations ({len(missing_files)} files)\n\n")
+                for file_path in missing_files:
+                    expected_path = file_path.replace('dev/', f'{lang_code}/dev/').replace('.md', f'_{lang_code}.md')
+                    f.write(f"- [ ] {file_path} → {expected_path}\n")
+            else:
+                f.write(f"\n### Missing {lang_name} Translations\n\nAll files are translated! 🎉\n")
 
 def main():
     try:
