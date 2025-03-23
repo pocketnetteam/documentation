@@ -14,11 +14,11 @@ export const navbarRu: NavbarOptions = [
           },
           {
             text: 'Руководство по настройке Easy Node',
-            link: '/ru/guide/easy-node/',
+            link: '/ru/guide/easy-node/index_ru.md',
           },
           {
             text: 'Руководство по настройке Full Node',
-            link: '/ru/guide/full-node/',
+            link: '/ru/guide/full-node/index_ru.md',
           }
         ]
       },
@@ -27,7 +27,7 @@ export const navbarRu: NavbarOptions = [
         children: [
           {
             text: 'Руководство по монетизации Bastyon',
-            link: '/ru/guide/monetization/',
+            link: '/ru/guide/monetization/index_ru.md',
           }
         ]
       }
