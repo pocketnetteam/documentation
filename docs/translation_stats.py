@@ -67,6 +67,10 @@ def scan_translations(start_path='.'):
             if not file.lower().endswith('.md'):
                 continue
                 
+            # Skip README.md and translation_stats.md
+            if file.lower() in ['readme.md', 'translation_stats.md']:
+                continue
+                
             full_path = os.path.join(root, file)
             rel_path = os.path.relpath(full_path, start_path)
             base_name = get_base_filename(file, rel_path)
