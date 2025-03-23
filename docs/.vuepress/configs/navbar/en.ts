@@ -75,6 +75,27 @@ export const navbarEn: NavbarOptions = [
         ]
       },
       {
+        text: 'API',
+        children: [
+          {
+            text: 'Introduction',
+            link: '/dev/api/introduction.md',
+          },
+          {
+            text: 'Get Started',
+            link: '/dev/api/get-started.md',
+          },
+          {
+            text: 'RPC',
+            link: '/dev/api/rpc.md',
+          },
+          {
+            text: 'MiniApps',
+            link: '/dev/api/miniapps.md',
+          }
+        ]
+      },
+      {
         text: 'Mini Apps',
         children: [
           {

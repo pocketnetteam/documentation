@@ -75,6 +75,27 @@ export const navbarRu: NavbarOptions = [
         ]
       },
       {
+        text: 'API',
+        children: [
+          {
+            text: 'Введение',
+            link: '/ru/dev/api/introduction_ru.md',
+          },
+          {
+            text: 'Начало работы',
+            link: '/ru/dev/api/get-started_ru.md',
+          },
+          {
+            text: 'RPC',
+            link: '/ru/dev/api/rpc_ru.md',
+          },
+          {
+            text: 'Мини-приложения',
+            link: '/ru/dev/api/miniapps_ru.md',
+          }
+        ]
+      },
+      {
         text: 'Мини-приложения',
         children: [
           {
