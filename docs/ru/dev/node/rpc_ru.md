@@ -613,11 +613,21 @@ The `getuserstate` method returns, among other things, a `badges` object with a 
 
 ### `/getalljury`
 
-List of all jury
+Список всех жюри
 
 ```json
-> /rpc/getalljury
+> /rpc/getalljury <ПАРАМЕТРЫ_ЗАПРОСА>
 
+// ПАРАМЕТРЫ_ЗАПРОСА
+{
+    "topHeight": number,  // Начальная высота для пагинации
+    "pageStart": number,  // Номер начальной страницы
+    "pageSize": number,   // Размер страницы
+    "orderBy": string,    // Поле сортировки (Height)
+    "desc": boolean      // Направление сортировки (true для убывания)
+}
+
+// Результат
 {
     "result": "success",
     "data": [
