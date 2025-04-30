@@ -65,7 +65,7 @@ todo: provide a post that will contain support accounts in different languages
 
 ### Документация
 
-Чтобы узнать больше о технических деталях Bastyon, ознакомьтесь с нашей подробной [Технической документацией](/dev/get-started.md).
+Чтобы узнать больше о технических деталях Bastyon, ознакомьтесь с нашей подробной [Технической документацией](/dev/introduction.md).
 
 ## Как оставить отзыв о Bastyon
 
