@@ -86,10 +86,12 @@
 
 ### Шаблоны для разработки
 
-| Тип | Репозиторий | Описание |
-|-----|-------------|-----------|
-| Клиент | [bastyon-miniapp-vue-template](https://github.com/DaniilKimlb/bastyon-miniapp-vue-template) | Vue.js шаблон с настроенным SDK |
-| Сервер | [bastyon-miniapp-expressjs-template](https://github.com/DaniilKimlb/bastyon-miniapp-expressjs-template) | Express.js шаблон для API |
+| Тип     | Репозиторий | Описание |
+|---------|-------------|----------|
+| Клиент  | [bastyon-miniapp-vue-template](https://github.com/DaniilKimlb/bastyon-miniapp-vue-template) | Vue.js шаблон с настроенным SDK |
+| Сервер  | [bastyon-miniapp-expressjs-template](https://github.com/DaniilKimlb/bastyon-miniapp-expressjs-template) | Express.js шаблон для API |
+| Клиент  | [bastyon-miniapp-html-template](https://github.com/DaniilKimlb/bastyon-miniapp-html-template) | Чистый HTML шаблон мини‑приложения |
+| Клиент  | [bastyon-demo-application](https://github.com/pocketnetteam/bastyon-demo-application) | Демо‑приложение на Vue |
 
 Шаблоны содержат преднастроенную структуру и все необходимые зависимости для быстрого старта.
 
