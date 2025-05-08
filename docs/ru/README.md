@@ -7,8 +7,8 @@ actions:
     link: /ru/dev/introduction_ru.md
     type: primary
 
-  - text: Публичный API
-    link: /ru/dev/api/introduction_ru.md
+  - text: Мини-приложения
+    link: /ru/dev/apps/miniapps/get-started_ru.md
     type: secondary
 
 features:
