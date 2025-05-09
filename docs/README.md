@@ -8,7 +8,7 @@ actions:
     type: primary
 
   - text: Mini-Apps API
-    link: /dev/api/introduction.md
+    link: /dev/apps/miniapps/get-started.md
     type: secondary
 
 features:
