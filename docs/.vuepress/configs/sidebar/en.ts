@@ -9,6 +9,7 @@ export const sidebarEn: SidebarOptions = {
         '/guide/monetization/',
         '/guide/easy-node/',
         '/guide/full-node/',
+        '/guide/network-configuration/',
       ],
     },
   ],
@@ -27,7 +28,6 @@ export const sidebarEn: SidebarOptions = {
       text: 'Blockchain Node',
       children: [
         '/dev/node/get-started.md',
-        '/dev/node/source.md',
         '/dev/node/building.md',
         '/dev/node/usage.md',
         '/dev/node/rpc.md',

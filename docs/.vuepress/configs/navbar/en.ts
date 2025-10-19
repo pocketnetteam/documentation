@@ -19,6 +19,10 @@ export const navbarEn: NavbarOptions = [
           {
             text: 'Full Node Setup Guide',
             link: '/guide/full-node/',
+          },
+          {
+            text: 'Node Network Configuration',
+            link: '/guide/network-configuration/',
           }
         ]
       },
@@ -55,10 +59,6 @@ export const navbarEn: NavbarOptions = [
           {
             text: 'Getting Started',
             link: '/dev/node/get-started.md',
-          },
-          {
-            text: 'Source Code',
-            link: '/dev/node/source.md',
           },
           {
             text: 'Building',

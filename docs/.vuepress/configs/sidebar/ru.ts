@@ -9,6 +9,7 @@ export const sidebarRu: SidebarOptions = {
         '/ru/guide/monetization/index_ru.md',
         '/ru/guide/easy-node/index_ru.md',
         '/ru/guide/full-node/index_ru.md',
+        '/ru/guide/network-configuration/index_ru.md',
       ],
     },
   ],
@@ -27,7 +28,6 @@ export const sidebarRu: SidebarOptions = {
       text: 'Блокчейн-узел',
       children: [
         '/ru/dev/node/get-started_ru.md',
-        '/ru/dev/node/source_ru.md',
         '/ru/dev/node/building_ru.md',
         '/ru/dev/node/usage_ru.md',
         '/ru/dev/node/rpc_ru.md',

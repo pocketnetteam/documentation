@@ -19,6 +19,10 @@ export const navbarRu: NavbarOptions = [
           {
             text: 'Руководство по настройке Full Node',
             link: '/ru/guide/full-node/index_ru.md',
+          },
+          {
+            text: 'Сетевая конфигурация узла',
+            link: '/ru/guide/network-configuration/index_ru.md',
           }
         ]
       },
@@ -55,10 +59,6 @@ export const navbarRu: NavbarOptions = [
           {
             text: 'Начало работы',
             link: '/ru/dev/node/get-started_ru.md',
-          },
-          {
-            text: 'Исходный код',
-            link: '/ru/dev/node/source_ru.md',
           },
           {
             text: 'Сборка',
